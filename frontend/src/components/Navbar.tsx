@@ -27,14 +27,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
+    <header className="sticky top-0 z-40 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Left: Mobile Toggle & Logo */}
         <div className="flex items-center gap-3">
           {isAuthenticated && (
             <button
               onClick={onToggleSidebar}
-              className="lg:hidden p-2 rounded-xl text-slate-500 hover:text-slate-700 hover:bg-slate-100 transition-colors"
+              className="lg:hidden p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors"
               aria-label="Toggle Navigation Menu"
             >
               {isSidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -47,9 +47,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-slate-900 text-lg tracking-tight">SehatSense</span>
-                <span className="text-[10px] font-bold bg-violet-50 text-violet-700 border border-violet-200 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
-                  <Sparkles className="w-2.5 h-2.5 text-violet-600" /> AI
+                <span className="font-extrabold text-white text-lg tracking-tight">SehatSense</span>
+                <span className="text-[10px] font-bold bg-violet-950/80 text-violet-300 border border-violet-800/60 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+                  <Sparkles className="w-2.5 h-2.5 text-violet-400" /> AI
                 </span>
               </div>
               <p className="text-[10px] text-slate-400 font-medium hidden sm:block">Smart Food Choices, Better Health.</p>
@@ -64,17 +64,17 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
               {/* Quick Log Buttons */}
               <Link
                 to="/food-logging"
-                className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-violet-700 bg-violet-50 hover:bg-violet-100 border border-violet-200 px-3 py-1.5 rounded-xl transition-all"
+                className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-violet-300 bg-violet-950/60 hover:bg-violet-900/60 border border-violet-800/60 px-3 py-1.5 rounded-xl transition-all"
               >
-                <PlusCircle className="w-4 h-4 text-violet-600" />
+                <PlusCircle className="w-4 h-4 text-violet-400" />
                 <span>Log Meal</span>
               </Link>
 
               <Link
                 to="/food-logging?tab=image"
-                className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-xl transition-all"
+                className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 px-3 py-1.5 rounded-xl transition-all"
               >
-                <Camera className="w-4 h-4 text-violet-600" />
+                <Camera className="w-4 h-4 text-violet-400" />
                 <span>AI Photo Scan</span>
               </Link>
 
@@ -87,23 +87,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
               </Link>
 
               {/* Profile dropdown / link */}
-              <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
+              <div className="flex items-center gap-2 pl-2 border-l border-slate-800">
                 <Link
                   to="/profile"
-                  className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-slate-100 transition-colors"
+                  className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-slate-800/60 transition-colors"
                   title="Profile & Settings"
                 >
-                  <div className="w-8 h-8 rounded-full bg-violet-100 border border-violet-200 flex items-center justify-center text-violet-800 font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-violet-950 border border-violet-800 flex items-center justify-center text-violet-300 font-bold text-xs">
                     {profile?.display_name ? profile.display_name[0].toUpperCase() : <UserIcon className="w-4 h-4" />}
                   </div>
-                  <span className="text-xs font-medium text-slate-700 hidden lg:inline-block max-w-[100px] truncate">
+                  <span className="text-xs font-medium text-slate-200 hidden lg:inline-block max-w-[100px] truncate">
                     {profile?.display_name || user?.email.split('@')[0]}
                   </span>
                 </Link>
 
                 <button
                   onClick={handleLogout}
-                  className="p-1.5 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-xl transition-colors cursor-pointer"
+                  className="p-1.5 text-slate-400 hover:text-red-400 hover:bg-red-950/30 rounded-xl transition-colors cursor-pointer"
                   title="Log out"
                 >
                   <LogOut className="w-4 h-4" />
@@ -114,7 +114,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
             <div className="flex items-center gap-2">
               <Link
                 to="/login"
-                className="text-xs font-semibold text-slate-700 hover:text-slate-900 px-3.5 py-2 rounded-xl hover:bg-slate-100 transition-colors"
+                className="text-xs font-semibold text-slate-300 hover:text-white px-3.5 py-2 rounded-xl hover:bg-slate-800 transition-colors"
               >
                 Sign In
               </Link>

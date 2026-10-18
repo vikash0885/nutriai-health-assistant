@@ -52,7 +52,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
       {/* Sidebar container */}
       <aside
-        className={`fixed lg:sticky top-16 z-40 h-[calc(100vh-4rem)] w-64 bg-white border-r border-slate-200 overflow-y-auto transition-transform duration-300 ease-in-out ${
+        className={`fixed lg:sticky top-16 z-40 h-[calc(100vh-4rem)] w-64 bg-[#0f172a] border-r border-slate-800 overflow-y-auto transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
@@ -68,8 +68,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-violet-50 text-violet-800 font-semibold border-l-3 border-violet-600 shadow-sm shadow-violet-100'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'bg-violet-950/80 text-violet-300 font-semibold border-l-3 border-violet-500 shadow-sm shadow-violet-950/40'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                 }`
               }
             >
@@ -89,8 +89,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-violet-50 text-violet-800 font-semibold border-l-3 border-violet-600 shadow-sm shadow-violet-100'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'bg-violet-950/80 text-violet-300 font-semibold border-l-3 border-violet-500 shadow-sm shadow-violet-950/40'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                 }`
               }
             >
@@ -110,8 +110,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-violet-50 text-violet-800 font-semibold border-l-3 border-violet-600 shadow-sm shadow-violet-100'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'bg-violet-950/80 text-violet-300 font-semibold border-l-3 border-violet-500 shadow-sm shadow-violet-950/40'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                 }`
               }
             >
@@ -131,8 +131,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-violet-50 text-violet-800 font-semibold border-l-3 border-violet-600 shadow-sm shadow-violet-100'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'bg-violet-950/80 text-violet-300 font-semibold border-l-3 border-violet-500 shadow-sm shadow-violet-950/40'
+                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                 }`
               }
             >
