@@ -1,0 +1,33 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nutriai_backend
+    restart: always
+    ports:
+      - "8000:8000"
+    environment:
+      - PROJECT_NAME=NutriAI - Personal Food, Health & Fitness Intelligence
+      - API_V1_STR=/api/v1
+      - SECRET_KEY=nutriai-docker-production-secret-change-me-123456789
+      - DATABASE_URL=sqlite+aiosqlite:///./nutriai.db
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.5-flash}
+      - BACKEND_CORS_ORIGINS=["http://localhost:5173","http://localhost:3000","http://localhost:80"]
+    volumes:
+      - nutriai_data:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: nutriai_frontend
+    restart: always
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  nutriai_data:
