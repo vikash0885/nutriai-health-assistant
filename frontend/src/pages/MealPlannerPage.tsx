@@ -110,14 +110,14 @@ export const MealPlannerPage: React.FC = () => {
           to="/grocery-list"
           className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-semibold px-4 py-2 rounded-2xl border border-slate-200 text-xs shadow-sm transition-all self-start sm:self-auto"
         >
-          <ShoppingCart className="w-4 h-4 text-emerald-600" />
+          <ShoppingCart className="w-4 h-4 text-violet-600" />
           <span>View Grocery List</span>
         </Link>
       </div>
 
       {actionSuccess && (
-        <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2">
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+        <div className="p-4 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-800 flex items-center gap-2">
+          <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
           <span className="font-semibold">{actionSuccess}</span>
         </div>
       )}
@@ -126,7 +126,7 @@ export const MealPlannerPage: React.FC = () => {
       <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-xl bg-emerald-50 text-emerald-700">
+            <div className="p-2 rounded-xl bg-violet-50 text-violet-700">
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
@@ -140,7 +140,7 @@ export const MealPlannerPage: React.FC = () => {
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-2xl text-xs shadow-md shadow-emerald-600/20 transition-all disabled:opacity-60"
+            className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-bold px-5 py-2.5 rounded-2xl text-xs shadow-md shadow-violet-600/20 transition-all disabled:opacity-60"
           >
             {isGenerating ? (
               <>
@@ -165,7 +165,7 @@ export const MealPlannerPage: React.FC = () => {
               type="number"
               value={budget}
               onChange={(e) => setBudget(Number(e.target.value) || 250)}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
 
@@ -178,7 +178,7 @@ export const MealPlannerPage: React.FC = () => {
               value={customRequest}
               onChange={(e) => setCustomRequest(e.target.value)}
               placeholder="e.g. Include high-protein breakfast like besan chilla, light dinner"
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
         </div>
@@ -188,9 +188,9 @@ export const MealPlannerPage: React.FC = () => {
       {currentPlan ? (
         <div className="space-y-6">
           {/* Plan Header Strip */}
-          <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="bg-gradient-to-r from-[#172554] via-blue-950 to-violet-950 text-white rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 border border-violet-900/40">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-emerald-400 text-xs font-semibold mb-1">
+              <div className="inline-flex items-center gap-1.5 text-violet-400 text-xs font-semibold mb-1">
                 <ChefHat className="w-4 h-4" /> Recommended Menu
               </div>
               <h2 className="text-xl sm:text-2xl font-bold">{currentPlan.title}</h2>
@@ -201,7 +201,7 @@ export const MealPlannerPage: React.FC = () => {
               <button
                 onClick={handleAddToDiary}
                 disabled={isAddingToDiary}
-                className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-sm disabled:opacity-60"
+                className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-500 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-sm disabled:opacity-60"
               >
                 <PlusCircle className="w-4 h-4" />
                 <span>{isAddingToDiary ? 'Logging...' : 'Add Plan to Diary'}</span>
@@ -223,11 +223,11 @@ export const MealPlannerPage: React.FC = () => {
             {currentPlan.items.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between space-y-4"
+                className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between space-y-4 hover:border-violet-200 transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full">
+                    <span className="text-xs font-bold uppercase tracking-wider text-violet-700 bg-violet-50 px-2.5 py-1 rounded-full border border-violet-100">
                       {item.meal_category}
                     </span>
                     <span className="text-xs font-black text-slate-900">
@@ -242,7 +242,7 @@ export const MealPlannerPage: React.FC = () => {
                   <div className="grid grid-cols-3 gap-2 bg-slate-50 p-2.5 rounded-xl text-center text-xs font-semibold text-slate-700 my-3">
                     <div>
                       <span className="text-[10px] text-slate-400 block">Protein</span>
-                      {item.protein_g}g
+                      <span className="text-violet-700 font-bold">{item.protein_g}g</span>
                     </div>
                     <div>
                       <span className="text-[10px] text-slate-400 block">Carbs</span>
@@ -284,15 +284,15 @@ export const MealPlannerPage: React.FC = () => {
         </div>
       ) : (
         <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-sm max-w-md mx-auto">
-          <CalendarCheck2 className="w-12 h-12 text-emerald-600 mx-auto mb-3" />
+          <CalendarCheck2 className="w-12 h-12 text-violet-600 mx-auto mb-3" />
           <h3 className="text-base font-bold text-slate-900 mb-1">No Active Meal Plan</h3>
           <p className="text-xs text-slate-500 mb-6">
-            Click 'Generate New Daily Plan' above to create a culturally aligned, nutrient-balanced menu with NutriAI.
+            Click 'Generate New Daily Plan' above to create a culturally aligned, nutrient-balanced menu with NutriAi-VM.
           </p>
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-sm transition-all"
+            className="px-6 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-sm transition-all"
           >
             Create My Plan Now
           </button>

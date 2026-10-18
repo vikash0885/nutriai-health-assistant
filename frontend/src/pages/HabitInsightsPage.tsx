@@ -29,12 +29,12 @@ export const HabitInsightsPage: React.FC = () => {
 
       {isLoading ? (
         <div className="py-16 text-center text-xs text-slate-400">
-          <div className="w-8 h-8 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin mx-auto mb-2" />
+          <div className="w-8 h-8 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin mx-auto mb-2" />
           <span>Evaluating lifestyle consistency...</span>
         </div>
       ) : habits.length === 0 ? (
         <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-sm max-w-md mx-auto space-y-3">
-          <TrendingUp className="w-12 h-12 text-emerald-600 mx-auto opacity-60" />
+          <TrendingUp className="w-12 h-12 text-violet-600 mx-auto opacity-60" />
           <h3 className="text-base font-bold text-slate-900">More Records Needed</h3>
           <p className="text-xs text-slate-500">
             Log your meals, water intake, and activities consistently for 3 or more days to reveal recurring habits!
@@ -43,10 +43,10 @@ export const HabitInsightsPage: React.FC = () => {
       ) : (
         <div className="space-y-4">
           {habits.map((h, i) => (
-            <div key={i} className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-3">
+            <div key={i} className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-3 hover:border-violet-200 transition-all">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <span className="p-2 rounded-xl bg-emerald-50 text-emerald-700">
+                  <span className="p-2 rounded-xl bg-violet-50 text-violet-700">
                     <TrendingUp className="w-4 h-4" />
                   </span>
                   <h3 className="text-base font-bold text-slate-900">{h.title}</h3>
@@ -60,7 +60,7 @@ export const HabitInsightsPage: React.FC = () => {
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{h.description}</p>
 
               {h.actionable_tip && (
-                <div className="p-3.5 bg-emerald-50/70 border border-emerald-100 rounded-2xl text-xs text-emerald-950 font-medium">
+                <div className="p-3.5 bg-violet-50/70 border border-violet-100 rounded-2xl text-xs text-violet-950 font-medium">
                   <strong>Practical Action to Consider:</strong> {h.actionable_tip}
                 </div>
               )}

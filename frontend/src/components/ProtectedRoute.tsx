@@ -10,8 +10,8 @@ export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ childr
     return (
       <div className="min-h-screen flex items-center justify-center bg-slate-50">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-10 h-10 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin" />
-          <p className="text-sm font-medium text-slate-500">Loading NutriAI Intelligence...</p>
+          <div className="w-10 h-10 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin" />
+          <p className="text-sm font-medium text-slate-500">Loading NutriAi-VM Intelligence...</p>
         </div>
       </div>
     );

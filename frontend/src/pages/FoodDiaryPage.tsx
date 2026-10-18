@@ -115,7 +115,7 @@ export const FoodDiaryPage: React.FC = () => {
 
           <button
             onClick={handleToday}
-            className="ml-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-2.5 py-1 rounded-xl transition-colors"
+            className="ml-1 text-[11px] font-semibold text-violet-700 bg-violet-50 hover:bg-violet-100 border border-violet-200 px-2.5 py-1 rounded-xl transition-colors cursor-pointer"
           >
             Today
           </button>
@@ -124,7 +124,7 @@ export const FoodDiaryPage: React.FC = () => {
 
       {/* Day Overview Strip */}
       {summary && (
-        <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
+        <div className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm grid grid-cols-2 sm:grid-cols-5 gap-4 text-center">
           <div className="col-span-2 sm:col-span-1 border-b sm:border-b-0 sm:border-r border-slate-100 pb-3 sm:pb-0">
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Calories</span>
             <span className="text-2xl font-black text-slate-900">{Math.round(summary.total_calories)}</span>
@@ -132,7 +132,7 @@ export const FoodDiaryPage: React.FC = () => {
           </div>
           <div>
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Protein</span>
-            <span className="text-lg font-bold text-emerald-700">{Math.round(summary.protein.current)}g</span>
+            <span className="text-lg font-bold text-violet-700">{Math.round(summary.protein.current)}g</span>
             <span className="text-[11px] text-slate-400 block">/ {Math.round(summary.protein.target)}g</span>
           </div>
           <div>
@@ -147,7 +147,7 @@ export const FoodDiaryPage: React.FC = () => {
           </div>
           <div>
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Fiber</span>
-            <span className="text-lg font-bold text-purple-700">{Math.round(summary.fiber.current)}g</span>
+            <span className="text-lg font-bold text-indigo-700">{Math.round(summary.fiber.current)}g</span>
             <span className="text-[11px] text-slate-400 block">/ {Math.round(summary.fiber.target)}g</span>
           </div>
         </div>
@@ -164,7 +164,7 @@ export const FoodDiaryPage: React.FC = () => {
             const catTotalProt = catEntries.reduce((sum, e) => sum + e.protein_g, 0);
 
             return (
-              <div key={category} className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-4">
+              <div key={category} className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-sm space-y-4">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                   <div className="flex items-center gap-2">
                     <h3 className="text-base font-bold text-slate-900 capitalize">{category}</h3>
@@ -173,12 +173,12 @@ export const FoodDiaryPage: React.FC = () => {
 
                   <div className="flex items-center gap-3">
                     <span className="text-xs font-bold text-slate-700">{Math.round(catTotalCal)} kcal</span>
-                    <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-semibold text-violet-700 bg-violet-50 border border-violet-200 px-2 py-0.5 rounded-full">
                       {Math.round(catTotalProt)}g Protein
                     </span>
                     <Link
                       to={`/food-logging?meal=${category}`}
-                      className="p-1 text-emerald-600 hover:text-emerald-700 hover:bg-emerald-50 rounded-lg transition-colors"
+                      className="p-1 text-violet-600 hover:text-violet-700 hover:bg-violet-50 rounded-lg transition-colors cursor-pointer"
                       title={`Add to ${category}`}
                     >
                       <PlusCircle className="w-4 h-4" />
@@ -191,7 +191,7 @@ export const FoodDiaryPage: React.FC = () => {
                     <span>No {category} recorded. </span>
                     <Link
                       to={`/food-logging?meal=${category}`}
-                      className="text-emerald-600 font-semibold hover:underline"
+                      className="text-violet-600 font-semibold hover:underline"
                     >
                       + Log {category}
                     </Link>
@@ -207,8 +207,8 @@ export const FoodDiaryPage: React.FC = () => {
                           <div className="flex items-center gap-2">
                             <h4 className="text-xs font-bold text-slate-900">{entry.food_name}</h4>
                             {entry.source === 'gemini_vision' && (
-                              <span className="text-[9px] font-semibold bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded-full flex items-center gap-0.5">
-                                <Sparkles className="w-2.5 h-2.5" /> AI Scan
+                              <span className="text-[9px] font-semibold bg-violet-100 text-violet-800 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+                                <Sparkles className="w-2.5 h-2.5 text-violet-600" /> AI Scan
                               </span>
                             )}
                           </div>

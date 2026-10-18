@@ -95,8 +95,8 @@ export const ExercisePage: React.FC = () => {
       </div>
 
       {successMsg && (
-        <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2">
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+        <div className="p-4 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-800 flex items-center gap-2">
+          <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
           <span>{successMsg}</span>
         </div>
       )}
@@ -104,7 +104,7 @@ export const ExercisePage: React.FC = () => {
       {/* Recommended Routines Grid */}
       <div className="space-y-3">
         <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-emerald-600" />
+          <Sparkles className="w-4 h-4 text-violet-600" />
           <span>Tailored Digestion & Fitness Routines</span>
         </h3>
 
@@ -113,12 +113,12 @@ export const ExercisePage: React.FC = () => {
             <div
               key={idx}
               onClick={() => handleSelectRoutine(routine)}
-              className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-sm hover:border-emerald-400 cursor-pointer transition-all space-y-2 flex flex-col justify-between"
+              className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-sm hover:border-violet-400 cursor-pointer transition-all space-y-2 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-1">
                   <h4 className="text-xs font-bold text-slate-900">{routine.title}</h4>
-                  <span className="text-[10px] font-semibold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full capitalize">
+                  <span className="text-[10px] font-semibold bg-violet-100 text-violet-800 px-2 py-0.5 rounded-full capitalize">
                     {routine.intensity}
                   </span>
                 </div>
@@ -130,7 +130,7 @@ export const ExercisePage: React.FC = () => {
 
               <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-xs text-slate-400 font-medium">
                 <span>⏱️ {routine.duration_minutes} mins</span>
-                <span className="text-emerald-700 font-bold">~{Math.round(routine.estimated_calories)} kcal</span>
+                <span className="text-violet-700 font-bold">~{Math.round(routine.estimated_calories)} kcal</span>
               </div>
             </div>
           ))}
@@ -140,7 +140,7 @@ export const ExercisePage: React.FC = () => {
       {/* Log Exercise Form */}
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-4">
         <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-          <Plus className="w-4 h-4 text-emerald-600" />
+          <Plus className="w-4 h-4 text-violet-600" />
           <span>Log Completed Activity</span>
         </h3>
 
@@ -153,7 +153,7 @@ export const ExercisePage: React.FC = () => {
                 required
                 value={activityName}
                 onChange={(e) => setActivityName(e.target.value)}
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
               />
             </div>
 
@@ -162,7 +162,7 @@ export const ExercisePage: React.FC = () => {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20 bg-white"
+                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
               >
                 <option value="post_meal_stroll">Post-Meal Stroll (Gentle walking)</option>
                 <option value="walking">Brisk Walking</option>
@@ -186,7 +186,7 @@ export const ExercisePage: React.FC = () => {
                   max="360"
                   value={durationMinutes}
                   onChange={(e) => setDurationMinutes(Number(e.target.value) || 1)}
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
                 />
               </div>
             </div>
@@ -201,7 +201,7 @@ export const ExercisePage: React.FC = () => {
                     onClick={() => setIntensity(lvl)}
                     className={`py-2 text-xs font-semibold rounded-xl capitalize transition-all ${
                       intensity === lvl
-                        ? 'bg-emerald-600 text-white shadow-sm'
+                        ? 'bg-violet-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                     }`}
                   >
@@ -219,14 +219,14 @@ export const ExercisePage: React.FC = () => {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="e.g. 15 mins stroll after lunch"
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSaving}
-            className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-md shadow-emerald-600/20 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60"
+            className="w-full py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60"
           >
             {isSaving ? 'Logging...' : 'Save Activity Entry'}
           </button>
@@ -261,7 +261,7 @@ export const ExercisePage: React.FC = () => {
 
                 <div className="flex items-center gap-3">
                   <div className="text-right">
-                    <span className="text-xs font-bold text-emerald-700">{Math.round(ex.calories_burned)} kcal</span>
+                    <span className="text-xs font-bold text-violet-700">{Math.round(ex.calories_burned)} kcal</span>
                     <span className="text-[10px] text-slate-400 block">burned</span>
                   </div>
 

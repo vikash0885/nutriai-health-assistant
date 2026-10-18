@@ -115,16 +115,16 @@ export const ProfileSettingsPage: React.FC = () => {
       </div>
 
       {saveSuccess && (
-        <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2">
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+        <div className="p-4 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-800 flex items-center gap-2">
+          <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
           <span>{saveSuccess}</span>
         </div>
       )}
 
       {/* Target Preview Strip */}
       {profile && (
-        <div className="bg-emerald-50/70 border border-emerald-200/60 rounded-3xl p-6 text-center">
-          <h3 className="text-xs font-bold text-emerald-950 uppercase tracking-wider mb-3">
+        <div className="bg-violet-50/70 border border-violet-200/60 rounded-3xl p-6 text-center">
+          <h3 className="text-xs font-bold text-violet-950 uppercase tracking-wider mb-3">
             Computed Daily Dietary Targets (Mifflin-St Jeor & ICMR Standards)
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-6 gap-3">
@@ -134,7 +134,7 @@ export const ProfileSettingsPage: React.FC = () => {
             </div>
             <div>
               <span className="text-[10px] text-slate-500 block">Protein</span>
-              <span className="text-base font-bold text-emerald-700">{profile.daily_protein_target} g</span>
+              <span className="text-base font-bold text-violet-700">{profile.daily_protein_target} g</span>
             </div>
             <div>
               <span className="text-[10px] text-slate-500 block">Carbs</span>
@@ -159,7 +159,7 @@ export const ProfileSettingsPage: React.FC = () => {
       {/* Profile Form */}
       <form onSubmit={handleSaveProfile} className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-5">
         <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-          <User className="w-4 h-4 text-emerald-600" />
+          <User className="w-4 h-4 text-violet-600" />
           <span>Biometric & Lifestyle Profile</span>
         </h3>
 
@@ -171,7 +171,7 @@ export const ProfileSettingsPage: React.FC = () => {
               required
               value={displayName}
               onChange={(e) => setDisplayName(e.target.value)}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
 
@@ -180,7 +180,7 @@ export const ProfileSettingsPage: React.FC = () => {
             <select
               value={gender}
               onChange={(e) => setGender(e.target.value)}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20 bg-white"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
             >
               <option value="prefer_not_to_say">Prefer not to say</option>
               <option value="female">Female</option>
@@ -199,7 +199,7 @@ export const ProfileSettingsPage: React.FC = () => {
               max={110}
               value={age}
               onChange={(e) => setAge(e.target.value ? Number(e.target.value) : '')}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
 
@@ -211,7 +211,7 @@ export const ProfileSettingsPage: React.FC = () => {
               max={240}
               value={heightCm}
               onChange={(e) => setHeightCm(e.target.value ? Number(e.target.value) : '')}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
 
@@ -223,7 +223,7 @@ export const ProfileSettingsPage: React.FC = () => {
               max={250}
               value={weightKg}
               onChange={(e) => setWeightKg(e.target.value ? Number(e.target.value) : '')}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
         </div>
@@ -234,7 +234,7 @@ export const ProfileSettingsPage: React.FC = () => {
             <select
               value={dietaryPreference}
               onChange={(e) => setDietaryPreference(e.target.value)}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20 bg-white"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
             >
               <option value="vegetarian">Vegetarian</option>
               <option value="eggetarian">Eggetarian</option>
@@ -249,7 +249,7 @@ export const ProfileSettingsPage: React.FC = () => {
             <select
               value={fitnessGoal}
               onChange={(e) => setFitnessGoal(e.target.value)}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20 bg-white"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
             >
               <option value="general_wellness">General Wellness & Vitality</option>
               <option value="weight_maintenance">Weight Maintenance</option>
@@ -266,7 +266,7 @@ export const ProfileSettingsPage: React.FC = () => {
             <select
               value={activityLevel}
               onChange={(e) => setActivityLevel(e.target.value)}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20 bg-white"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
             >
               <option value="sedentary">Sedentary (desk job)</option>
               <option value="light">Lightly active (1-3 days walk)</option>
@@ -281,7 +281,7 @@ export const ProfileSettingsPage: React.FC = () => {
               type="number"
               value={dailyBudget}
               onChange={(e) => setDailyBudget(e.target.value ? Number(e.target.value) : '')}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
         </div>
@@ -289,7 +289,7 @@ export const ProfileSettingsPage: React.FC = () => {
         {/* Privacy & Consent Controls */}
         <div className="pt-4 border-t border-slate-100 space-y-3">
           <h4 className="text-xs font-bold text-slate-900 flex items-center gap-2">
-            <Shield className="w-4 h-4 text-emerald-600" />
+            <Shield className="w-4 h-4 text-violet-600" />
             <span>Health Data Privacy & Consent Controls</span>
           </h4>
 
@@ -298,7 +298,7 @@ export const ProfileSettingsPage: React.FC = () => {
               type="checkbox"
               checked={healthConsent}
               onChange={(e) => setHealthConsent(e.target.checked)}
-              className="mt-0.5 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500"
+              className="mt-0.5 w-4 h-4 text-violet-600 rounded border-slate-300 focus:ring-violet-500"
             />
             <span className="text-xs text-slate-600">
               Consent to encrypted storage of my food diary and self-reported symptoms for personal wellness tracking.
@@ -310,7 +310,7 @@ export const ProfileSettingsPage: React.FC = () => {
               type="checkbox"
               checked={aiConsent}
               onChange={(e) => setAiConsent(e.target.checked)}
-              className="mt-0.5 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500"
+              className="mt-0.5 w-4 h-4 text-violet-600 rounded border-slate-300 focus:ring-violet-500"
             />
             <span className="text-xs text-slate-600">
               Consent to AI-assisted meal planning, food image understanding, and bilingual conversational answers.
@@ -321,7 +321,7 @@ export const ProfileSettingsPage: React.FC = () => {
         <button
           type="submit"
           disabled={isSaving}
-          className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-md shadow-emerald-600/20 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60"
+          className="w-full py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60"
         >
           {isSaving ? 'Updating...' : 'Save Profile & Recalculate Targets'}
         </button>
@@ -334,7 +334,7 @@ export const ProfileSettingsPage: React.FC = () => {
           <span>Danger Zone: Permanent Account Deletion</span>
         </h3>
         <p className="text-xs text-rose-800/80 leading-relaxed">
-          In strict compliance with privacy standards, you can permanently delete your NutriAI account at any time.
+          In strict compliance with privacy standards, you can permanently delete your NutriAi-VM account at any time.
           This will immediately remove your profile, food entries, symptom logs, hydration records, and grocery items.
         </p>
         <button

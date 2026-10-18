@@ -100,7 +100,7 @@ export const SymptomDiaryPage: React.FC = () => {
 
         <Link
           to="/patterns"
-          className="inline-flex items-center gap-2 bg-purple-50 hover:bg-purple-100 text-purple-700 font-semibold px-4 py-2 rounded-2xl border border-purple-200 text-xs transition-all self-start sm:self-auto"
+          className="inline-flex items-center gap-2 bg-violet-50 hover:bg-violet-100 text-violet-700 font-semibold px-4 py-2 rounded-2xl border border-violet-200 text-xs transition-all self-start sm:self-auto"
         >
           <Sparkles className="w-4 h-4" />
           <span>Analyze Food Patterns</span>
@@ -108,8 +108,8 @@ export const SymptomDiaryPage: React.FC = () => {
       </div>
 
       {successMsg && (
-        <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2">
-          <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+        <div className="p-4 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-800 flex items-center gap-2">
+          <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
           <span>{successMsg}</span>
         </div>
       )}
@@ -117,7 +117,7 @@ export const SymptomDiaryPage: React.FC = () => {
       {/* Log Symptom Form */}
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-4">
         <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-          <Plus className="w-4 h-4 text-emerald-600" />
+          <Plus className="w-4 h-4 text-violet-600" />
           <span>Log a Bodily or Digestive Feeling</span>
         </h3>
 
@@ -128,7 +128,7 @@ export const SymptomDiaryPage: React.FC = () => {
               <select
                 value={symptomType}
                 onChange={(e) => setSymptomType(e.target.value)}
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20 bg-white"
+                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
               >
                 {symptomOptions.map((symp) => (
                   <option key={symp} value={symp}>
@@ -152,7 +152,7 @@ export const SymptomDiaryPage: React.FC = () => {
                           ? 'bg-rose-600 text-white shadow-sm'
                           : sev === 'moderate'
                           ? 'bg-amber-600 text-white shadow-sm'
-                          : 'bg-emerald-600 text-white shadow-sm'
+                          : 'bg-violet-600 text-white shadow-sm'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                     }`}
                   >
@@ -177,7 +177,7 @@ export const SymptomDiaryPage: React.FC = () => {
                   value={onsetMinutes}
                   onChange={(e) => setOnsetMinutes(Number(e.target.value) || 0)}
                   placeholder="e.g. 45"
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
                 />
               </div>
             </div>
@@ -191,7 +191,7 @@ export const SymptomDiaryPage: React.FC = () => {
                 value={suspectedFood}
                 onChange={(e) => setSuspectedFood(e.target.value)}
                 placeholder="e.g. Fried snacks, heavy cream, milk"
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
               />
             </div>
           </div>
@@ -203,14 +203,14 @@ export const SymptomDiaryPage: React.FC = () => {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="e.g. Ate quickly during a busy meeting, high stress"
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSaving}
-            className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-md shadow-emerald-600/20 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60"
+            className="w-full py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60"
           >
             {isSaving ? 'Saving...' : 'Save Symptom Entry'}
           </button>
@@ -235,7 +235,7 @@ export const SymptomDiaryPage: React.FC = () => {
                   ? 'bg-rose-100 text-rose-800'
                   : s.severity === 'moderate'
                   ? 'bg-amber-100 text-amber-800'
-                  : 'bg-emerald-100 text-emerald-800';
+                  : 'bg-violet-100 text-violet-800';
 
               const logDate = new Date(s.logged_at).toLocaleDateString('en-US', {
                 month: 'short',

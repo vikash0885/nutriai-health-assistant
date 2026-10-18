@@ -113,12 +113,12 @@ export const WaterTrackerPage: React.FC = () => {
                 step="50"
                 value={customAmount}
                 onChange={(e) => setCustomAmount(Number(e.target.value) || 250)}
-                className="w-32 p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-sky-500/20"
+                className="w-32 p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
                 placeholder="Custom ml"
               />
               <button
                 onClick={() => handleAddWater(customAmount)}
-                className="px-4 py-2.5 bg-sky-600 hover:bg-sky-700 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-md shadow-violet-600/20 transition-all flex items-center gap-1.5"
               >
                 <Plus className="w-4 h-4" /> Add Custom
               </button>

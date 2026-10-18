@@ -25,7 +25,7 @@ export const AiAssistantPage: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: `Namaste ${profile?.display_name || ''}! I am your NutriAI assistant. I have access to your verified diary logs for today. You can ask me in English, हिन्दी (Hindi), or Hinglish!`,
+      content: `Namaste ${profile?.display_name || ''}! I am your NutriAi-VM assistant. I have access to your verified diary logs for today. You can ask me in English, हिन्दी (Hindi), or Hinglish!`,
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
@@ -99,17 +99,17 @@ export const AiAssistantPage: React.FC = () => {
       <div className="flex items-center justify-between pb-2 border-b border-slate-200">
         <div>
           <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
-            <Bot className="w-6 h-6 text-emerald-600" />
-            <span>NutriAI Assistant</span>
+            <Bot className="w-6 h-6 text-violet-600" />
+            <span>NutriAi-VM Assistant</span>
           </h1>
           <p className="text-xs text-slate-500">
             Bilingual Hindi & English intelligence grounded in your personal diary data.
           </p>
         </div>
 
-        <div className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-          <span>NutriAI Smart AI</span>
+        <div className="text-[11px] font-semibold text-violet-800 bg-violet-50 border border-violet-200 px-3 py-1 rounded-full flex items-center gap-1.5">
+          <Sparkles className="w-3.5 h-3.5 text-violet-600" />
+          <span>NutriAi-VM Smart AI</span>
         </div>
       </div>
 
@@ -126,8 +126,8 @@ export const AiAssistantPage: React.FC = () => {
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold ${
                 m.role === 'user'
-                  ? 'bg-emerald-600 text-white'
-                  : 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+                  ? 'bg-violet-600 text-white shadow-sm'
+                  : 'bg-violet-100 text-violet-800 border border-violet-200'
               }`}
             >
               {m.role === 'user' ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
@@ -137,7 +137,7 @@ export const AiAssistantPage: React.FC = () => {
             <div
               className={`max-w-[80%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed ${
                 m.role === 'user'
-                  ? 'bg-emerald-600 text-white shadow-sm rounded-tr-none'
+                  ? 'bg-violet-600 text-white shadow-sm rounded-tr-none'
                   : 'bg-slate-50 text-slate-800 border border-slate-100 rounded-tl-none space-y-2'
               }`}
             >
@@ -156,7 +156,7 @@ export const AiAssistantPage: React.FC = () => {
               {m.time && (
                 <div
                   className={`text-[9px] text-right mt-1 ${
-                    m.role === 'user' ? 'text-emerald-100' : 'text-slate-400'
+                    m.role === 'user' ? 'text-violet-200' : 'text-slate-400'
                   }`}
                 >
                   {m.time}
@@ -168,12 +168,12 @@ export const AiAssistantPage: React.FC = () => {
 
         {isLoading && (
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200 flex items-center justify-center text-xs font-bold">
+            <div className="w-8 h-8 rounded-full bg-violet-100 text-violet-800 border border-violet-200 flex items-center justify-center text-xs font-bold">
               <Bot className="w-4 h-4" />
             </div>
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-xs text-slate-500 flex items-center gap-2">
-              <div className="w-3.5 h-3.5 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin" />
-              <span>NutriAI is thinking with your diary context...</span>
+              <div className="w-3.5 h-3.5 border-2 border-violet-600 border-t-transparent rounded-full animate-spin" />
+              <span>NutriAi-VM is thinking with your diary context...</span>
             </div>
           </div>
         )}
@@ -188,7 +188,7 @@ export const AiAssistantPage: React.FC = () => {
           <button
             key={i}
             onClick={() => handleSend(p)}
-            className="flex-shrink-0 bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-800 border border-slate-200 px-3 py-1.5 rounded-full transition-colors text-[11px]"
+            className="flex-shrink-0 bg-slate-100 hover:bg-violet-50 text-slate-600 hover:text-violet-800 border border-slate-200 px-3 py-1.5 rounded-full transition-colors text-[11px]"
           >
             {p}
           </button>
@@ -201,7 +201,7 @@ export const AiAssistantPage: React.FC = () => {
           e.preventDefault();
           handleSend();
         }}
-        className="flex items-center gap-2 bg-white p-2 rounded-2xl border border-slate-200 shadow-sm"
+        className="flex items-center gap-2 bg-white p-2 rounded-2xl border border-slate-200 shadow-sm focus-within:ring-2 focus-within:ring-violet-500/20 focus-within:border-violet-500"
       >
         <input
           type="text"
@@ -214,7 +214,7 @@ export const AiAssistantPage: React.FC = () => {
         <button
           type="submit"
           disabled={isLoading || !inputMsg.trim()}
-          className="p-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl transition-all shadow-sm disabled:opacity-50"
+          className="p-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl transition-all shadow-md shadow-violet-600/20 disabled:opacity-50"
         >
           <Send className="w-4 h-4" />
         </button>

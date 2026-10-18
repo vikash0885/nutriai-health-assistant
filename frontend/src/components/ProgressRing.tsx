@@ -13,7 +13,7 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
   progress,
   size = 120,
   strokeWidth = 10,
-  colorClass = 'text-emerald-500',
+  colorClass = 'text-violet-600',
   bgColorClass = 'text-slate-100',
   children,
 }) => {

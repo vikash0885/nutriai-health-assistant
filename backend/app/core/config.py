@@ -5,7 +5,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "NutriAI - Personal Food, Health & Fitness Intelligence"
+    PROJECT_NAME: str = "NutriAi-VM - Personal Food, Health & Fitness Intelligence"
     API_V1_STR: str = "/api/v1"
     SECRET_KEY: str = "nutriai-development-secret-key-change-in-production-123456"
     ALGORITHM: str = "HS256"

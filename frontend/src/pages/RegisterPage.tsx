@@ -2,13 +2,25 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
-import { Lock, Mail, User, ArrowRight, AlertCircle, ShieldCheck } from 'lucide-react';
+import {
+  Lock,
+  Mail,
+  User,
+  ArrowRight,
+  AlertCircle,
+  ShieldCheck,
+  Eye,
+  EyeOff,
+  CheckCircle2,
+  Heart,
+} from 'lucide-react';
 
 export const RegisterPage: React.FC = () => {
   const [displayName, setDisplayName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [consent, setConsent] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -20,8 +32,13 @@ export const RegisterPage: React.FC = () => {
     e.preventDefault();
     setError(null);
 
+    if (password.length < 6) {
+      setError('Password must be at least 6 characters.');
+      return;
+    }
+
     if (password !== confirmPassword) {
-      setError('Passwords do not match');
+      setError('Passwords do not match.');
       return;
     }
 
@@ -47,124 +64,191 @@ export const RegisterPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 bg-slate-50">
-      <div className="max-w-md w-full bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm">
-        <div className="text-center mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-white font-bold text-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-            N
+    <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl w-full bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        {/* Left: Midnight Blue & Violet Branding Panel */}
+        <div className="lg:col-span-5 bg-[#172554] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+          {/* Subtle Ambient Violet Glow */}
+          <div className="absolute -top-24 -left-24 w-64 h-64 bg-violet-600/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-violet-500/20 rounded-full blur-3xl pointer-events-none" />
+
+          {/* Top Brand Identity */}
+          <div className="relative z-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-violet-600 to-indigo-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-violet-900/50">
+                N
+              </div>
+              <div>
+                <div className="flex items-center gap-1.5">
+                  <span className="font-extrabold text-xl tracking-tight text-white">NutriAi-VM</span>
+                  <span className="text-[10px] font-bold bg-violet-500/30 text-violet-200 border border-violet-400/30 px-2 py-0.5 rounded-full">
+                    AI
+                  </span>
+                </div>
+                <p className="text-xs text-violet-200/80 font-medium">Eat Smart. Live Healthy.</p>
+              </div>
+            </div>
+
+            <div className="space-y-4 my-8">
+              <h2 className="text-2xl font-bold leading-tight tracking-tight text-white">
+                Start Your Intelligent Nutrition Journey
+              </h2>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Join thousands who balance authentic Indian dishes with smart macro goals, hydration tracking, and symptom awareness.
+              </p>
+            </div>
+
+            {/* Highlights */}
+            <div className="space-y-3 pt-2">
+              <div className="flex items-center gap-2.5 text-xs text-slate-200">
+                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                <span>Personalized Mifflin-St Jeor TDEE target</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs text-slate-200">
+                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                <span>Bilingual conversational assistance in Hindi & English</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-xs text-slate-200">
+                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+                <span>Smart budget-friendly meal plan generation</span>
+              </div>
+            </div>
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Start with NutriAI</h2>
-          <p className="text-xs text-slate-500 mt-1">Your personal food, nutrition & lifestyle companion</p>
+
+          {/* Bottom Trust Badge */}
+          <div className="relative z-10 pt-8 mt-8 border-t border-white/10 flex items-center gap-2 text-[11px] text-slate-300">
+            <ShieldCheck className="w-4 h-4 text-violet-300" />
+            <span>Zero health-data selling. Total user consent controls.</span>
+          </div>
         </div>
 
-        {error && (
-          <div className="mb-6 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 flex-shrink-0" />
-            <span>{error}</span>
+        {/* Right: Registration Form */}
+        <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-white">
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Create Your Account</h3>
+            <p className="text-xs text-slate-500 mt-1">
+              Begin tracking your meals, hydration, and habits with NutriAi-VM.
+            </p>
           </div>
-        )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Your Name</label>
-            <div className="relative">
-              <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                required
-                value={displayName}
-                onChange={(e) => setDisplayName(e.target.value)}
-                placeholder="e.g. Priya Sharma"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-              />
+          {error && (
+            <div className="mb-5 p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-600" />
+              <span>{error}</span>
             </div>
-          </div>
+          )}
 
-          <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Email Address</label>
-            <div className="relative">
-              <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-              />
+          <form onSubmit={handleSubmit} className="space-y-3.5">
+            <div>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Full Name</label>
+              <div className="relative">
+                <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  required
+                  value={displayName}
+                  onChange={(e) => setDisplayName(e.target.value)}
+                  placeholder="e.g. Vikash Sharma"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                />
+              </div>
             </div>
-          </div>
 
-          <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Create Password</label>
-            <div className="relative">
-              <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
-                type="password"
-                required
-                minLength={6}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="At least 6 characters"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-              />
+            <div>
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Email Address</label>
+              <div className="relative">
+                <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                />
+              </div>
             </div>
-          </div>
 
-          <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1.5">Confirm Password</label>
-            <div className="relative">
-              <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
-              <input
-                type="password"
-                required
-                minLength={6}
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Re-enter password"
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
-              />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Create Password</label>
+                <div className="relative">
+                  <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    minLength={6}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Min 6 chars"
+                    className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  >
+                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Confirm Password</label>
+                <div className="relative">
+                  <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    required
+                    minLength={6}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Re-enter password"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Privacy Consent Checkbox */}
-          <div className="pt-2">
-            <label className="flex items-start gap-2.5 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
-                className="mt-0.5 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500"
-              />
-              <span className="text-[11px] text-slate-500 leading-tight">
-                I agree to the secure storage of my food diary and symptom records for personalized lifestyle intelligence,
-                and acknowledge NutriAI is an educational wellness tool and not medical treatment.
-              </span>
-            </label>
-          </div>
+            {/* Privacy Consent Checkbox */}
+            <div className="pt-2">
+              <label className="flex items-start gap-2.5 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 text-violet-600 rounded border-slate-300 focus:ring-violet-500"
+                />
+                <span className="text-[11px] text-slate-500 leading-tight">
+                  I agree to the secure storage of my food diary and lifestyle logs for educational wellness intelligence,
+                  and acknowledge NutriAi-VM is not medical treatment.
+                </span>
+              </label>
+            </div>
 
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full mt-2 py-3 px-4 rounded-xl font-semibold text-sm text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 transition-all flex items-center justify-center gap-2 disabled:opacity-60"
-          >
-            {isLoading ? (
-              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            ) : (
-              <>
-                <span>Create Account</span>
-                <ArrowRight className="w-4 h-4" />
-              </>
-            )}
-          </button>
-        </form>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full mt-3 py-3 px-4 rounded-xl font-semibold text-sm text-white bg-violet-600 hover:bg-violet-700 shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer"
+            >
+              {isLoading ? (
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              ) : (
+                <>
+                  <span>Create Account</span>
+                  <ArrowRight className="w-4 h-4" />
+                </>
+              )}
+            </button>
+          </form>
 
-        <p className="text-center text-xs text-slate-500 mt-6">
-          Already have an account?{' '}
-          <Link to="/login" className="font-semibold text-emerald-600 hover:text-emerald-700">
-            Sign In
-          </Link>
-        </p>
+          <p className="text-center text-xs text-slate-500 mt-6">
+            Already have an account?{' '}
+            <Link to="/login" className="font-semibold text-violet-600 hover:text-violet-700 hover:underline">
+              Sign In
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -4,14 +4,26 @@ import { MacroProgress } from '../types';
 interface MacroCardProps {
   label: string;
   data: MacroProgress;
-  color: 'emerald' | 'amber' | 'blue' | 'purple' | 'rose';
+  color: 'violet' | 'indigo' | 'emerald' | 'amber' | 'blue' | 'purple' | 'rose';
   icon?: React.ReactNode;
 }
 
 export const MacroCard: React.FC<MacroCardProps> = ({ label, data, color, icon }) => {
   const colorMap = {
+    violet: {
+      bar: 'bg-violet-600',
+      text: 'text-violet-700',
+      bg: 'bg-violet-50',
+      border: 'border-violet-200',
+    },
+    indigo: {
+      bar: 'bg-indigo-600',
+      text: 'text-indigo-700',
+      bg: 'bg-indigo-50',
+      border: 'border-indigo-200',
+    },
     emerald: {
-      bar: 'bg-emerald-500',
+      bar: 'bg-emerald-600',
       text: 'text-emerald-700',
       bg: 'bg-emerald-50',
       border: 'border-emerald-200',
@@ -29,7 +41,7 @@ export const MacroCard: React.FC<MacroCardProps> = ({ label, data, color, icon }
       border: 'border-sky-200',
     },
     purple: {
-      bar: 'bg-purple-500',
+      bar: 'bg-purple-600',
       text: 'text-purple-700',
       bg: 'bg-purple-50',
       border: 'border-purple-200',

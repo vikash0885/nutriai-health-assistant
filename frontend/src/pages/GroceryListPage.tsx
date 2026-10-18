@@ -85,13 +85,13 @@ export const GroceryListPage: React.FC = () => {
           value={newItemName}
           onChange={(e) => setNewItemName(e.target.value)}
           placeholder="Add item (e.g. Baby Spinach, Moong Dal, Lemon)..."
-          className="flex-1 p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+          className="flex-1 p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
         />
 
         <select
           value={newItemCategory}
           onChange={(e) => setNewItemCategory(e.target.value)}
-          className="p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500/20 bg-white"
+          className="p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
         >
           {categories.map((cat) => (
             <option key={cat} value={cat}>
@@ -102,7 +102,7 @@ export const GroceryListPage: React.FC = () => {
 
         <button
           type="submit"
-          className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-1.5"
+          className="px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-1.5"
         >
           <Plus className="w-4 h-4" /> Add Item
         </button>
@@ -113,7 +113,7 @@ export const GroceryListPage: React.FC = () => {
         <div className="py-12 text-center text-xs text-slate-400">Loading grocery list...</div>
       ) : items.length === 0 ? (
         <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-sm max-w-md mx-auto">
-          <ShoppingCart className="w-12 h-12 text-emerald-600 mx-auto mb-3 opacity-60" />
+          <ShoppingCart className="w-12 h-12 text-violet-600 mx-auto mb-3 opacity-60" />
           <h3 className="text-base font-bold text-slate-900 mb-1">Your list is currently empty</h3>
           <p className="text-xs text-slate-500">
             Generate an AI meal plan and click 'Generate Grocery List' to populate your shopping items!
@@ -141,7 +141,7 @@ export const GroceryListPage: React.FC = () => {
                       className={`p-3 rounded-2xl border transition-all flex items-center justify-between ${
                         item.is_purchased
                           ? 'bg-slate-50/50 border-slate-100 opacity-60'
-                          : 'bg-white border-slate-200/70 hover:border-emerald-300'
+                          : 'bg-white border-slate-200/70 hover:border-violet-300'
                       }`}
                     >
                       <label className="flex items-center gap-3 cursor-pointer flex-1">
@@ -149,7 +149,7 @@ export const GroceryListPage: React.FC = () => {
                           type="checkbox"
                           checked={item.is_purchased}
                           onChange={() => handleToggle(item)}
-                          className="w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500"
+                          className="w-4 h-4 text-violet-600 rounded border-slate-300 focus:ring-violet-500"
                         />
                         <span
                           className={`text-xs font-semibold ${

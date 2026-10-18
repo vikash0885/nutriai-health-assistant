@@ -155,6 +155,7 @@ export const api = {
         standard_units: any[];
       }>;
       disclaimer: string;
+      message?: string;
     }>('/foods/upload-image', {
       method: 'POST',
       body: formData,

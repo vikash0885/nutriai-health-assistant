@@ -46,7 +46,7 @@ export const NutritionPage: React.FC = () => {
   if (isLoading || !daily) {
     return (
       <div className="min-h-[60vh] flex items-center justify-center">
-        <div className="w-8 h-8 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin" />
+        <div className="w-8 h-8 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin" />
       </div>
     );
   }
@@ -65,7 +65,7 @@ export const NutritionPage: React.FC = () => {
       <div>
         <h2 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-3">Today's Macronutrients</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <MacroCard label="Protein" data={daily.protein} color="emerald" icon={<Fish className="w-4 h-4" />} />
+          <MacroCard label="Protein" data={daily.protein} color="violet" icon={<Fish className="w-4 h-4" />} />
           <MacroCard label="Carbohydrates" data={daily.carbs} color="amber" icon={<Wheat className="w-4 h-4" />} />
           <MacroCard label="Healthy Fats" data={daily.fat} color="rose" icon={<Cookie className="w-4 h-4" />} />
           <MacroCard label="Dietary Fiber" data={daily.fiber} color="purple" icon={<Sparkles className="w-4 h-4" />} />
@@ -91,7 +91,7 @@ export const NutritionPage: React.FC = () => {
         </div>
         <div>
           <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Hydration</span>
-          <span className="text-xl font-bold text-sky-700">{daily.total_water_ml} ml</span>
+          <span className="text-xl font-bold text-violet-700">{daily.total_water_ml} ml</span>
           <span className="text-[11px] text-slate-400 block">Target: {daily.water_target_ml} ml</span>
         </div>
       </div>
@@ -116,10 +116,10 @@ export const NutritionPage: React.FC = () => {
                 <XAxis dataKey="day_name" tickLine={false} axisLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
                 <YAxis tickLine={false} axisLine={false} tick={{ fontSize: 12, fill: '#64748b' }} />
                 <Tooltip
-                  contentStyle={{ backgroundColor: '#1e293b', borderRadius: '12px', border: 'none', color: '#fff', fontSize: '12px' }}
+                  contentStyle={{ backgroundColor: '#172554', borderRadius: '12px', border: 'none', color: '#fff', fontSize: '12px' }}
                 />
                 <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
-                <Bar dataKey="protein_g" fill="#10b981" name="Protein (g)" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="protein_g" fill="#7C3AED" name="Protein (g)" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="carbs_g" fill="#f59e0b" name="Carbs (g)" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="fat_g" fill="#f43f5e" name="Fat (g)" radius={[4, 4, 0, 0]} />
                 <Bar dataKey="fiber_g" fill="#a855f7" name="Fiber (g)" radius={[4, 4, 0, 0]} />
@@ -139,8 +139,8 @@ export const NutritionPage: React.FC = () => {
               <h3 className="text-sm font-bold text-slate-900">Identified Nutrition Gaps</h3>
             </div>
             {weekly.nutrition_gaps.length === 0 ? (
-              <div className="p-4 rounded-2xl bg-emerald-50 text-xs text-emerald-800 flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <div className="p-4 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-800 flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-600" />
                 <span>Your rolling weekly nutrition intake aligns well with your targets!</span>
               </div>
             ) : (
@@ -161,8 +161,8 @@ export const NutritionPage: React.FC = () => {
               <h3 className="text-sm font-bold text-slate-900">Potential Excesses / Surpluses</h3>
             </div>
             {weekly.potential_excesses.length === 0 ? (
-              <div className="p-4 rounded-2xl bg-emerald-50 text-xs text-emerald-800 flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <div className="p-4 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-800 flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-green-600" />
                 <span>No significant caloric or macronutrient surpluses detected this week.</span>
               </div>
             ) : (

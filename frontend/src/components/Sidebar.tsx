@@ -45,7 +45,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       {/* Mobile Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-slate-900/30 backdrop-blur-sm lg:hidden transition-opacity"
+          className="fixed inset-0 z-40 bg-[#0F172A]/40 backdrop-blur-sm lg:hidden transition-opacity"
           onClick={onClose}
         />
       )}
@@ -57,7 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         }`}
       >
         <div className="p-4 space-y-1">
-          <div className="px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
             Core Tracking
           </div>
           {navItems.slice(0, 4).map((item) => (
@@ -68,7 +68,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-emerald-50 text-emerald-800 font-semibold'
+                    ? 'bg-violet-50 text-violet-800 font-semibold border-l-3 border-violet-600 shadow-sm shadow-violet-100'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`
               }
@@ -78,7 +78,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
             AI & Planning
           </div>
           {navItems.slice(4, 7).map((item) => (
@@ -89,7 +89,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-emerald-50 text-emerald-800 font-semibold'
+                    ? 'bg-violet-50 text-violet-800 font-semibold border-l-3 border-violet-600 shadow-sm shadow-violet-100'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`
               }
@@ -99,7 +99,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
             Health & Insights
           </div>
           {navItems.slice(7, 10).map((item) => (
@@ -110,7 +110,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-emerald-50 text-emerald-800 font-semibold'
+                    ? 'bg-violet-50 text-violet-800 font-semibold border-l-3 border-violet-600 shadow-sm shadow-violet-100'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`
               }
@@ -120,7 +120,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
             Lifestyle & Support
           </div>
           {navItems.slice(10).map((item) => (
@@ -131,7 +131,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-emerald-50 text-emerald-800 font-semibold'
+                    ? 'bg-violet-50 text-violet-800 font-semibold border-l-3 border-violet-600 shadow-sm shadow-violet-100'
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`
               }
