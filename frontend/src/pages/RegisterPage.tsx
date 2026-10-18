@@ -68,6 +68,12 @@ export const RegisterPage: React.FC = () => {
       <div className="max-w-4xl w-full bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
         {/* Left: Midnight Blue & Violet Branding Panel */}
         <div className="lg:col-span-5 bg-[#172554] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+          {/* Custom Background Image Texture */}
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-screen pointer-events-none"
+            style={{ backgroundImage: `url('/images/sehatsense-background.png')` }}
+          />
+
           {/* Subtle Ambient Violet Glow */}
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-violet-600/30 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-violet-500/20 rounded-full blur-3xl pointer-events-none" />
