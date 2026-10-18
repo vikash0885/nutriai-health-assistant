@@ -3,14 +3,14 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: nutriai_backend
+    container_name: sehatsense_backend
     restart: always
     ports:
       - "8000:8000"
     environment:
-      - PROJECT_NAME=NutriAI - Personal Food, Health & Fitness Intelligence
+      - PROJECT_NAME=SehatSense AI — Smart Food Choices, Better Health.
       - API_V1_STR=/api/v1
-      - SECRET_KEY=nutriai-docker-production-secret-change-me-123456789
+      - SECRET_KEY=sehatsense-docker-production-secret-change-me-123456789
       - DATABASE_URL=sqlite+aiosqlite:///./nutriai.db
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
       - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.5-flash}
@@ -22,7 +22,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: nutriai_frontend
+    container_name: sehatsense_frontend
     restart: always
     ports:
       - "5173:80"

@@ -391,7 +391,7 @@ export const DashboardPage: React.FC = () => {
               <p className="font-semibold text-slate-700 mb-1">No symptom patterns detected yet.</p>
               <p className="leading-relaxed">
                 Log your meals and any digestive feelings (bloating, acidity) in the Symptom Diary.
-                NutriAi-VM will automatically identify repeated associations.
+                SehatSense AI will automatically identify repeated associations.
               </p>
             </div>
           ) : (

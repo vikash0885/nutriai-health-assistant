@@ -287,7 +287,7 @@ export const MealPlannerPage: React.FC = () => {
           <CalendarCheck2 className="w-12 h-12 text-violet-600 mx-auto mb-3" />
           <h3 className="text-base font-bold text-slate-900 mb-1">No Active Meal Plan</h3>
           <p className="text-xs text-slate-500 mb-6">
-            Click 'Generate New Daily Plan' above to create a culturally aligned, nutrient-balanced menu with NutriAi-VM.
+            Click 'Generate New Daily Plan' above to create a culturally aligned, nutrient-balanced menu with SehatSense AI.
           </p>
           <button
             onClick={handleGenerate}

@@ -319,7 +319,7 @@ export const OnboardingPage: React.FC = () => {
             <div>
               <h3 className="text-xl font-bold text-slate-900">Allergies & Sensitivities</h3>
               <p className="text-xs text-slate-500 mt-1">
-                NutriAi-VM's meal planner will NEVER suggest items conflicting with your marked allergies.
+                SehatSense AI's meal planner will NEVER suggest items conflicting with your marked allergies.
               </p>
             </div>
 

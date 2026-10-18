@@ -1,5 +1,6 @@
 {
-  "name": "frontend",
+  "name": "sehatsense-ai-frontend",
+  "description": "SehatSense AI — Smart Food Choices, Better Health.",
   "private": true,
   "version": "0.0.0",
   "type": "module",

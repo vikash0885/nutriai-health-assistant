@@ -76,16 +76,16 @@ export const RegisterPage: React.FC = () => {
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-violet-600 to-indigo-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-violet-900/50">
-                N
+                S
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-xl tracking-tight text-white">NutriAi-VM</span>
+                  <span className="font-extrabold text-xl tracking-tight text-white">SehatSense</span>
                   <span className="text-[10px] font-bold bg-violet-500/30 text-violet-200 border border-violet-400/30 px-2 py-0.5 rounded-full">
                     AI
                   </span>
                 </div>
-                <p className="text-xs text-violet-200/80 font-medium">Eat Smart. Live Healthy.</p>
+                <p className="text-xs text-violet-200/80 font-medium">Smart Food Choices, Better Health.</p>
               </div>
             </div>
 
@@ -115,10 +115,15 @@ export const RegisterPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom Trust Badge */}
-          <div className="relative z-10 pt-8 mt-8 border-t border-white/10 flex items-center gap-2 text-[11px] text-slate-300">
-            <ShieldCheck className="w-4 h-4 text-violet-300" />
-            <span>Zero health-data selling. Total user consent controls.</span>
+          {/* Bottom Trust Badge & Developer Credit */}
+          <div className="relative z-10 pt-6 mt-6 border-t border-white/10 space-y-2">
+            <div className="flex items-center gap-2 text-[11px] text-slate-300">
+              <ShieldCheck className="w-4 h-4 text-violet-300" />
+              <span>Zero health-data selling. Total user consent controls.</span>
+            </div>
+            <p className="text-[11px] text-violet-300/80 font-medium pt-1">
+              Made with ❤️ by <span className="text-white font-semibold">Vikash Mishra</span>
+            </p>
           </div>
         </div>
 
@@ -127,7 +132,7 @@ export const RegisterPage: React.FC = () => {
           <div className="mb-6">
             <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Create Your Account</h3>
             <p className="text-xs text-slate-500 mt-1">
-              Begin tracking your meals, hydration, and habits with NutriAi-VM.
+              Begin tracking your meals, hydration, and habits with SehatSense AI.
             </p>
           </div>
 
@@ -221,7 +226,7 @@ export const RegisterPage: React.FC = () => {
                 />
                 <span className="text-[11px] text-slate-500 leading-tight">
                   I agree to the secure storage of my food diary and lifestyle logs for educational wellness intelligence,
-                  and acknowledge NutriAi-VM is not medical treatment.
+                  and acknowledge SehatSense AI is not medical treatment.
                 </span>
               </label>
             </div>

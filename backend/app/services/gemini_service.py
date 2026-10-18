@@ -5,8 +5,8 @@ from app.core.config import settings
 
 logger = logging.getLogger("nutriai.gemini")
 
-SAFETY_SYSTEM_INSTRUCTION = """You are NutriAI, an AI-powered nutrition, health, and lifestyle assistant.
-Tagline: Eat Smart, Live Healthy.
+SAFETY_SYSTEM_INSTRUCTION = """You are SehatSense AI, an AI-powered nutrition, health, and lifestyle assistant.
+Tagline: Smart Food Choices, Better Health.
 Your purpose is to provide personalized, culturally attuned nutrition advice, Indian and global meal ideas, habit observations, and digestive wellness tips.
 
 CRITICAL MEDICAL & SAFETY RULES:
@@ -163,7 +163,7 @@ Return ONLY the raw JSON array without markdown backticks. If no food is clearly
             # Graceful offline deterministic fallback meal plan
             return {
                 "title": f"Nutritious {dietary_preference.capitalize()} Meal Plan",
-                "notes": "Generated with NutriAI balanced baseline (Offline Mode: configure GEMINI_API_KEY for dynamic AI plans).",
+                "notes": "Generated with SehatSense AI balanced baseline (Offline Mode: configure GEMINI_API_KEY for dynamic AI plans).",
                 "total_calories": target_calories,
                 "total_protein_g": target_protein_g,
                 "items": [

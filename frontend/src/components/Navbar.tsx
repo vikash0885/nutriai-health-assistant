@@ -43,16 +43,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
 
           <Link to={isAuthenticated ? '/dashboard' : '/'} className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#172554] via-blue-950 to-violet-600 flex items-center justify-center shadow-md shadow-violet-900/20 text-white font-black text-lg">
-              N
+              S
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-slate-900 text-lg tracking-tight">NutriAi-VM</span>
+                <span className="font-extrabold text-slate-900 text-lg tracking-tight">SehatSense</span>
                 <span className="text-[10px] font-bold bg-violet-50 text-violet-700 border border-violet-200 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
                   <Sparkles className="w-2.5 h-2.5 text-violet-600" /> AI
                 </span>
               </div>
-              <p className="text-[10px] text-slate-400 font-medium hidden sm:block">Eat Smart. Live Healthy.</p>
+              <p className="text-[10px] text-slate-400 font-medium hidden sm:block">Smart Food Choices, Better Health.</p>
             </div>
           </Link>
         </div>

@@ -25,7 +25,7 @@ export const AiAssistantPage: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: `Namaste ${profile?.display_name || ''}! I am your NutriAi-VM assistant. I have access to your verified diary logs for today. You can ask me in English, हिन्दी (Hindi), or Hinglish!`,
+      content: `Namaste ${profile?.display_name || ''}! I am your SehatSense AI assistant. I have access to your verified diary logs for today. You can ask me in English, हिन्दी (Hindi), or Hinglish!`,
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
@@ -100,7 +100,7 @@ export const AiAssistantPage: React.FC = () => {
         <div>
           <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
             <Bot className="w-6 h-6 text-violet-600" />
-            <span>NutriAi-VM Assistant</span>
+            <span>SehatSense AI Assistant</span>
           </h1>
           <p className="text-xs text-slate-500">
             Bilingual Hindi & English intelligence grounded in your personal diary data.
@@ -109,7 +109,7 @@ export const AiAssistantPage: React.FC = () => {
 
         <div className="text-[11px] font-semibold text-violet-800 bg-violet-50 border border-violet-200 px-3 py-1 rounded-full flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-violet-600" />
-          <span>NutriAi-VM Smart AI</span>
+          <span>SehatSense AI Smart Intelligence</span>
         </div>
       </div>
 
@@ -173,7 +173,7 @@ export const AiAssistantPage: React.FC = () => {
             </div>
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-xs text-slate-500 flex items-center gap-2">
               <div className="w-3.5 h-3.5 border-2 border-violet-600 border-t-transparent rounded-full animate-spin" />
-              <span>NutriAi-VM is thinking with your diary context...</span>
+              <span>SehatSense AI is thinking with your diary context...</span>
             </div>
           </div>
         )}

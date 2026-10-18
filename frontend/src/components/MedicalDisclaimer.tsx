@@ -10,7 +10,7 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ compact = 
     return (
       <div className="flex items-center gap-2 text-xs text-slate-500 bg-slate-100/80 px-3 py-1.5 rounded-xl border border-slate-200">
         <ShieldAlert className="w-3.5 h-3.5 text-violet-600 flex-shrink-0" />
-        <span>NutriAi-VM is an educational wellness tool and does not provide medical diagnoses or treatment.</span>
+        <span>SehatSense AI is an educational wellness tool and does not provide medical diagnoses or treatment.</span>
       </div>
     );
   }
@@ -25,7 +25,7 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ compact = 
           Educational & Wellness Safety Notice
         </h4>
         <p className="text-xs text-slate-600 leading-relaxed">
-          NutriAi-VM estimates nutritional intake and analyzes self-reported habits for educational purposes only.
+          SehatSense AI estimates nutritional intake and analyzes self-reported habits for educational purposes only.
           It does not diagnose, treat, or cure medical conditions. If you experience severe, persistent, or worsening symptoms,
           please consult a qualified healthcare professional or seek emergency medical care immediately.
         </p>

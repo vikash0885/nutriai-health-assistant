@@ -25,7 +25,7 @@ class HabitInsightsService:
                     "actionable_tip": "Try logging at least your breakfast and lunch today!",
                     "confidence": "baseline",
                     "supporting_records_count": total_foods_logged,
-                    "medical_disclaimer": "NutriAI uses evidence-based wellness principles and does not predict disease.",
+                    "medical_disclaimer": "SehatSense AI uses evidence-based wellness principles and does not predict disease.",
                 }
             ]
 

@@ -208,7 +208,7 @@ export const FoodLoggingPage: React.FC = () => {
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Log Your Food</h1>
         <p className="text-xs sm:text-sm text-slate-500 mt-1">
-          Search over 120+ authentic Indian and global dishes or snap a photo with NutriAi-VM Vision.
+          Search over 120+ authentic Indian and global dishes or snap a photo with SehatSense AI Vision.
         </p>
       </div>
 
@@ -455,7 +455,7 @@ export const FoodLoggingPage: React.FC = () => {
             <h3 className="text-lg font-bold text-slate-900">AI Food Recognition</h3>
             <p className="text-xs text-slate-500">
               Upload a clear photo of your meal (rotis, thali, salad, or regional dish).
-              NutriAi-VM will identify likely dishes and calculate nutrients for your confirmation.
+              SehatSense AI will identify likely dishes and calculate nutrients for your confirmation.
             </p>
           </div>
 
@@ -487,12 +487,12 @@ export const FoodLoggingPage: React.FC = () => {
                 {isUploading ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    <span>Analyzing Image with NutriAi-VM...</span>
+                    <span>Analyzing Image with SehatSense AI...</span>
                   </>
                 ) : (
                   <>
                     <Sparkles className="w-4 h-4" />
-                    <span>Identify Dishes with NutriAi-VM</span>
+                    <span>Identify Dishes with SehatSense AI</span>
                   </>
                 )}
               </button>

@@ -334,7 +334,7 @@ export const ProfileSettingsPage: React.FC = () => {
           <span>Danger Zone: Permanent Account Deletion</span>
         </h3>
         <p className="text-xs text-rose-800/80 leading-relaxed">
-          In strict compliance with privacy standards, you can permanently delete your NutriAi-VM account at any time.
+          In strict compliance with privacy standards, you can permanently delete your SehatSense AI account at any time.
           This will immediately remove your profile, food entries, symptom logs, hydration records, and grocery items.
         </p>
         <button

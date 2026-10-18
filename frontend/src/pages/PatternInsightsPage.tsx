@@ -77,7 +77,7 @@ export const PatternInsightsPage: React.FC = () => {
           <Sparkles className="w-12 h-12 text-violet-500 mx-auto opacity-70" />
           <h3 className="text-base font-bold text-slate-900">No Repeated Patterns Found Yet</h3>
           <p className="text-xs text-slate-500 leading-relaxed">
-            NutriAi-VM strictly avoids fabricating false associations. We require at least 2 distinct instances
+            SehatSense AI strictly avoids fabricating false associations. We require at least 2 distinct instances
             where a symptom was logged within 6 hours of consuming a specific food before flagging a pattern.
           </p>
           <p className="text-[11px] text-slate-400">

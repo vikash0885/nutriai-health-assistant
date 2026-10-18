@@ -18,6 +18,6 @@ class ChatResponse(BaseModel):
     detected_language: str = "en"
     referenced_data: Optional[dict] = None
     medical_disclaimer: str = (
-        "NutriAI provides educational lifestyle & nutrition insights only and does not diagnose, "
+        "SehatSense AI provides educational lifestyle & nutrition insights only and does not diagnose, "
         "treat, or cure medical conditions. Always seek professional healthcare advice for medical symptoms."
     )

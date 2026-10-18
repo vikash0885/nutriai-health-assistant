@@ -18,14 +18,15 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title=settings.PROJECT_NAME,
     description="""
-# NutriAI — Personal Food, Health & Fitness Intelligence
-**Tagline:** Eat Smart, Live Healthy.
+# SehatSense AI — Smart Food Choices, Better Health.
+**Tagline:** Smart Food Choices, Better Health.
+*Made with ❤️ by Vikash Mishra*
 
-NutriAI is a comprehensive wellness intelligence platform combining deterministic nutritional calculations,
-symptom pattern recognition, and Google Gemini AI assistance for Indian and global food cultures.
+SehatSense AI is a comprehensive wellness intelligence platform combining deterministic nutritional calculations,
+symptom pattern recognition, and conversational AI assistance for Indian and global food cultures.
 
 ### Medical & Educational Safety Notice
-NutriAI is an educational wellness and lifestyle tracking tool. It does not provide medical diagnoses,
+SehatSense AI is an educational wellness and lifestyle tracking tool. It does not provide medical diagnoses,
 clinical treatment plans, or emergency health interventions.
     """,
     version="1.0.0",
@@ -63,7 +64,7 @@ async def health_check():
 @app.get("/", tags=["Root"])
 async def root():
     return {
-        "message": "Welcome to NutriAI API. Visit /docs for interactive OpenAPI specifications.",
-        "tagline": "Eat Smart, Live Healthy.",
+        "message": "Welcome to SehatSense AI API. Visit /docs for interactive OpenAPI specifications.",
+        "tagline": "Smart Food Choices, Better Health.",
         "version": "1.0.0",
     }

@@ -1,5 +1,6 @@
-# NutriAI — Personal Food, Health & Fitness Intelligence
-> **Tagline:** Eat Smart, Live Healthy.
+# SehatSense AI — Smart Food Choices, Better Health.
+> **Tagline:** Smart Food Choices, Better Health.  
+> **Developer:** Made with ❤️ by **Vikash Mishra**
 
 [![Backend Tests](https://img.shields.io/badge/pytest-11%20passed-brightgreen.svg)]()
 [![Python](https://img.shields.io/badge/Python-3.13%2B-blue.svg)]()
@@ -8,7 +9,7 @@
 [![Gemini](https://img.shields.io/badge/Google%20Gen%20AI-google--genai-8e44ad.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 
-NutriAI is a modern, responsive, full-stack wellness intelligence platform tailored for Indian and global food cultures. Powered by the **official Google Gen AI SDK (`google-genai`)** and deterministic nutrition science, NutriAI empowers individuals to understand daily meals, track hydration and activity, plan affordable menus, and discover evidence-based correlations between foods and self-reported symptoms.
+SehatSense AI is a modern, responsive, full-stack wellness intelligence platform tailored for Indian and global food cultures. Powered by the **official Google Gen AI SDK (`google-genai`)** and deterministic nutrition science, SehatSense AI empowers individuals to understand daily meals, track hydration and activity, plan affordable menus, and discover evidence-based correlations between foods and self-reported symptoms.
 
 ---
 
@@ -104,8 +105,8 @@ flowchart TD
 
 ### 1. Clone & Setup Workspace
 ```bash
-git clone https://github.com/your-username/nutriai.git
-cd nutriai
+git clone https://github.com/vikash0885/nutriai-health-assistant.git sehatsense-ai
+cd sehatsense-ai
 ```
 
 ### 2. Backend Setup
@@ -164,7 +165,7 @@ Frontend will be live at `http://localhost:5173`.
    GEMINI_MODEL="gemini-2.5-flash"
    ```
 3. Restart the backend server.
-> **Offline Fallback Note:** If no Gemini API key is configured, NutriAI gracefully runs in offline fallback mode with manual food logging, portion calculations, deterministic symptom pattern detection, and local meal plan templates.
+> **Offline Fallback Note:** If no Gemini API key is configured, SehatSense AI gracefully runs in offline fallback mode with manual food logging, portion calculations, deterministic symptom pattern detection, and local meal plan templates.
 
 ---
 
@@ -198,10 +199,15 @@ cd backend
 
 ## 🛡️ Medical Safety & Disclaimer
 
-NutriAI is an educational wellness and lifestyle tracking assistant.
-- **Not Medical Advice:** NutriAI does not diagnose, treat, or cure medical conditions.
+SehatSense AI is an educational wellness and lifestyle tracking assistant.
+- **Not Medical Advice:** SehatSense AI does not diagnose, treat, or cure medical conditions.
 - **Correlations, Not Causation:** Observed diary associations between foods and symptoms reflect personal logs and do not constitute clinical allergy or intolerance diagnoses.
 - **Medical Evaluation:** For persistent, severe, or worsening symptoms (e.g., severe abdominal pain, persistent nausea), users should promptly consult a licensed healthcare professional.
+
+---
+
+## 👨‍💻 Developer Credit
+**Made with ❤️ by Vikash Mishra**
 
 ---
 

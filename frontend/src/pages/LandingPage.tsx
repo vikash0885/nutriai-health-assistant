@@ -58,29 +58,43 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
-      {/* Hero Section: Midnight Blue & Violet Ambience */}
-      <section className="relative overflow-hidden bg-[#172554] text-white pt-16 pb-24 lg:pt-24 lg:pb-32 rounded-3xl mx-2 sm:mx-4 mt-2">
-        {/* Ambient Violet Glow Orbs */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-violet-600/25 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none" />
+      {/* Hero Section: SehatSense AI Custom Graphic Background */}
+      <section
+        className="relative overflow-hidden text-slate-900 pt-16 pb-20 lg:pt-24 lg:pb-28 rounded-3xl mx-2 sm:mx-4 mt-2 border border-slate-200/80 shadow-xl bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url('/images/sehatsense-background.png')` }}
+      >
+        {/* Subtle translucent overlay for crisp text readability while preserving side artwork */}
+        <div className="absolute inset-0 bg-white/80 md:bg-white/70 lg:bg-white/65 backdrop-blur-[1px]" />
+
+        {/* Ambient Glow Accents */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-violet-500/15 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            {/* Pill */}
-            <div className="inline-flex items-center gap-2 bg-violet-900/60 border border-violet-500/40 text-violet-200 px-4 py-1.5 rounded-full text-xs font-semibold mb-6 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-violet-400" />
-              <span>AI-Powered Nutrition & Verified Health Science</span>
+            {/* Pill & Developer Credit */}
+            <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+              <div className="inline-flex items-center gap-2 bg-violet-100/90 border border-violet-300 text-violet-800 px-4 py-1.5 rounded-full text-xs font-semibold shadow-xs">
+                <Sparkles className="w-3.5 h-3.5 text-violet-600" />
+                <span>AI-Powered Nutrition & Lifestyle Intelligence</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200 text-xs text-slate-600 font-medium shadow-2xs">
+                <span>Made with ❤️ by <strong className="text-slate-900">Vikash Mishra</strong></span>
+              </div>
             </div>
 
             {/* Title & Tagline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] mb-6">
-              Eat Smart, <span className="text-violet-400">Live Healthy</span>.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.14] mb-4">
+              Smart Food Choices, <br className="hidden sm:inline" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-700 via-indigo-600 to-emerald-600">
+                Better Health.
+              </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-300 mb-8 leading-relaxed max-w-2xl mx-auto">
-              NutriAi-VM is your intelligent companion for food, nutrition, symptoms, and lifestyle.
-              Understand Indian & global meals, discover digestive patterns, plan affordable diets,
-              and chat with your bilingual AI health assistant.
+            <p className="text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl mx-auto font-normal">
+              <strong>SehatSense AI</strong> is your personal intelligence platform for nutrition, digestive health,
+              and mindful wellness. Snap food photos, analyze symptom patterns, plan budget-friendly meals,
+              and consult your bilingual AI health assistant.
             </p>
 
             {/* CTAs */}
@@ -88,7 +102,7 @@ export const LandingPage: React.FC = () => {
               {isAuthenticated ? (
                 <Link
                   to="/dashboard"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-violet-900/40 transition-all text-sm cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-violet-900/25 transition-all text-sm cursor-pointer"
                 >
                   Go to Your Dashboard
                   <ArrowRight className="w-4 h-4" />
@@ -97,7 +111,7 @@ export const LandingPage: React.FC = () => {
                 <>
                   <Link
                     to="/register"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-violet-900/40 transition-all text-sm cursor-pointer"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-violet-900/25 transition-all text-sm cursor-pointer"
                   >
                     Start Free Journey
                     <ArrowRight className="w-4 h-4" />
@@ -105,9 +119,9 @@ export const LandingPage: React.FC = () => {
 
                   <button
                     onClick={handleDemoLogin}
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold px-6 py-3.5 rounded-2xl border border-white/20 shadow-sm transition-all text-sm cursor-pointer backdrop-blur-sm"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/90 hover:bg-white text-slate-800 font-bold px-6 py-3.5 rounded-2xl border border-slate-300/80 shadow-md transition-all text-sm cursor-pointer backdrop-blur-sm"
                   >
-                    <Sparkles className="w-4 h-4 text-violet-300" />
+                    <Sparkles className="w-4 h-4 text-violet-600" />
                     Try Instant Demo
                   </button>
                 </>
@@ -115,18 +129,18 @@ export const LandingPage: React.FC = () => {
             </div>
 
             {/* Feature Badges */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-300 font-medium">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-700 font-semibold bg-white/70 backdrop-blur-sm py-3 px-6 rounded-2xl border border-slate-200/60 max-w-2xl mx-auto shadow-2xs">
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-violet-400" /> 120+ Curated Indian Dishes
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" /> 120+ Curated Indian Dishes
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-violet-400" /> AI Vision Photo Scan
+                <CheckCircle2 className="w-4 h-4 text-violet-600" /> AI Vision Photo Scan
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-violet-400" /> Symptom Pattern Analyzer
+                <CheckCircle2 className="w-4 h-4 text-indigo-600" /> Symptom Pattern Analyzer
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-violet-400" /> Hindi & English Assistant
+                <CheckCircle2 className="w-4 h-4 text-violet-600" /> Bilingual AI Assistant
               </span>
             </div>
           </div>
@@ -141,7 +155,7 @@ export const LandingPage: React.FC = () => {
               Comprehensive Health Intelligence, Built for Real Life
             </h2>
             <p className="text-slate-500 text-sm leading-relaxed">
-              No generic western meal plans that ignore your culture. NutriAi-VM embraces authentic Indian staples,
+              No generic western meal plans that ignore your culture. SehatSense AI embraces authentic Indian staples,
               honest calculations, and safe digestive pattern recognition.
             </p>
           </div>
@@ -154,7 +168,7 @@ export const LandingPage: React.FC = () => {
               </div>
               <h3 className="text-base font-bold text-slate-900 mb-2">AI Vision Photo Logging</h3>
               <p className="text-xs text-slate-500 leading-relaxed">
-                Snap a picture of your thali or snack. NutriAi-VM detects your rotis, dals, and sabzis,
+                Snap a picture of your thali or snack. SehatSense AI detects your rotis, dals, and sabzis,
                 allowing you to confirm portions while our deterministic engine calculates precise nutrients.
               </p>
             </div>
@@ -230,7 +244,7 @@ export const LandingPage: React.FC = () => {
           </div>
           <h3 className="text-xl font-bold text-[#172554] mb-2 tracking-tight">Our Medical Safety & Educational Pledge</h3>
           <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            NutriAi-VM is designed as an empowering wellness education tool. We believe in transparency:
+            SehatSense AI is designed as an empowering wellness education tool. We believe in transparency:
             our AI models never claim to diagnose diseases or promise cure-all diets.
             All calculated numbers are clearly labeled estimates, and user privacy remains strictly protected.
           </p>
