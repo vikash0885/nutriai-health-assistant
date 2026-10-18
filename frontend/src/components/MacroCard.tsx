@@ -58,7 +58,7 @@ export const MacroCard: React.FC<MacroCardProps> = ({ label, data, color, icon }
   const clamped = Math.min(Math.max(data.percentage, 0), 100);
 
   return (
-    <div className="bg-[#131d38] rounded-2xl p-4 border border-slate-800 shadow-sm hover:border-slate-700 transition-all">
+    <div className="bg-[#0d0d12] rounded-2xl p-4 border border-zinc-800 shadow-sm hover:border-zinc-700 transition-all">
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           {icon && <div className={`p-1.5 rounded-lg border ${scheme.bg} ${scheme.text} ${scheme.border}`}>{icon}</div>}

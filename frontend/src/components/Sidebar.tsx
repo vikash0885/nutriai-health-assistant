@@ -52,12 +52,12 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
       {/* Sidebar container */}
       <aside
-        className={`fixed lg:sticky top-16 z-40 h-[calc(100vh-4rem)] w-64 bg-[#0f172a] border-r border-slate-800 overflow-y-auto transition-transform duration-300 ease-in-out ${
+        className={`fixed lg:sticky top-16 z-40 h-[calc(100vh-4rem)] w-64 bg-[#070709] border-r border-zinc-800/80 overflow-y-auto transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
         <div className="p-4 space-y-1">
-          <div className="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
             Core Tracking
           </div>
           {navItems.slice(0, 4).map((item) => (
@@ -68,8 +68,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-violet-950/80 text-violet-300 font-semibold border-l-3 border-violet-500 shadow-sm shadow-violet-950/40'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
+                    ? 'bg-amber-500/15 text-amber-300 font-semibold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
                 }`
               }
             >
@@ -78,7 +78,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
             AI & Planning
           </div>
           {navItems.slice(4, 7).map((item) => (
@@ -89,8 +89,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-violet-950/80 text-violet-300 font-semibold border-l-3 border-violet-500 shadow-sm shadow-violet-950/40'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
+                    ? 'bg-amber-500/15 text-amber-300 font-semibold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
                 }`
               }
             >
@@ -99,7 +99,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
             Health & Insights
           </div>
           {navItems.slice(7, 10).map((item) => (
@@ -110,8 +110,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-violet-950/80 text-violet-300 font-semibold border-l-3 border-violet-500 shadow-sm shadow-violet-950/40'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
+                    ? 'bg-amber-500/15 text-amber-300 font-semibold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
                 }`
               }
             >
@@ -120,7 +120,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
             Lifestyle & Support
           </div>
           {navItems.slice(10).map((item) => (
@@ -131,8 +131,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
                   isActive
-                    ? 'bg-violet-950/80 text-violet-300 font-semibold border-l-3 border-violet-500 shadow-sm shadow-violet-950/40'
-                    : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
+                    ? 'bg-amber-500/15 text-amber-300 font-semibold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
                 }`
               }
             >

@@ -31,7 +31,7 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0b1120] text-slate-100 flex flex-col">
+    <div className="min-h-screen bg-[#070709] text-zinc-100 flex flex-col selection:bg-amber-500 selection:text-black">
       <Navbar
         onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)}
         isSidebarOpen={isSidebarOpen}

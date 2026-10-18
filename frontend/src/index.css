@@ -2,26 +2,42 @@
 
 @layer base {
   body {
-    background-color: #0b1120;
-    color: #f8fafc;
+    background-color: #070709;
+    color: #f4f4f5;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
-  /* Custom scrollbar for modern Midnight Navy & Violet feel */
+  /* Custom scrollbar matching dark onyx & gold theme */
   ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0f172a;
+    background: #070709;
   }
   ::-webkit-scrollbar-thumb {
-    background: #334155;
+    background: #27272a;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: #ca8a04;
   }
+}
+
+/* Subtle tech grid mesh from user reference */
+.bg-grid-mesh {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+}
+
+.gold-glow {
+  text-shadow: 0 0 30px rgba(234, 179, 8, 0.4);
+}
+
+.gold-box-glow {
+  box-shadow: 0 0 35px -5px rgba(234, 179, 8, 0.35);
 }
 

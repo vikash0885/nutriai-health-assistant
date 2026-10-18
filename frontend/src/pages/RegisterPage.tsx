@@ -65,33 +65,36 @@ export const RegisterPage: React.FC = () => {
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl w-full bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-        {/* Left: Midnight Blue & Violet Branding Panel */}
-        <div className="lg:col-span-5 bg-[#172554] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+      <div className="max-w-4xl w-full bg-[#0d0d12] rounded-3xl border border-zinc-800/90 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        {/* Left: Onyx & Golden Amber Branding Panel */}
+        <div className="lg:col-span-5 bg-[#070709] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-800/80">
           {/* Custom Background Image Texture */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-screen pointer-events-none"
+            className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-screen pointer-events-none"
             style={{ backgroundImage: `url('/images/sehatsense-background.png')` }}
           />
 
-          {/* Subtle Ambient Violet Glow */}
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-violet-600/30 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-violet-500/20 rounded-full blur-3xl pointer-events-none" />
+          {/* Grid Mesh */}
+          <div className="absolute inset-0 bg-grid-mesh opacity-30 pointer-events-none" />
+
+          {/* Subtle Ambient Gold Glow */}
+          <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Top Brand Identity */}
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-violet-600 to-indigo-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-violet-900/50">
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-black font-black text-xl shadow-lg shadow-amber-500/25">
                 S
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <span className="font-extrabold text-xl tracking-tight text-white">SehatSense</span>
-                  <span className="text-[10px] font-bold bg-violet-500/30 text-violet-200 border border-violet-400/30 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full">
                     AI
                   </span>
                 </div>
-                <p className="text-xs text-violet-200/80 font-medium">Smart Food Choices, Better Health.</p>
+                <p className="text-xs text-amber-400/90 font-medium">Smart Food Choices, Better Health.</p>
               </div>
             </div>
 
@@ -99,92 +102,92 @@ export const RegisterPage: React.FC = () => {
               <h2 className="text-2xl font-bold leading-tight tracking-tight text-white">
                 Start Your Intelligent Nutrition Journey
               </h2>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-zinc-400 leading-relaxed">
                 Join thousands who balance authentic Indian dishes with smart macro goals, hydration tracking, and symptom awareness.
               </p>
             </div>
 
             {/* Highlights */}
             <div className="space-y-3 pt-2">
-              <div className="flex items-center gap-2.5 text-xs text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
                 <span>Personalized Mifflin-St Jeor TDEE target</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
                 <span>Bilingual conversational assistance in Hindi & English</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
                 <span>Smart budget-friendly meal plan generation</span>
               </div>
             </div>
           </div>
 
           {/* Bottom Trust Badge & Developer Credit */}
-          <div className="relative z-10 pt-6 mt-6 border-t border-white/10 space-y-2">
-            <div className="flex items-center gap-2 text-[11px] text-slate-300">
-              <ShieldCheck className="w-4 h-4 text-violet-300" />
+          <div className="relative z-10 pt-6 mt-6 border-t border-zinc-800/80 space-y-2">
+            <div className="flex items-center gap-2 text-[11px] text-zinc-400">
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
               <span>Zero health-data selling. Total user consent controls.</span>
             </div>
-            <p className="text-[11px] text-violet-300/80 font-medium pt-1">
-              Made with ❤️ by <span className="text-white font-semibold">Vikash Mishra</span>
+            <p className="text-[11px] text-zinc-400 font-medium pt-1">
+              Made with ❤️ by <span className="text-amber-300 font-semibold">Vikash Mishra</span>
             </p>
           </div>
         </div>
 
         {/* Right: Registration Form */}
-        <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-white">
+        <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-[#0d0d12]">
           <div className="mb-6">
-            <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Create Your Account</h3>
-            <p className="text-xs text-slate-500 mt-1">
+            <h3 className="text-2xl font-bold text-white tracking-tight">Create Your Account</h3>
+            <p className="text-xs text-zinc-400 mt-1">
               Begin tracking your meals, hydration, and habits with SehatSense AI.
             </p>
           </div>
 
           {error && (
-            <div className="mb-5 p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-600" />
+            <div className="mb-5 p-3.5 rounded-xl bg-red-950/40 border border-red-800/60 text-xs text-red-300 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-400" />
               <span>{error}</span>
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="space-y-3.5">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Full Name</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1.5">Full Name</label>
               <div className="relative">
-                <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <User className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="text"
                   required
                   value={displayName}
                   onChange={(e) => setDisplayName(e.target.value)}
                   placeholder="e.g. Vikash Sharma"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-600"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Email Address</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1.5">Email Address</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Mail className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-600"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Create Password</label>
+                <label className="block text-xs font-semibold text-zinc-300 mb-1.5">Create Password</label>
                 <div className="relative">
-                  <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <Lock className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type={showPassword ? 'text' : 'password'}
                     required
@@ -192,12 +195,12 @@ export const RegisterPage: React.FC = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Min 6 chars"
-                    className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                    className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-600"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300"
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
@@ -205,9 +208,9 @@ export const RegisterPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Confirm Password</label>
+                <label className="block text-xs font-semibold text-zinc-300 mb-1.5">Confirm Password</label>
                 <div className="relative">
-                  <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                  <Lock className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
                     type={showPassword ? 'text' : 'password'}
                     required
@@ -215,7 +218,7 @@ export const RegisterPage: React.FC = () => {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     placeholder="Re-enter password"
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-600"
                   />
                 </div>
               </div>
@@ -228,9 +231,9 @@ export const RegisterPage: React.FC = () => {
                   type="checkbox"
                   checked={consent}
                   onChange={(e) => setConsent(e.target.checked)}
-                  className="mt-0.5 w-4 h-4 text-violet-600 rounded border-slate-300 focus:ring-violet-500"
+                  className="mt-0.5 w-4 h-4 text-amber-500 bg-black/60 rounded border-zinc-700 focus:ring-amber-400"
                 />
-                <span className="text-[11px] text-slate-500 leading-tight">
+                <span className="text-[11px] text-zinc-400 leading-tight">
                   I agree to the secure storage of my food diary and lifestyle logs for educational wellness intelligence,
                   and acknowledge SehatSense AI is not medical treatment.
                 </span>
@@ -240,10 +243,10 @@ export const RegisterPage: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full mt-3 py-3 px-4 rounded-xl font-semibold text-sm text-white bg-violet-600 hover:bg-violet-700 shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer"
+              className="w-full mt-3 py-3 px-4 rounded-xl font-bold text-sm text-black bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
               ) : (
                 <>
                   <span>Create Account</span>
@@ -253,9 +256,9 @@ export const RegisterPage: React.FC = () => {
             </button>
           </form>
 
-          <p className="text-center text-xs text-slate-500 mt-6">
+          <p className="text-center text-xs text-zinc-400 mt-6">
             Already have an account?{' '}
-            <Link to="/login" className="font-semibold text-violet-600 hover:text-violet-700 hover:underline">
+            <Link to="/login" className="font-semibold text-amber-400 hover:text-amber-300 hover:underline">
               Sign In
             </Link>
           </p>

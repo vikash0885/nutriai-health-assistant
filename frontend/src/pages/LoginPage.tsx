@@ -53,33 +53,36 @@ export const LoginPage: React.FC = () => {
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl w-full bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
-        {/* Left: Midnight Blue & Violet Branding Panel */}
-        <div className="lg:col-span-5 bg-[#172554] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden">
+      <div className="max-w-4xl w-full bg-[#0d0d12] rounded-3xl border border-zinc-800/90 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+        {/* Left: Onyx & Golden Amber Branding Panel */}
+        <div className="lg:col-span-5 bg-[#070709] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-800/80">
           {/* Custom Background Image Texture */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-screen pointer-events-none"
+            className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-screen pointer-events-none"
             style={{ backgroundImage: `url('/images/sehatsense-background.png')` }}
           />
 
-          {/* Subtle Ambient Violet Glow */}
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-violet-600/30 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-violet-500/20 rounded-full blur-3xl pointer-events-none" />
+          {/* Grid Mesh */}
+          <div className="absolute inset-0 bg-grid-mesh opacity-30 pointer-events-none" />
+
+          {/* Subtle Ambient Gold Glow */}
+          <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none" />
 
           {/* Top Brand Identity */}
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-violet-600 to-indigo-500 flex items-center justify-center text-white font-black text-xl shadow-lg shadow-violet-900/50">
+              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-black font-black text-xl shadow-lg shadow-amber-500/25">
                 S
               </div>
               <div>
                 <div className="flex items-center gap-1.5">
                   <span className="font-extrabold text-xl tracking-tight text-white">SehatSense</span>
-                  <span className="text-[10px] font-bold bg-violet-500/30 text-violet-200 border border-violet-400/30 px-2 py-0.5 rounded-full">
+                  <span className="text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full">
                     AI
                   </span>
                 </div>
-                <p className="text-xs text-violet-200/80 font-medium">Smart Food Choices, Better Health.</p>
+                <p className="text-xs text-amber-400/90 font-medium">Smart Food Choices, Better Health.</p>
               </div>
             </div>
 
@@ -87,62 +90,62 @@ export const LoginPage: React.FC = () => {
               <h2 className="text-2xl font-bold leading-tight tracking-tight text-white">
                 Personal Food, Health & Fitness Intelligence
               </h2>
-              <p className="text-xs text-slate-300 leading-relaxed">
+              <p className="text-xs text-zinc-400 leading-relaxed">
                 Log authentic meals, discover pattern correlations, and achieve balanced wellness with bilingual AI assistance.
               </p>
             </div>
 
             {/* Highlights */}
             <div className="space-y-3 pt-2">
-              <div className="flex items-center gap-2.5 text-xs text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
                 <span>120+ Curated Indian Dishes & Nutrition Math</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
                 <span>Multimodal AI Food Photo Recognition</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-violet-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
+                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
                 <span>Temporal Symptom Pattern Analysis</span>
               </div>
             </div>
           </div>
 
           {/* Bottom Trust Badge & Developer Credit */}
-          <div className="relative z-10 pt-6 mt-6 border-t border-white/10 space-y-2">
-            <div className="flex items-center gap-2 text-[11px] text-slate-300">
-              <ShieldCheck className="w-4 h-4 text-violet-300" />
+          <div className="relative z-10 pt-6 mt-6 border-t border-zinc-800/80 space-y-2">
+            <div className="flex items-center gap-2 text-[11px] text-zinc-400">
+              <ShieldCheck className="w-4 h-4 text-amber-400" />
               <span>Private, secure, and user-consented health data</span>
             </div>
-            <p className="text-[11px] text-violet-300/80 font-medium pt-1">
-              Made with ❤️ by <span className="text-white font-semibold">Vikash Mishra</span>
+            <p className="text-[11px] text-zinc-400 font-medium pt-1">
+              Made with ❤️ by <span className="text-amber-300 font-semibold">Vikash Mishra</span>
             </p>
           </div>
         </div>
 
         {/* Right: Authentication Form */}
-        <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-white">
+        <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-[#0d0d12]">
           <div className="mb-6">
-            <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Welcome Back</h3>
-            <p className="text-xs text-slate-500 mt-1">
+            <h3 className="text-2xl font-bold text-white tracking-tight">Welcome Back</h3>
+            <p className="text-xs text-zinc-400 mt-1">
               Sign in to your SehatSense AI account to continue your wellness journey.
             </p>
           </div>
 
           {error && (
-            <div className="mb-5 p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-600" />
+            <div className="mb-5 p-3.5 rounded-xl bg-red-950/40 border border-red-800/60 text-xs text-red-300 flex items-center gap-2">
+              <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-400" />
               <span>{error}</span>
             </div>
           )}
 
           {forgotNotice && (
-            <div className="mb-5 p-3.5 rounded-xl bg-violet-50 border border-violet-200 text-xs text-violet-800 flex items-start gap-2">
-              <HeartPulse className="w-4 h-4 flex-shrink-0 text-violet-600 mt-0.5" />
+            <div className="mb-5 p-3.5 rounded-xl bg-amber-950/40 border border-amber-800/60 text-xs text-amber-300 flex items-start gap-2">
+              <HeartPulse className="w-4 h-4 flex-shrink-0 text-amber-400 mt-0.5" />
               <div>
                 <p className="font-semibold">Reset Password</p>
-                <p className="text-[11px] text-slate-600 mt-0.5">
+                <p className="text-[11px] text-zinc-300 mt-0.5">
                   For security, local development accounts can reset by creating a new account or using Demo Credentials below.
                 </p>
               </div>
@@ -151,45 +154,45 @@ export const LoginPage: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1.5">Email Address</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1.5">Email Address</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Mail className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-600"
                 />
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="block text-xs font-semibold text-slate-700">Password</label>
+                <label className="block text-xs font-semibold text-zinc-300">Password</label>
                 <button
                   type="button"
                   onClick={() => setForgotNotice(!forgotNotice)}
-                  className="text-[11px] font-medium text-violet-600 hover:text-violet-700 hover:underline"
+                  className="text-[11px] font-medium text-amber-400 hover:text-amber-300 hover:underline"
                 >
                   Forgot password?
                 </button>
               </div>
               <div className="relative">
-                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Lock className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-10 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-600 transition-all text-slate-900 placeholder:text-slate-400"
+                  className="w-full pl-10 pr-10 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-600"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-500 hover:text-zinc-300"
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -203,19 +206,19 @@ export const LoginPage: React.FC = () => {
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-4 h-4 text-violet-600 rounded border-slate-300 focus:ring-violet-500"
+                  className="w-4 h-4 text-amber-500 bg-black/60 rounded border-zinc-700 focus:ring-amber-400"
                 />
-                <span className="text-xs text-slate-600 select-none">Remember this device</span>
+                <span className="text-xs text-zinc-400 select-none">Remember this device</span>
               </label>
             </div>
 
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full mt-2 py-3 px-4 rounded-xl font-semibold text-sm text-white bg-violet-600 hover:bg-violet-700 shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer"
+              className="w-full mt-2 py-3 px-4 rounded-xl font-bold text-sm text-black bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer"
             >
               {isLoading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
               ) : (
                 <>
                   <span>Sign In</span>
@@ -226,21 +229,21 @@ export const LoginPage: React.FC = () => {
           </form>
 
           {/* Demo Fast Sign-in */}
-          <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <span className="text-xs text-slate-400">Want to test right away?</span>
+          <div className="mt-6 pt-5 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <span className="text-xs text-zinc-500">Want to test right away?</span>
             <button
               type="button"
               onClick={fillDemoAccount}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-violet-700 bg-violet-50 hover:bg-violet-100 border border-violet-200 px-3.5 py-2 rounded-xl transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 px-3.5 py-2 rounded-xl transition-all cursor-pointer"
             >
-              <Sparkles className="w-3.5 h-3.5 text-violet-600" />
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               Fill Demo Credentials
             </button>
           </div>
 
-          <p className="text-center text-xs text-slate-500 mt-6">
+          <p className="text-center text-xs text-zinc-400 mt-6">
             Don't have an account?{' '}
-            <Link to="/register" className="font-semibold text-violet-600 hover:text-violet-700 hover:underline">
+            <Link to="/register" className="font-semibold text-amber-400 hover:text-amber-300 hover:underline">
               Create an account
             </Link>
           </p>
