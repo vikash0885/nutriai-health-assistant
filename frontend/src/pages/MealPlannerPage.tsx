@@ -145,7 +145,7 @@ export const MealPlannerPage: React.FC = () => {
             {isGenerating ? (
               <>
                 <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                <span>Designing Meals with Gemini...</span>
+                <span>Designing Your Meal Plan...</span>
               </>
             ) : (
               <>
@@ -287,7 +287,7 @@ export const MealPlannerPage: React.FC = () => {
           <CalendarCheck2 className="w-12 h-12 text-emerald-600 mx-auto mb-3" />
           <h3 className="text-base font-bold text-slate-900 mb-1">No Active Meal Plan</h3>
           <p className="text-xs text-slate-500 mb-6">
-            Click 'Generate New Daily Plan' above to create a culturally aligned, nutrient-balanced menu with Gemini.
+            Click 'Generate New Daily Plan' above to create a culturally aligned, nutrient-balanced menu with NutriAI.
           </p>
           <button
             onClick={handleGenerate}

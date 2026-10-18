@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
               <div className="flex items-center gap-1.5">
                 <span className="font-bold text-slate-900 text-lg tracking-tight">NutriAI</span>
                 <span className="text-[10px] font-semibold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
-                  <Sparkles className="w-2.5 h-2.5" /> Gemini
+                  <Sparkles className="w-2.5 h-2.5" /> AI
                 </span>
               </div>
               <p className="text-[10px] text-slate-400 font-medium hidden sm:block">Eat Smart, Live Healthy</p>

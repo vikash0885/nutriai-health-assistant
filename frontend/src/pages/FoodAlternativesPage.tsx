@@ -106,7 +106,7 @@ export const FoodAlternativesPage: React.FC = () => {
       {isLoading ? (
         <div className="py-12 text-center text-xs text-slate-400">
           <div className="w-8 h-8 border-4 border-emerald-200 border-t-emerald-600 rounded-full animate-spin mx-auto mb-2" />
-          <span>Generating smart nutritional alternatives with Gemini...</span>
+          <span>Generating smart nutritional alternatives with NutriAI...</span>
         </div>
       ) : alternatives.length > 0 ? (
         <div className="space-y-4">

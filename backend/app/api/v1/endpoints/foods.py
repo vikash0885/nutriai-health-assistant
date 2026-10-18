@@ -236,5 +236,6 @@ async def upload_food_image(
         "status": "success",
         "detected_count": len(enriched_items),
         "items": enriched_items,
+        "message": "Dishes detected successfully." if enriched_items else "No food items could be clearly identified. You can search and log your meal manually below.",
         "disclaimer": "AI image estimation provides approximate dish identifications. You can modify the food name, portion, and quantity before confirming.",
     }

@@ -41,6 +41,8 @@ export const FoodLoggingPage: React.FC = () => {
   const [detectedItems, setDetectedItems] = useState<any[]>([]);
   const [imageError, setImageError] = useState<string | null>(null);
   const [imageDisclaimer, setImageDisclaimer] = useState<string | null>(null);
+  const [scanMessage, setScanMessage] = useState<string | null>(null);
+  const [scanPerformed, setScanPerformed] = useState(false);
 
   const [isSaving, setIsSaving] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -148,6 +150,8 @@ export const FoodLoggingPage: React.FC = () => {
       setPreviewUrl(URL.createObjectURL(file));
       setDetectedItems([]);
       setImageError(null);
+      setScanMessage(null);
+      setScanPerformed(false);
     }
   };
 
@@ -156,12 +160,19 @@ export const FoodLoggingPage: React.FC = () => {
 
     setIsUploading(true);
     setImageError(null);
+    setScanMessage(null);
+    setScanPerformed(true);
     try {
       const result = await api.uploadFoodImage(selectedFile);
-      setDetectedItems(result.items);
+      setDetectedItems(result.items || []);
       setImageDisclaimer(result.disclaimer);
+      if (result.message) {
+        setScanMessage(result.message);
+      }
     } catch (err: any) {
-      setImageError(err.message || 'Image analysis failed.');
+      setImageError(
+        err.message || 'Image analysis was unable to process this photo. Please use manual entry.'
+      );
     } finally {
       setIsUploading(false);
     }
@@ -183,7 +194,7 @@ export const FoodLoggingPage: React.FC = () => {
         fiber_g: nutrients.fiber_g || 2.0,
         source: 'gemini_vision',
         confirmed_by_user: true,
-        notes: `Detected via Gemini Vision: ${item.note || ''}`,
+        notes: `Detected via AI Vision: ${item.note || ''}`,
       });
       alert(`Logged ${item.detected_name} to your Food Diary!`);
     } catch (err: any) {
@@ -197,7 +208,7 @@ export const FoodLoggingPage: React.FC = () => {
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Log Your Food</h1>
         <p className="text-xs sm:text-sm text-slate-500 mt-1">
-          Search over 120+ authentic Indian and global dishes or snap a photo with Gemini Vision AI.
+          Search over 120+ authentic Indian and global dishes or snap a photo with NutriAI Vision.
         </p>
       </div>
 
@@ -441,10 +452,10 @@ export const FoodLoggingPage: React.FC = () => {
             <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-2">
               <Camera className="w-6 h-6" />
             </div>
-            <h3 className="text-lg font-bold text-slate-900">Gemini Multimodal Food Recognition</h3>
+            <h3 className="text-lg font-bold text-slate-900">AI Food Recognition</h3>
             <p className="text-xs text-slate-500">
               Upload a clear photo of your meal (rotis, thali, salad, or regional dish).
-              Gemini will identify likely dishes and calculate nutrients for your confirmation.
+              NutriAI will identify likely dishes and calculate nutrients for your confirmation.
             </p>
           </div>
 
@@ -476,21 +487,51 @@ export const FoodLoggingPage: React.FC = () => {
                 {isUploading ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    <span>Analyzing Image with Gemini...</span>
+                    <span>Analyzing Image with NutriAI...</span>
                   </>
                 ) : (
                   <>
                     <Sparkles className="w-4 h-4" />
-                    <span>Identify Dishes with Gemini AI</span>
+                    <span>Identify Dishes with NutriAI</span>
                   </>
                 )}
               </button>
             )}
 
             {imageError && (
-              <div className="mt-4 p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                <span>{imageError}</span>
+              <div className="mt-4 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-xs text-rose-700 space-y-3">
+                <div className="flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 flex-shrink-0 text-rose-600" />
+                  <span>{imageError}</span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('manual')}
+                  className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <Search className="w-3.5 h-3.5" />
+                  Switch to Manual Food Search
+                </button>
+              </div>
+            )}
+
+            {scanPerformed && !imageError && detectedItems.length === 0 && !isUploading && (
+              <div className="mt-4 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-800 space-y-3">
+                <div className="flex items-start gap-2">
+                  <Info className="w-4 h-4 flex-shrink-0 text-amber-600 mt-0.5" />
+                  <span>
+                    {scanMessage ||
+                      'No specific food items could be recognized with sufficient certainty. Please use manual food search to log your meal accurately.'}
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab('manual')}
+                  className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <Search className="w-3.5 h-3.5" />
+                  Search and Log Manually Instead
+                </button>
               </div>
             )}
           </div>

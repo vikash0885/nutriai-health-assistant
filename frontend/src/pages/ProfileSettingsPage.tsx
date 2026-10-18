@@ -313,7 +313,7 @@ export const ProfileSettingsPage: React.FC = () => {
               className="mt-0.5 w-4 h-4 text-emerald-600 rounded border-slate-300 focus:ring-emerald-500"
             />
             <span className="text-xs text-slate-600">
-              Consent to AI-assisted meal planning, food image understanding, and bilingual conversational answers via Google Gemini API.
+              Consent to AI-assisted meal planning, food image understanding, and bilingual conversational answers.
             </span>
           </label>
         </div>

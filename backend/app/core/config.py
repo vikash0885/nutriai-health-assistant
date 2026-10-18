@@ -15,7 +15,7 @@ class Settings(BaseSettings):
 
     # Gemini API Settings (official google-genai SDK)
     GEMINI_API_KEY: str = ""
-    GEMINI_MODEL: str = "gemini-2.5-flash"
+    GEMINI_MODEL: str = "gemini-flash-latest"
 
     # CORS
     BACKEND_CORS_ORIGINS: Union[List[str], str] = [

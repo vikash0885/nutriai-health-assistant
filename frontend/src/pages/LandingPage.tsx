@@ -70,7 +70,7 @@ export const LandingPage: React.FC = () => {
             {/* Pill */}
             <div className="inline-flex items-center gap-2 bg-emerald-100/80 border border-emerald-200 text-emerald-800 px-3.5 py-1.5 rounded-full text-xs font-semibold mb-6 shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Powered by Google Gemini API & Verified Nutrition Science</span>
+              <span>AI-Powered Nutrition & Verified Science</span>
             </div>
 
             {/* Title & Tagline */}
@@ -121,7 +121,7 @@ export const LandingPage: React.FC = () => {
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" /> 120+ Curated Indian Dishes
               </span>
               <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Gemini Vision Image Scan
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" /> AI Vision Image Scan
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" /> Symptom Pattern Analyzer
@@ -153,9 +153,9 @@ export const LandingPage: React.FC = () => {
               <div className="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
                 <Camera className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">Gemini Vision Photo Logging</h3>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">AI Vision Photo Logging</h3>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Snap a picture of your thali or snack. Gemini detects your rotis, dals, and sabzis,
+                Snap a picture of your thali or snack. NutriAI detects your rotis, dals, and sabzis,
                 allowing you to confirm portions while our deterministic engine calculates precise nutrients.
               </p>
             </div>

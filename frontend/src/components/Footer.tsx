@@ -11,7 +11,7 @@ export const Footer: React.FC = () => {
           <span>Eat Smart, Live Healthy</span>
           <span>•</span>
           <span className="flex items-center gap-1 text-emerald-700">
-            <ShieldCheck className="w-3.5 h-3.5" /> Google Gemini API Powered
+            <ShieldCheck className="w-3.5 h-3.5" /> AI Powered
           </span>
         </div>
 

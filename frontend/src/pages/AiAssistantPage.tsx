@@ -25,7 +25,7 @@ export const AiAssistantPage: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: `Namaste ${profile?.display_name || ''}! I am your NutriAI assistant powered by Google Gemini. I have access to your verified diary logs for today. You can ask me in English, हिन्दी (Hindi), or Hinglish!`,
+      content: `Namaste ${profile?.display_name || ''}! I am your NutriAI assistant. I have access to your verified diary logs for today. You can ask me in English, हिन्दी (Hindi), or Hinglish!`,
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ]);
@@ -84,7 +84,7 @@ export const AiAssistantPage: React.FC = () => {
         ...prev,
         {
           role: 'assistant',
-          content: `Service Notice: ${err.message || 'Could not communicate with Gemini.'}`,
+          content: `Service Notice: ${err.message || 'Could not reach the AI service. Please try again.'}`,
           time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
         },
       ]);
@@ -109,7 +109,7 @@ export const AiAssistantPage: React.FC = () => {
 
         <div className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full flex items-center gap-1.5">
           <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-          <span>Gemini 2.5 Flash</span>
+          <span>NutriAI Smart AI</span>
         </div>
       </div>
 
@@ -173,7 +173,7 @@ export const AiAssistantPage: React.FC = () => {
             </div>
             <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-xs text-slate-500 flex items-center gap-2">
               <div className="w-3.5 h-3.5 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin" />
-              <span>Gemini is thinking with your diary context...</span>
+              <span>NutriAI is thinking with your diary context...</span>
             </div>
           </div>
         )}

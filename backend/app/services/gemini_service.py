@@ -24,7 +24,7 @@ CRITICAL MEDICAL & SAFETY RULES:
 class GeminiService:
     def __init__(self):
         self.api_key = settings.GEMINI_API_KEY
-        self.model = settings.GEMINI_MODEL or "gemini-2.5-flash"
+        self.model = settings.GEMINI_MODEL or "gemini-flash-latest"
         self._client = None
         self._initialize_client()
 
@@ -77,23 +77,16 @@ class GeminiService:
         """
         Multimodal image analysis to identify likely food items in an uploaded photo.
         Returns a list of identified dishes with estimated portion sizes and confidence.
+        If analysis fails or no dishes are identified, returns an empty list without fake cards.
         """
         if not self.is_configured():
-            return [
-                {
-                    "food_name": "Roti / Chapati (Whole Wheat)",
-                    "estimated_portion": "2 medium rotis",
-                    "confidence": "Demo/Offline",
-                    "category": "Grains & Breads",
-                    "note": "Gemini API key not configured. Showing sample detection from photo. You can select or search your meal manually.",
-                }
-            ]
+            logger.warning("Gemini API key is not configured. Cannot perform image analysis.")
+            return []
 
-        try:
-            from google.genai import types
+        from google.genai import types
 
-            prompt = """Analyze this food image carefully.
-Identify all the individual food items or dishes present on the plate or in the meal (especially recognizing Indian dishes such as roti, dal, sabzi, rice, paneer, raita, salad, dosa, idli, etc.).
+        prompt = """Analyze this food image carefully.
+Identify all the individual food items or dishes present on the plate or in the meal (especially recognizing Indian dishes such as roti, chapati, dal, sabzi, rice, paneer, raita, salad, dosa, idli, samosa, etc.).
 
 Return a strictly valid JSON array of objects with the following keys for each identified item:
 - "food_name": Standard recognized food name in English (e.g. "Roti / Chapati (Whole Wheat)", "Dal Tadka", "Steamed White Rice", "Palak Paneer", "Cucumber Salad")
@@ -102,45 +95,55 @@ Return a strictly valid JSON array of objects with the following keys for each i
 - "category": Meal category (e.g., "Grains & Breads", "Dal & Pulses", "Vegetables & Curries", "Dairy", "Fruits")
 - "note": Brief observation about cooking style, visible oil, or ingredients.
 
-Return ONLY the raw JSON array without markdown backticks.
+Return ONLY the raw JSON array without markdown backticks. If no food is clearly visible, return an empty array [].
 """
 
-            part = types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
-            response = self._client.models.generate_content(
-                model=self.model,
-                contents=[part, prompt],
-                config=types.GenerateContentConfig(
-                    system_instruction=SAFETY_SYSTEM_INSTRUCTION,
-                    temperature=0.2,
-                ),
-            )
+        # Priority list of models to try for vision
+        models_to_try = [self.model]
+        for fallback in ["gemini-flash-latest", "gemini-2.0-flash"]:
+            if fallback not in models_to_try:
+                models_to_try.append(fallback)
 
-            text = response.text.strip()
-            if text.startswith("```json"):
-                text = text[7:]
-            if text.startswith("```"):
-                text = text[3:]
-            if text.endswith("```"):
-                text = text[:-3]
-            text = text.strip()
+        last_error = None
+        for model_name in models_to_try:
+            try:
+                part = types.Part.from_bytes(data=image_bytes, mime_type=mime_type)
+                response = self._client.models.generate_content(
+                    model=model_name,
+                    contents=[part, prompt],
+                    config=types.GenerateContentConfig(
+                        system_instruction=SAFETY_SYSTEM_INSTRUCTION,
+                        temperature=0.2,
+                    ),
+                )
 
-            detected = json.loads(text)
-            if isinstance(detected, list):
-                return detected
-            elif isinstance(detected, dict) and "items" in detected:
-                return detected["items"]
-            return []
-        except Exception as e:
-            logger.error("Error analyzing food image with Gemini: %s", str(e))
-            return [
-                {
-                    "food_name": "Manual Entry Needed",
-                    "estimated_portion": "1 serving",
-                    "confidence": "low",
-                    "category": "Other",
-                    "note": f"Could not automatically detect food: {str(e)}. Please use manual food search.",
-                }
-            ]
+                text = response.text.strip() if response.text else ""
+                if text.startswith("```json"):
+                    text = text[7:]
+                if text.startswith("```"):
+                    text = text[3:]
+                if text.endswith("```"):
+                    text = text[:-3]
+                text = text.strip()
+
+                if not text:
+                    return []
+
+                detected = json.loads(text)
+                if isinstance(detected, list):
+                    return [item for item in detected if item.get("food_name")]
+                elif isinstance(detected, dict) and "items" in detected and isinstance(detected["items"], list):
+                    return [item for item in detected["items"] if item.get("food_name")]
+                return []
+            except Exception as e:
+                last_error = e
+                logger.warning("Vision analysis failed with model %s: %s", model_name, str(e))
+                # If error is a 404 / model not found, loop will try next fallback model
+                continue
+
+        logger.error("All vision models failed. Last error: %s", str(last_error))
+        # Return empty list — do NOT invent fake placeholder items
+        return []
 
     async def generate_smart_meal_plan(
         self,
