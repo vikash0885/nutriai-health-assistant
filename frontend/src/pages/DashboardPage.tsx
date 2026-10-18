@@ -73,8 +73,8 @@ export const DashboardPage: React.FC = () => {
     return (
       <div className="min-h-[70vh] flex items-center justify-center">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-10 h-10 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin" />
-          <p className="text-sm font-medium text-slate-500">Calculating your daily intelligence...</p>
+          <div className="w-10 h-10 border-4 border-amber-500/20 border-t-amber-400 rounded-full animate-spin" />
+          <p className="text-sm font-medium text-zinc-400">Calculating your daily intelligence...</p>
         </div>
       </div>
     );
@@ -82,13 +82,13 @@ export const DashboardPage: React.FC = () => {
 
   if (error || !data) {
     return (
-      <div className="p-8 text-center max-w-md mx-auto bg-white rounded-3xl border border-slate-200 shadow-sm">
-        <AlertCircle className="w-10 h-10 text-red-500 mx-auto mb-3" />
-        <h3 className="text-lg font-bold text-slate-900 mb-1">Could not load dashboard</h3>
-        <p className="text-xs text-slate-500 mb-4">{error}</p>
+      <div className="p-8 text-center max-w-md mx-auto bg-[#0d0d12] rounded-3xl border border-zinc-800 shadow-xl">
+        <AlertCircle className="w-10 h-10 text-red-400 mx-auto mb-3" />
+        <h3 className="text-lg font-bold text-white mb-1">Could not load dashboard</h3>
+        <p className="text-xs text-zinc-400 mb-4">{error}</p>
         <button
           onClick={fetchDashboard}
-          className="px-4 py-2 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-semibold transition-all cursor-pointer shadow-md shadow-violet-600/20"
+          className="px-4 py-2 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold rounded-xl text-xs transition-all cursor-pointer shadow-md shadow-amber-500/20"
         >
           Try Again
         </button>

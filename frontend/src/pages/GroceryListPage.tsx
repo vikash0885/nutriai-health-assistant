@@ -71,30 +71,30 @@ export const GroceryListPage: React.FC = () => {
     <div className="max-w-4xl mx-auto space-y-6 pb-12">
       {/* Title */}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Grocery Shopping List</h1>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Grocery Shopping List</h1>
+        <p className="text-xs sm:text-sm text-zinc-400 mt-1">
           Ingredients automatically synced from your meal plans, organized by market aisles.
         </p>
       </div>
 
       {/* Add Custom Item Card */}
-      <form onSubmit={handleAdd} className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-sm flex flex-col sm:flex-row gap-3">
+      <form onSubmit={handleAdd} className="bg-[#0d0d12] rounded-3xl p-5 border border-zinc-800/90 shadow-xl flex flex-col sm:flex-row gap-3">
         <input
           type="text"
           required
           value={newItemName}
           onChange={(e) => setNewItemName(e.target.value)}
           placeholder="Add item (e.g. Baby Spinach, Moong Dal, Lemon)..."
-          className="flex-1 p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+          className="flex-1 p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-600"
         />
 
         <select
           value={newItemCategory}
           onChange={(e) => setNewItemCategory(e.target.value)}
-          className="p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
+          className="p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white"
         >
           {categories.map((cat) => (
-            <option key={cat} value={cat}>
+            <option key={cat} value={cat} className="bg-zinc-900 text-white">
               {cat}
             </option>
           ))}
@@ -102,7 +102,7 @@ export const GroceryListPage: React.FC = () => {
 
         <button
           type="submit"
-          className="px-5 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-1.5"
+          className="px-5 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-xs font-extrabold shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-1.5 cursor-pointer"
         >
           <Plus className="w-4 h-4" /> Add Item
         </button>
@@ -110,12 +110,12 @@ export const GroceryListPage: React.FC = () => {
 
       {/* Items by Category */}
       {isLoading ? (
-        <div className="py-12 text-center text-xs text-slate-400">Loading grocery list...</div>
+        <div className="py-12 text-center text-xs text-zinc-500">Loading grocery list...</div>
       ) : items.length === 0 ? (
-        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-sm max-w-md mx-auto">
-          <ShoppingCart className="w-12 h-12 text-violet-600 mx-auto mb-3 opacity-60" />
-          <h3 className="text-base font-bold text-slate-900 mb-1">Your list is currently empty</h3>
-          <p className="text-xs text-slate-500">
+        <div className="bg-[#0d0d12] rounded-3xl p-12 text-center border border-zinc-800/90 shadow-xl max-w-md mx-auto">
+          <ShoppingCart className="w-12 h-12 text-amber-400 mx-auto mb-3 opacity-80" />
+          <h3 className="text-base font-bold text-white mb-1">Your list is currently empty</h3>
+          <p className="text-xs text-zinc-400">
             Generate an AI meal plan and click 'Generate Grocery List' to populate your shopping items!
           </p>
         </div>
@@ -126,10 +126,10 @@ export const GroceryListPage: React.FC = () => {
             if (catItems.length === 0) return null;
 
             return (
-              <div key={category} className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-3">
-                <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                  <h3 className="text-sm font-bold text-slate-900">{category}</h3>
-                  <span className="text-xs font-semibold text-slate-400">
+              <div key={category} className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-3">
+                <div className="flex items-center justify-between border-b border-zinc-800 pb-2">
+                  <h3 className="text-sm font-bold text-white">{category}</h3>
+                  <span className="text-xs font-semibold text-zinc-400">
                     {catItems.filter((i) => i.is_purchased).length}/{catItems.length} purchased
                   </span>
                 </div>
@@ -140,8 +140,8 @@ export const GroceryListPage: React.FC = () => {
                       key={item.id}
                       className={`p-3 rounded-2xl border transition-all flex items-center justify-between ${
                         item.is_purchased
-                          ? 'bg-slate-50/50 border-slate-100 opacity-60'
-                          : 'bg-white border-slate-200/70 hover:border-violet-300'
+                          ? 'bg-black/30 border-zinc-900 opacity-50'
+                          : 'bg-black/60 border border-zinc-800 hover:border-amber-500/40'
                       }`}
                     >
                       <label className="flex items-center gap-3 cursor-pointer flex-1">
@@ -149,21 +149,21 @@ export const GroceryListPage: React.FC = () => {
                           type="checkbox"
                           checked={item.is_purchased}
                           onChange={() => handleToggle(item)}
-                          className="w-4 h-4 text-violet-600 rounded border-slate-300 focus:ring-violet-500"
+                          className="w-4 h-4 text-amber-500 bg-black rounded border-zinc-700 focus:ring-amber-400"
                         />
                         <span
                           className={`text-xs font-semibold ${
-                            item.is_purchased ? 'line-through text-slate-400' : 'text-slate-800'
+                            item.is_purchased ? 'line-through text-zinc-500' : 'text-zinc-100'
                           }`}
                         >
                           {item.item_name}
                         </span>
-                        <span className="text-[11px] text-slate-400">({item.quantity})</span>
+                        <span className="text-[11px] text-zinc-400">({item.quantity})</span>
                       </label>
 
                       <button
                         onClick={() => handleDelete(item.id)}
-                        className="p-1.5 text-slate-300 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                        className="p-1.5 text-zinc-500 hover:text-rose-400 hover:bg-rose-950/40 rounded-lg transition-colors cursor-pointer"
                         title="Delete"
                       >
                         <Trash2 className="w-4 h-4" />

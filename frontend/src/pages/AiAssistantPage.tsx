@@ -95,26 +95,26 @@ export const AiAssistantPage: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto space-y-4 pb-12 flex flex-col h-[calc(100vh-8rem)]">
-      {/* Title & Gemini Banner */}
-      <div className="flex items-center justify-between pb-2 border-b border-slate-200">
+      {/* Title & Banner */}
+      <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
         <div>
-          <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
-            <Bot className="w-6 h-6 text-violet-600" />
+          <h1 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight flex items-center gap-2">
+            <Bot className="w-6 h-6 text-amber-400" />
             <span>SehatSense AI Assistant</span>
           </h1>
-          <p className="text-xs text-slate-500">
+          <p className="text-xs text-zinc-400">
             Bilingual Hindi & English intelligence grounded in your personal diary data.
           </p>
         </div>
 
-        <div className="text-[11px] font-semibold text-violet-800 bg-violet-50 border border-violet-200 px-3 py-1 rounded-full flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-violet-600" />
+        <div className="text-[11px] font-semibold text-amber-300 bg-amber-950/60 border border-amber-800/50 px-3 py-1 rounded-full flex items-center gap-1.5">
+          <Sparkles className="w-3.5 h-3.5 text-amber-400" />
           <span>SehatSense AI Smart Intelligence</span>
         </div>
       </div>
 
       {/* Chat Messages Container */}
-      <div className="flex-1 bg-white rounded-3xl p-4 sm:p-6 border border-slate-200/80 shadow-sm overflow-y-auto space-y-4">
+      <div className="flex-1 bg-[#0d0d12] rounded-3xl p-4 sm:p-6 border border-zinc-800/90 shadow-xl overflow-y-auto space-y-4">
         {messages.map((m, idx) => (
           <div
             key={idx}
@@ -126,8 +126,8 @@ export const AiAssistantPage: React.FC = () => {
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-xs font-bold ${
                 m.role === 'user'
-                  ? 'bg-violet-600 text-white shadow-sm'
-                  : 'bg-violet-100 text-violet-800 border border-violet-200'
+                  ? 'bg-gradient-to-tr from-amber-500 to-yellow-400 text-black shadow-sm'
+                  : 'bg-amber-950/70 text-amber-300 border border-amber-800/60'
               }`}
             >
               {m.role === 'user' ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
@@ -137,14 +137,14 @@ export const AiAssistantPage: React.FC = () => {
             <div
               className={`max-w-[80%] rounded-2xl p-4 text-xs sm:text-sm leading-relaxed ${
                 m.role === 'user'
-                  ? 'bg-violet-600 text-white shadow-sm rounded-tr-none'
-                  : 'bg-slate-50 text-slate-800 border border-slate-100 rounded-tl-none space-y-2'
+                  ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-semibold shadow-md rounded-tr-none'
+                  : 'bg-black/60 text-zinc-200 border border-zinc-800/80 rounded-tl-none space-y-2'
               }`}
             >
               <div className="whitespace-pre-wrap">{m.content}</div>
 
               {m.referenced_data && m.referenced_data.today_calories !== undefined && (
-                <div className="pt-2 border-t border-slate-200/60 text-[10px] text-slate-500 flex flex-wrap gap-2">
+                <div className="pt-2 border-t border-zinc-800 text-[10px] text-zinc-400 flex flex-wrap gap-2">
                   <span>Logged Today: {m.referenced_data.today_calories} kcal</span>
                   <span>•</span>
                   <span>{m.referenced_data.today_protein_g}g Protein</span>
@@ -156,7 +156,7 @@ export const AiAssistantPage: React.FC = () => {
               {m.time && (
                 <div
                   className={`text-[9px] text-right mt-1 ${
-                    m.role === 'user' ? 'text-violet-200' : 'text-slate-400'
+                    m.role === 'user' ? 'text-black/60' : 'text-zinc-500'
                   }`}
                 >
                   {m.time}
@@ -168,11 +168,11 @@ export const AiAssistantPage: React.FC = () => {
 
         {isLoading && (
           <div className="flex items-start gap-3">
-            <div className="w-8 h-8 rounded-full bg-violet-100 text-violet-800 border border-violet-200 flex items-center justify-center text-xs font-bold">
+            <div className="w-8 h-8 rounded-full bg-amber-950/70 text-amber-300 border border-amber-800/60 flex items-center justify-center text-xs font-bold">
               <Bot className="w-4 h-4" />
             </div>
-            <div className="bg-slate-50 border border-slate-100 rounded-2xl p-4 text-xs text-slate-500 flex items-center gap-2">
-              <div className="w-3.5 h-3.5 border-2 border-violet-600 border-t-transparent rounded-full animate-spin" />
+            <div className="bg-black/60 border border-zinc-800 rounded-2xl p-4 text-xs text-zinc-400 flex items-center gap-2">
+              <div className="w-3.5 h-3.5 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
               <span>SehatSense AI is thinking with your diary context...</span>
             </div>
           </div>
@@ -183,12 +183,12 @@ export const AiAssistantPage: React.FC = () => {
 
       {/* Suggested Prompt Chips */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs">
-        <Lightbulb className="w-4 h-4 text-amber-500 flex-shrink-0" />
+        <Lightbulb className="w-4 h-4 text-amber-400 flex-shrink-0" />
         {suggestedPrompts.map((p, i) => (
           <button
             key={i}
             onClick={() => handleSend(p)}
-            className="flex-shrink-0 bg-slate-100 hover:bg-violet-50 text-slate-600 hover:text-violet-800 border border-slate-200 px-3 py-1.5 rounded-full transition-colors text-[11px]"
+            className="flex-shrink-0 bg-black/60 hover:bg-amber-950/40 text-zinc-300 hover:text-amber-300 border border-zinc-800 px-3 py-1.5 rounded-full transition-colors text-[11px] cursor-pointer"
           >
             {p}
           </button>
@@ -201,20 +201,20 @@ export const AiAssistantPage: React.FC = () => {
           e.preventDefault();
           handleSend();
         }}
-        className="flex items-center gap-2 bg-white p-2 rounded-2xl border border-slate-200 shadow-sm focus-within:ring-2 focus-within:ring-violet-500/20 focus-within:border-violet-500"
+        className="flex items-center gap-2 bg-[#0d0d12] p-2 rounded-2xl border border-zinc-800/90 shadow-xl focus-within:ring-2 focus-within:ring-amber-500/20 focus-within:border-amber-400"
       >
         <input
           type="text"
           value={inputMsg}
           onChange={(e) => setInputMsg(e.target.value)}
           placeholder="Type your question in English, Hindi, or Hinglish..."
-          className="flex-1 px-4 py-2.5 text-xs sm:text-sm focus:outline-none"
+          className="flex-1 px-4 py-2.5 text-xs sm:text-sm bg-transparent text-white placeholder:text-zinc-600 focus:outline-none"
         />
 
         <button
           type="submit"
           disabled={isLoading || !inputMsg.trim()}
-          className="p-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl transition-all shadow-md shadow-violet-600/20 disabled:opacity-50"
+          className="p-3 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold rounded-xl transition-all shadow-lg shadow-amber-500/20 gold-box-glow disabled:opacity-50 cursor-pointer"
         >
           <Send className="w-4 h-4" />
         </button>

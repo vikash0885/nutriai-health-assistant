@@ -48,10 +48,10 @@ export const PatternInsightsPage: React.FC = () => {
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
             Food & Symptom Insights
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-1">
+          <p className="text-xs sm:text-sm text-zinc-400 mt-1">
             Deterministic correlation analysis matching your recorded meals with post-meal symptoms.
           </p>
         </div>
@@ -59,7 +59,7 @@ export const PatternInsightsPage: React.FC = () => {
         <button
           onClick={fetchPatterns}
           disabled={isLoading}
-          className="inline-flex items-center gap-2 bg-violet-50 hover:bg-violet-100 text-violet-800 font-semibold px-4 py-2 rounded-2xl border border-violet-200 text-xs transition-all self-start sm:self-auto"
+          className="inline-flex items-center gap-2 bg-[#0d0d12] hover:bg-zinc-800 text-amber-300 font-semibold px-4 py-2 rounded-2xl border border-zinc-800 text-xs transition-all self-start sm:self-auto cursor-pointer"
         >
           <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
           <span>Re-analyze My Diary</span>
@@ -68,19 +68,19 @@ export const PatternInsightsPage: React.FC = () => {
 
       {/* Main Insights Content */}
       {isLoading ? (
-        <div className="py-16 text-center text-xs text-slate-400">
-          <div className="w-8 h-8 border-4 border-violet-200 border-t-violet-600 rounded-full animate-spin mx-auto mb-2" />
+        <div className="py-16 text-center text-xs text-zinc-500">
+          <div className="w-8 h-8 border-4 border-amber-500/20 border-t-amber-400 rounded-full animate-spin mx-auto mb-2" />
           <span>Mining temporal associations across your meal and symptom logs...</span>
         </div>
       ) : insights.length === 0 ? (
-        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-sm max-w-lg mx-auto space-y-3">
-          <Sparkles className="w-12 h-12 text-violet-500 mx-auto opacity-70" />
-          <h3 className="text-base font-bold text-slate-900">No Repeated Patterns Found Yet</h3>
-          <p className="text-xs text-slate-500 leading-relaxed">
+        <div className="bg-[#0d0d12] rounded-3xl p-12 text-center border border-zinc-800/90 shadow-xl max-w-lg mx-auto space-y-3">
+          <Sparkles className="w-12 h-12 text-amber-400 mx-auto opacity-80" />
+          <h3 className="text-base font-bold text-white">No Repeated Patterns Found Yet</h3>
+          <p className="text-xs text-zinc-400 leading-relaxed">
             SehatSense AI strictly avoids fabricating false associations. We require at least 2 distinct instances
             where a symptom was logged within 6 hours of consuming a specific food before flagging a pattern.
           </p>
-          <p className="text-[11px] text-slate-400">
+          <p className="text-[11px] text-zinc-500">
             Keep logging your daily meals in the Food Diary and any feelings in the Symptom Diary!
           </p>
         </div>
@@ -89,22 +89,22 @@ export const PatternInsightsPage: React.FC = () => {
           {insights.map((ins) => {
             const confColor =
               ins.confidence === 'high'
-                ? 'bg-violet-100 text-violet-800 border border-violet-200'
+                ? 'bg-amber-950/70 text-amber-300 border border-amber-800/50'
                 : ins.confidence === 'moderate'
-                ? 'bg-amber-100 text-amber-800'
-                : 'bg-slate-100 text-slate-600';
+                ? 'bg-yellow-950/70 text-yellow-300 border border-yellow-800/50'
+                : 'bg-zinc-800 text-zinc-300';
 
             return (
               <div
                 key={ins.id}
-                className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-4 hover:border-violet-200 transition-all"
+                className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl space-y-4 hover:border-amber-500/40 transition-all"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="p-2 rounded-xl bg-violet-50 text-violet-700">
+                    <span className="p-2 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-400">
                       <Sparkles className="w-4 h-4" />
                     </span>
-                    <h3 className="text-base font-bold text-slate-900">{ins.title}</h3>
+                    <h3 className="text-base font-bold text-white">{ins.title}</h3>
                   </div>
 
                   <span className={`text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${confColor}`}>
@@ -112,32 +112,32 @@ export const PatternInsightsPage: React.FC = () => {
                   </span>
                 </div>
 
-                <p className="text-sm text-slate-700 leading-relaxed">{ins.description}</p>
+                <p className="text-sm text-zinc-300 leading-relaxed">{ins.description}</p>
 
                 {ins.actionable_tip && (
-                  <div className="bg-violet-50/70 p-3.5 rounded-2xl border border-violet-100 text-xs text-violet-900">
+                  <div className="bg-amber-950/20 p-3.5 rounded-2xl border border-amber-900/30 text-xs text-amber-200">
                     <strong className="block mb-0.5">Practical Tracking Step:</strong>
                     {ins.actionable_tip}
                   </div>
                 )}
 
                 {/* Medical Safety Disclaimer for this Pattern */}
-                <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 text-[11px] text-slate-500 flex items-start gap-2">
-                  <Info className="w-4 h-4 text-slate-400 flex-shrink-0 mt-0.5" />
+                <div className="p-3 bg-black/60 rounded-xl border border-zinc-800 text-[11px] text-zinc-400 flex items-start gap-2">
+                  <Info className="w-4 h-4 text-zinc-500 flex-shrink-0 mt-0.5" />
                   <span>{ins.medical_disclaimer}</span>
                 </div>
 
                 {/* Feedback Bar */}
-                <div className="flex items-center justify-between pt-3 border-t border-slate-100 text-xs text-slate-500">
+                <div className="flex items-center justify-between pt-3 border-t border-zinc-800 text-xs text-zinc-400">
                   <span className="text-[11px]">Was this pattern observation accurate for you?</span>
 
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleFeedback(ins.id, 'helpful')}
-                      className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 font-medium transition-all ${
+                      className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 font-medium transition-all cursor-pointer ${
                         ins.user_feedback === 'helpful'
-                          ? 'border-violet-600 bg-violet-50 text-violet-800 font-bold'
-                          : 'border-slate-200 hover:bg-slate-50 text-slate-600'
+                          ? 'border-amber-400 bg-amber-950/50 text-amber-300 font-bold'
+                          : 'border-zinc-800 hover:bg-zinc-800/60 text-zinc-300'
                       }`}
                     >
                       <ThumbsUp className="w-3.5 h-3.5" /> Helpful
@@ -145,10 +145,10 @@ export const PatternInsightsPage: React.FC = () => {
 
                     <button
                       onClick={() => handleFeedback(ins.id, 'inaccurate')}
-                      className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 font-medium transition-all ${
+                      className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 font-medium transition-all cursor-pointer ${
                         ins.user_feedback === 'inaccurate'
-                          ? 'border-rose-600 bg-rose-50 text-rose-800 font-bold'
-                          : 'border-slate-200 hover:bg-slate-50 text-slate-600'
+                          ? 'border-rose-700 bg-rose-950/50 text-rose-300 font-bold'
+                          : 'border-zinc-800 hover:bg-zinc-800/60 text-zinc-300'
                       }`}
                     >
                       <ThumbsDown className="w-3.5 h-3.5" /> Inaccurate

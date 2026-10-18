@@ -88,23 +88,23 @@ export const ExercisePage: React.FC = () => {
     <div className="max-w-4xl mx-auto space-y-6 pb-12">
       {/* Title */}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Exercise & Digestion Support</h1>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Exercise & Digestion Support</h1>
+        <p className="text-xs sm:text-sm text-zinc-400 mt-1">
           Post-meal gentle mobility routines and daily fitness tracking powered by MET calorie calculation.
         </p>
       </div>
 
       {successMsg && (
-        <div className="p-4 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-800 flex items-center gap-2">
-          <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+        <div className="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-800 text-xs text-emerald-300 flex items-center gap-2">
+          <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
           <span>{successMsg}</span>
         </div>
       )}
 
       {/* Recommended Routines Grid */}
       <div className="space-y-3">
-        <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-          <Sparkles className="w-4 h-4 text-violet-600" />
+        <h3 className="text-sm font-bold text-white flex items-center gap-2">
+          <Sparkles className="w-4 h-4 text-amber-400" />
           <span>Tailored Digestion & Fitness Routines</span>
         </h3>
 
@@ -113,24 +113,24 @@ export const ExercisePage: React.FC = () => {
             <div
               key={idx}
               onClick={() => handleSelectRoutine(routine)}
-              className="bg-white rounded-3xl p-5 border border-slate-200/80 shadow-sm hover:border-violet-400 cursor-pointer transition-all space-y-2 flex flex-col justify-between"
+              className="bg-[#0d0d12] rounded-3xl p-5 border border-zinc-800/90 shadow-xl hover:border-amber-500/50 cursor-pointer transition-all space-y-2 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <h4 className="text-xs font-bold text-slate-900">{routine.title}</h4>
-                  <span className="text-[10px] font-semibold bg-violet-100 text-violet-800 px-2 py-0.5 rounded-full capitalize">
+                  <h4 className="text-xs font-bold text-white">{routine.title}</h4>
+                  <span className="text-[10px] font-bold bg-amber-950/60 border border-amber-800/50 text-amber-300 px-2 py-0.5 rounded-full capitalize">
                     {routine.intensity}
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed mb-2">{routine.benefits}</p>
-                <div className="text-[11px] text-amber-900 bg-amber-50 p-2 rounded-xl border border-amber-200/50">
+                <p className="text-xs text-zinc-300 leading-relaxed mb-2">{routine.benefits}</p>
+                <div className="text-[11px] text-amber-200 bg-amber-950/30 p-2 rounded-xl border border-amber-900/40">
                   ⚠️ {routine.safety_notes}
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-2 border-t border-slate-100 text-xs text-slate-400 font-medium">
+              <div className="flex items-center justify-between pt-2 border-t border-zinc-800 text-xs text-zinc-400 font-medium">
                 <span>⏱️ {routine.duration_minutes} mins</span>
-                <span className="text-violet-700 font-bold">~{Math.round(routine.estimated_calories)} kcal</span>
+                <span className="text-amber-400 font-bold">~{Math.round(routine.estimated_calories)} kcal</span>
               </div>
             </div>
           ))}
@@ -138,71 +138,71 @@ export const ExercisePage: React.FC = () => {
       </div>
 
       {/* Log Exercise Form */}
-      <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm space-y-4">
-        <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-          <Plus className="w-4 h-4 text-violet-600" />
+      <div className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl space-y-4">
+        <h3 className="text-sm font-bold text-white flex items-center gap-2">
+          <Plus className="w-4 h-4 text-amber-400" />
           <span>Log Completed Activity</span>
         </h3>
 
         <form onSubmit={handleSaveExercise} className="space-y-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Activity Name</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">Activity Name</label>
               <input
                 type="text"
                 required
                 value={activityName}
                 onChange={(e) => setActivityName(e.target.value)}
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white"
               />
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Category</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">Category</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
+                className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white"
               >
-                <option value="post_meal_stroll">Post-Meal Stroll (Gentle walking)</option>
-                <option value="walking">Brisk Walking</option>
-                <option value="cardio">Cardio / Jogging / Cycling</option>
-                <option value="strength">Strength Training</option>
-                <option value="yoga">Yoga & Pranayama</option>
-                <option value="stretching">Mobility & Stretching</option>
-                <option value="other">Other Activity</option>
+                <option value="post_meal_stroll" className="bg-zinc-900 text-white">Post-Meal Stroll (Gentle walking)</option>
+                <option value="walking" className="bg-zinc-900 text-white">Brisk Walking</option>
+                <option value="cardio" className="bg-zinc-900 text-white">Cardio / Jogging / Cycling</option>
+                <option value="strength" className="bg-zinc-900 text-white">Strength Training</option>
+                <option value="yoga" className="bg-zinc-900 text-white">Yoga & Pranayama</option>
+                <option value="stretching" className="bg-zinc-900 text-white">Mobility & Stretching</option>
+                <option value="other" className="bg-zinc-900 text-white">Other Activity</option>
               </select>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Duration (minutes)</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">Duration (minutes)</label>
               <div className="relative">
-                <Clock className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <Clock className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="number"
                   min="1"
                   max="360"
                   value={durationMinutes}
                   onChange={(e) => setDurationMinutes(Number(e.target.value) || 1)}
-                  className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                  className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Intensity</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">Intensity</label>
               <div className="grid grid-cols-3 gap-2">
                 {(['low', 'moderate', 'high'] as const).map((lvl) => (
                   <button
                     key={lvl}
                     type="button"
                     onClick={() => setIntensity(lvl)}
-                    className={`py-2 text-xs font-semibold rounded-xl capitalize transition-all ${
+                    className={`py-2 text-xs font-semibold rounded-xl capitalize transition-all cursor-pointer ${
                       intensity === lvl
-                        ? 'bg-violet-600 text-white shadow-sm'
-                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                        ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-extrabold shadow-sm'
+                        : 'bg-black/60 border border-zinc-800 text-zinc-400 hover:bg-zinc-800 hover:text-white'
                     }`}
                   >
                     {lvl}
@@ -213,20 +213,20 @@ export const ExercisePage: React.FC = () => {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Optional Notes</label>
+            <label className="block text-xs font-semibold text-zinc-300 mb-1">Optional Notes</label>
             <input
               type="text"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="e.g. 15 mins stroll after lunch"
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+              className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-600"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSaving}
-            className="w-full py-3 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-md shadow-violet-600/20 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60"
+            className="w-full py-3 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold rounded-xl text-xs shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-1.5 disabled:opacity-60 cursor-pointer"
           >
             {isSaving ? 'Logging...' : 'Save Activity Entry'}
           </button>
@@ -234,13 +234,13 @@ export const ExercisePage: React.FC = () => {
       </div>
 
       {/* Activity History */}
-      <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-4">
-        <h3 className="text-sm font-bold text-slate-900">Recorded Activity History</h3>
+      <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
+        <h3 className="text-sm font-bold text-white">Recorded Activity History</h3>
 
         {isLoading ? (
-          <div className="py-8 text-center text-xs text-slate-400">Loading exercise logs...</div>
+          <div className="py-8 text-center text-xs text-zinc-500">Loading exercise logs...</div>
         ) : exercises.length === 0 ? (
-          <div className="py-8 text-center text-xs text-slate-400">
+          <div className="py-8 text-center text-xs text-zinc-500">
             No activities logged yet. Record your morning walk or post-meal stroll!
           </div>
         ) : (
@@ -248,11 +248,11 @@ export const ExercisePage: React.FC = () => {
             {exercises.map((ex) => (
               <div
                 key={ex.id}
-                className="p-3.5 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-between"
+                className="p-3.5 rounded-2xl bg-black/60 border border-zinc-800/80 flex items-center justify-between"
               >
                 <div>
-                  <h4 className="text-xs font-bold text-slate-900">{ex.activity_name}</h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5">
+                  <h4 className="text-xs font-bold text-white">{ex.activity_name}</h4>
+                  <p className="text-[11px] text-zinc-400 mt-0.5">
                     {new Date(ex.logged_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
                     {` • ${ex.duration_minutes} mins • ${ex.intensity} intensity`}
                     {ex.notes && ` • "${ex.notes}"`}
@@ -261,13 +261,13 @@ export const ExercisePage: React.FC = () => {
 
                 <div className="flex items-center gap-3">
                   <div className="text-right">
-                    <span className="text-xs font-bold text-violet-700">{Math.round(ex.calories_burned)} kcal</span>
-                    <span className="text-[10px] text-slate-400 block">burned</span>
+                    <span className="text-xs font-bold text-amber-400">{Math.round(ex.calories_burned)} kcal</span>
+                    <span className="text-[10px] text-zinc-500 block">burned</span>
                   </div>
 
                   <button
                     onClick={() => handleDelete(ex.id)}
-                    className="p-1.5 text-slate-300 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                    className="p-1.5 text-zinc-500 hover:text-rose-400 hover:bg-rose-950/40 rounded-lg transition-colors cursor-pointer"
                     title="Delete"
                   >
                     <Trash2 className="w-4 h-4" />

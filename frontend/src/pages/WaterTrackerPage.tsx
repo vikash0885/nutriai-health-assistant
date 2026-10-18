@@ -52,28 +52,28 @@ export const WaterTrackerPage: React.FC = () => {
     <div className="max-w-4xl mx-auto space-y-6 pb-12">
       {/* Title */}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Water Tracker</h1>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Water Tracker</h1>
+        <p className="text-xs sm:text-sm text-zinc-400 mt-1">
           Stay mindfully hydrated to assist gut digestion, nutrient absorption, and cognitive focus.
         </p>
       </div>
 
       {/* Main Hydration Card */}
       {summary && (
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/80 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex flex-col items-center justify-center text-center">
             <ProgressRing
               progress={summary.percentage}
               size={180}
               strokeWidth={16}
-              colorClass="text-sky-500"
-              bgColorClass="text-slate-100"
+              colorClass="text-sky-400"
+              bgColorClass="text-zinc-800"
             >
-              <Droplet className="w-8 h-8 text-sky-500 mb-1" />
-              <span className="text-3xl font-black text-slate-900 leading-none">{summary.total_ml}</span>
-              <span className="text-xs text-slate-400 font-semibold mt-1">/ {summary.target_ml} ml</span>
+              <Droplet className="w-8 h-8 text-sky-400 mb-1" />
+              <span className="text-3xl font-black text-white leading-none">{summary.total_ml}</span>
+              <span className="text-xs text-zinc-500 font-semibold mt-1">/ {summary.target_ml} ml</span>
             </ProgressRing>
-            <span className="text-xs font-bold text-sky-700 bg-sky-50 px-3 py-1 rounded-full mt-4">
+            <span className="text-xs font-bold text-sky-300 bg-sky-950/60 border border-sky-800/50 px-3 py-1 rounded-full mt-4">
               {Math.round(summary.percentage)}% of Daily Target
             </span>
           </div>
@@ -81,8 +81,8 @@ export const WaterTrackerPage: React.FC = () => {
           {/* Quick Actions Panel */}
           <div className="flex-1 w-full space-y-4">
             <div>
-              <h3 className="text-sm font-bold text-slate-900 mb-1">Quick Log Buttons</h3>
-              <p className="text-xs text-slate-400">Tap standard volumes to record instantly</p>
+              <h3 className="text-sm font-bold text-white mb-1">Quick Log Buttons</h3>
+              <p className="text-xs text-zinc-400">Tap standard volumes to record instantly</p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -95,11 +95,11 @@ export const WaterTrackerPage: React.FC = () => {
                 <button
                   key={p.ml}
                   onClick={() => handleAddWater(p.ml)}
-                  className="p-3 rounded-2xl bg-sky-50 hover:bg-sky-100 border border-sky-200/60 text-sky-900 flex flex-col items-center justify-center transition-all group"
+                  className="p-3 rounded-2xl bg-sky-950/40 hover:bg-sky-900/60 border border-sky-800/50 text-sky-200 flex flex-col items-center justify-center transition-all group cursor-pointer"
                 >
-                  <Droplet className="w-5 h-5 text-sky-600 mb-1 group-hover:scale-110 transition-transform" />
+                  <Droplet className="w-5 h-5 text-sky-400 mb-1 group-hover:scale-110 transition-transform" />
                   <span className="text-xs font-bold">+{p.ml} ml</span>
-                  <span className="text-[10px] text-sky-600/80">{p.label}</span>
+                  <span className="text-[10px] text-sky-300/80">{p.label}</span>
                 </button>
               ))}
             </div>
@@ -113,12 +113,12 @@ export const WaterTrackerPage: React.FC = () => {
                 step="50"
                 value={customAmount}
                 onChange={(e) => setCustomAmount(Number(e.target.value) || 250)}
-                className="w-32 p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                className="w-32 p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-600"
                 placeholder="Custom ml"
               />
               <button
                 onClick={() => handleAddWater(customAmount)}
-                className="px-4 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-md shadow-violet-600/20 transition-all flex items-center gap-1.5"
+                className="px-4 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-xs font-extrabold shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center gap-1.5 cursor-pointer"
               >
                 <Plus className="w-4 h-4" /> Add Custom
               </button>
@@ -128,13 +128,13 @@ export const WaterTrackerPage: React.FC = () => {
       )}
 
       {/* History */}
-      <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-4">
-        <h3 className="text-sm font-bold text-slate-900">Today's Hydration Entries</h3>
+      <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
+        <h3 className="text-sm font-bold text-white">Today's Hydration Entries</h3>
 
         {isLoading ? (
-          <div className="py-8 text-center text-xs text-slate-400">Loading water records...</div>
+          <div className="py-8 text-center text-xs text-zinc-500">Loading water records...</div>
         ) : logs.length === 0 ? (
-          <div className="py-8 text-center text-xs text-slate-400">
+          <div className="py-8 text-center text-xs text-zinc-500">
             No water logged yet today. Drink a refreshing glass and tap +250ml!
           </div>
         ) : (
@@ -142,15 +142,15 @@ export const WaterTrackerPage: React.FC = () => {
             {logs.map((log) => (
               <div
                 key={log.id}
-                className="p-3 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-between"
+                className="p-3 rounded-2xl bg-black/60 border border-zinc-800/80 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-sky-100 text-sky-700">
+                  <div className="p-2 rounded-xl bg-sky-950/70 border border-sky-800/60 text-sky-400">
                     <Droplet className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900">{log.amount_ml} ml</h4>
-                    <p className="text-[11px] text-slate-400">
+                    <h4 className="text-xs font-bold text-white">{log.amount_ml} ml</h4>
+                    <p className="text-[11px] text-zinc-400">
                       {new Date(log.logged_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </p>
                   </div>
@@ -158,7 +158,7 @@ export const WaterTrackerPage: React.FC = () => {
 
                 <button
                   onClick={() => handleDelete(log.id)}
-                  className="p-1.5 text-slate-300 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors"
+                  className="p-1.5 text-zinc-500 hover:text-rose-400 hover:bg-rose-950/40 rounded-lg transition-colors cursor-pointer"
                   title="Delete"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -169,8 +169,8 @@ export const WaterTrackerPage: React.FC = () => {
         )}
       </div>
 
-      <div className="p-4 bg-sky-50/60 rounded-2xl border border-sky-100 text-xs text-slate-600 flex items-start gap-2">
-        <Info className="w-4 h-4 text-sky-600 flex-shrink-0 mt-0.5" />
+      <div className="p-4 bg-[#0d0d12] rounded-2xl border border-zinc-800 text-xs text-zinc-400 flex items-start gap-2">
+        <Info className="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" />
         <span>
           Hydration guidance note: Fluid requirements vary by environmental heat, physical exertion,
           and personal physiology. Users with clinically prescribed fluid restrictions (e.g. kidney or heart conditions)

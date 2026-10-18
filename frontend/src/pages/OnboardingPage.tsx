@@ -99,28 +99,31 @@ export const OnboardingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] bg-slate-50 flex items-center justify-center py-12 px-4 sm:px-6">
-      <div className="max-w-xl w-full bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm">
+    <div className="min-h-[calc(100vh-4rem)] bg-[#070709] flex items-center justify-center py-12 px-4 sm:px-6">
+      <div className="max-w-xl w-full bg-[#0d0d12] rounded-3xl p-6 sm:p-10 border border-zinc-800/90 shadow-2xl relative overflow-hidden">
+        {/* Subtle decorative glow */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
+
         {/* Progress Header */}
         <div className="mb-8">
-          <div className="flex items-center justify-between text-xs font-semibold text-slate-500 mb-2">
+          <div className="flex items-center justify-between text-xs font-semibold text-zinc-400 mb-2">
             <span>Step {step} of 3</span>
-            <span>
+            <span className="text-amber-400 font-medium">
               {step === 1 && 'Biometrics & Body'}
               {step === 2 && 'Dietary Culture & Goals'}
               {step === 3 && 'Allergies & Wellness'}
             </span>
           </div>
-          <div className="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+          <div className="w-full bg-zinc-800/80 h-2 rounded-full overflow-hidden">
             <div
-              className="bg-violet-600 h-full transition-all duration-300"
+              className="bg-gradient-to-r from-amber-500 to-yellow-400 h-full transition-all duration-300 shadow-sm shadow-amber-500/30"
               style={{ width: `${(step / 3) * 100}%` }}
             />
           </div>
         </div>
 
         {error && (
-          <div className="mb-6 p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700">
+          <div className="mb-6 p-3.5 rounded-xl bg-rose-950/40 border border-rose-800/60 text-xs text-rose-300">
             {error}
           </div>
         )}
@@ -129,54 +132,54 @@ export const OnboardingPage: React.FC = () => {
         {step === 1 && (
           <div className="space-y-5">
             <div>
-              <h3 className="text-xl font-bold text-slate-900">Tell us a bit about yourself</h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <h3 className="text-xl font-extrabold text-white">Tell us a bit about yourself</h3>
+              <p className="text-xs text-zinc-400 mt-1">
                 Used to calculate your daily basal metabolic rate and safe calorie & protein targets.
               </p>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Display Name</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">Display Name</label>
               <input
                 type="text"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
                 placeholder="Your Name"
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Age</label>
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">Age</label>
                 <input
                   type="number"
                   min={12}
                   max={110}
                   value={age}
                   onChange={(e) => setAge(e.target.value ? Number(e.target.value) : '')}
-                  className="w-full p-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                  className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Gender</label>
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">Gender</label>
                 <select
                   value={gender}
                   onChange={(e) => setGender(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
+                  className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
                 >
-                  <option value="prefer_not_to_say">Prefer not to say</option>
-                  <option value="female">Female</option>
-                  <option value="male">Male</option>
-                  <option value="other">Other</option>
+                  <option value="prefer_not_to_say" className="bg-[#0d0d12]">Prefer not to say</option>
+                  <option value="female" className="bg-[#0d0d12]">Female</option>
+                  <option value="male" className="bg-[#0d0d12]">Male</option>
+                  <option value="other" className="bg-[#0d0d12]">Other</option>
                 </select>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Height (cm)</label>
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">Height (cm)</label>
                 <input
                   type="number"
                   min={100}
@@ -184,12 +187,12 @@ export const OnboardingPage: React.FC = () => {
                   value={heightCm}
                   onChange={(e) => setHeightCm(e.target.value ? Number(e.target.value) : '')}
                   placeholder="e.g. 170"
-                  className="w-full p-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                  className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Weight (kg)</label>
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">Weight (kg)</label>
                 <input
                   type="number"
                   min={30}
@@ -197,23 +200,23 @@ export const OnboardingPage: React.FC = () => {
                   value={weightKg}
                   onChange={(e) => setWeightKg(e.target.value ? Number(e.target.value) : '')}
                   placeholder="e.g. 65"
-                  className="w-full p-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                  className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">Physical Activity Level</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">Physical Activity Level</label>
               <select
                 value={activityLevel}
                 onChange={(e) => setActivityLevel(e.target.value)}
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
+                className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
               >
-                <option value="sedentary">Sedentary (Little or no exercise, desk job)</option>
-                <option value="light">Lightly Active (Light exercise / walking 1-3 days/week)</option>
-                <option value="moderate">Moderately Active (Moderate exercise 3-5 days/week)</option>
-                <option value="active">Active (Heavy exercise / sports 6-7 days/week)</option>
-                <option value="very_active">Very Active (Physical job or twice-a-day training)</option>
+                <option value="sedentary" className="bg-[#0d0d12]">Sedentary (Little or no exercise, desk job)</option>
+                <option value="light" className="bg-[#0d0d12]">Lightly Active (Light exercise / walking 1-3 days/week)</option>
+                <option value="moderate" className="bg-[#0d0d12]">Moderately Active (Moderate exercise 3-5 days/week)</option>
+                <option value="active" className="bg-[#0d0d12]">Active (Heavy exercise / sports 6-7 days/week)</option>
+                <option value="very_active" className="bg-[#0d0d12]">Very Active (Physical job or twice-a-day training)</option>
               </select>
             </div>
           </div>
@@ -223,14 +226,14 @@ export const OnboardingPage: React.FC = () => {
         {step === 2 && (
           <div className="space-y-5">
             <div>
-              <h3 className="text-xl font-bold text-slate-900">Food Culture & Goals</h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <h3 className="text-xl font-extrabold text-white">Food Culture & Goals</h3>
+              <p className="text-xs text-zinc-400 mt-1">
                 Customize your meal recommendations, budgets, and nutritional goals.
               </p>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-2">Dietary Preference</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-2">Dietary Preference</label>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {[
                   { id: 'vegetarian', label: 'Vegetarian' },
@@ -243,10 +246,10 @@ export const OnboardingPage: React.FC = () => {
                     key={item.id}
                     type="button"
                     onClick={() => setDietaryPreference(item.id)}
-                    className={`p-3 rounded-xl border text-xs font-medium text-center transition-all ${
+                    className={`p-3 rounded-xl border text-xs font-medium text-center transition-all cursor-pointer ${
                       dietaryPreference === item.id
-                        ? 'border-violet-600 bg-violet-50 text-violet-800 font-bold ring-1 ring-violet-600'
-                        : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
+                        ? 'border-amber-400 bg-amber-500/10 text-amber-300 font-bold ring-1 ring-amber-400/50'
+                        : 'border-zinc-800/80 bg-black/40 text-zinc-400 hover:text-white hover:bg-zinc-800/40'
                     }`}
                   >
                     {item.label}
@@ -256,7 +259,7 @@ export const OnboardingPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-2">Primary Fitness Goal</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-2">Primary Fitness Goal</label>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {[
                   { id: 'general_wellness', label: 'General Wellness & Energy' },
@@ -269,10 +272,10 @@ export const OnboardingPage: React.FC = () => {
                     key={item.id}
                     type="button"
                     onClick={() => setFitnessGoal(item.id)}
-                    className={`p-3 rounded-xl border text-xs font-medium text-left transition-all ${
+                    className={`p-3 rounded-xl border text-xs font-medium text-left transition-all cursor-pointer ${
                       fitnessGoal === item.id
-                        ? 'border-violet-600 bg-violet-50 text-violet-800 font-bold ring-1 ring-violet-600'
-                        : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-50'
+                        ? 'border-amber-400 bg-amber-500/10 text-amber-300 font-bold ring-1 ring-amber-400/50'
+                        : 'border-zinc-800/80 bg-black/40 text-zinc-400 hover:text-white hover:bg-zinc-800/40'
                     }`}
                   >
                     {item.label}
@@ -283,7 +286,7 @@ export const OnboardingPage: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">
                   Daily Food Budget (₹ INR)
                 </label>
                 <input
@@ -293,20 +296,20 @@ export const OnboardingPage: React.FC = () => {
                   value={dailyBudget}
                   onChange={(e) => setDailyBudget(e.target.value ? Number(e.target.value) : '')}
                   placeholder="e.g. 250"
-                  className="w-full p-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                  className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white placeholder:text-zinc-600 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 mb-1">Preferred Language</label>
+                <label className="block text-xs font-semibold text-zinc-300 mb-1">Preferred Language</label>
                 <select
                   value={language}
                   onChange={(e) => setLanguage(e.target.value)}
-                  className="w-full p-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500 bg-white"
+                  className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
                 >
-                  <option value="en">English</option>
-                  <option value="hi">हिन्दी (Hindi)</option>
-                  <option value="hinglish">Hinglish</option>
+                  <option value="en" className="bg-[#0d0d12]">English</option>
+                  <option value="hi" className="bg-[#0d0d12]">हिन्दी (Hindi)</option>
+                  <option value="hinglish" className="bg-[#0d0d12]">Hinglish</option>
                 </select>
               </div>
             </div>
@@ -317,14 +320,14 @@ export const OnboardingPage: React.FC = () => {
         {step === 3 && (
           <div className="space-y-5">
             <div>
-              <h3 className="text-xl font-bold text-slate-900">Allergies & Sensitivities</h3>
-              <p className="text-xs text-slate-500 mt-1">
+              <h3 className="text-xl font-extrabold text-white">Allergies & Sensitivities</h3>
+              <p className="text-xs text-zinc-400 mt-1">
                 SehatSense AI's meal planner will NEVER suggest items conflicting with your marked allergies.
               </p>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-2">Known Food Allergies</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-2">Known Food Allergies</label>
               <div className="flex flex-wrap gap-2">
                 {allergyOptions.map((item) => {
                   const active = allergies.includes(item);
@@ -333,10 +336,10 @@ export const OnboardingPage: React.FC = () => {
                       key={item}
                       type="button"
                       onClick={() => toggleAllergy(item)}
-                      className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                      className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${
                         active
-                          ? 'border-rose-500 bg-rose-50 text-rose-700 font-bold'
-                          : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
+                          ? 'border-rose-500/80 bg-rose-950/40 text-rose-300 font-bold'
+                          : 'border-zinc-800 bg-black/40 text-zinc-400 hover:text-white hover:bg-zinc-800/40'
                       }`}
                     >
                       {active ? `✓ ${item}` : item}
@@ -347,7 +350,7 @@ export const OnboardingPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-2">Dietary Restrictions</label>
+              <label className="block text-xs font-semibold text-zinc-300 mb-2">Dietary Restrictions</label>
               <div className="flex flex-wrap gap-2">
                 {restrictionOptions.map((item) => {
                   const active = restrictions.includes(item);
@@ -356,10 +359,10 @@ export const OnboardingPage: React.FC = () => {
                       key={item}
                       type="button"
                       onClick={() => toggleRestriction(item)}
-                      className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                      className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all cursor-pointer ${
                         active
-                          ? 'border-violet-600 bg-violet-50 text-violet-800 font-bold'
-                          : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'
+                          ? 'border-amber-500/80 bg-amber-950/40 text-amber-300 font-bold'
+                          : 'border-zinc-800 bg-black/40 text-zinc-400 hover:text-white hover:bg-zinc-800/40'
                       }`}
                     >
                       {active ? `✓ ${item}` : item}
@@ -370,7 +373,7 @@ export const OnboardingPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold text-slate-700 mb-1">
+              <label className="block text-xs font-semibold text-zinc-300 mb-1">
                 Optional Health Considerations (Confidential)
               </label>
               <textarea
@@ -378,19 +381,19 @@ export const OnboardingPage: React.FC = () => {
                 value={healthNotes}
                 onChange={(e) => setHealthNotes(e.target.value)}
                 placeholder="e.g. Mild acid reflux after oily food, preparing for a marathon, fluid restriction, etc."
-                className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+                className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white placeholder:text-zinc-600 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
               />
             </div>
           </div>
         )}
 
         {/* Navigation Buttons */}
-        <div className="flex items-center justify-between mt-8 pt-6 border-t border-slate-100">
+        <div className="flex items-center justify-between mt-8 pt-6 border-t border-zinc-800/80">
           {step > 1 ? (
             <button
               type="button"
               onClick={() => setStep(step - 1)}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 px-4 py-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-400 hover:text-white px-4 py-2.5 rounded-xl border border-zinc-800 hover:bg-zinc-800/50 transition-colors cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4" /> Back
             </button>
@@ -402,7 +405,7 @@ export const OnboardingPage: React.FC = () => {
             <button
               type="button"
               onClick={() => setStep(step + 1)}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-violet-600 hover:bg-violet-700 px-6 py-2.5 rounded-xl shadow-md shadow-violet-600/20 transition-all"
+              className="inline-flex items-center gap-1.5 text-xs font-extrabold text-black bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 px-6 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 gold-box-glow transition-all cursor-pointer"
             >
               Next Step <ArrowRight className="w-4 h-4" />
             </button>
@@ -411,10 +414,10 @@ export const OnboardingPage: React.FC = () => {
               type="button"
               disabled={isLoading}
               onClick={handleFinish}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-white bg-violet-600 hover:bg-violet-700 px-6 py-2.5 rounded-xl shadow-md shadow-violet-600/20 transition-all disabled:opacity-60"
+              className="inline-flex items-center gap-1.5 text-xs font-extrabold text-black bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 px-6 py-2.5 rounded-xl shadow-lg shadow-amber-500/20 gold-box-glow transition-all disabled:opacity-60 cursor-pointer"
             >
               {isLoading ? (
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
               ) : (
                 <>
                   <span>Complete Setup</span>

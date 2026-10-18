@@ -100,38 +100,38 @@ export const MealPlannerPage: React.FC = () => {
       {/* Title */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Smart AI Meal Planner</h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Smart AI Meal Planner</h1>
+          <p className="text-xs sm:text-sm text-zinc-400 mt-0.5">
             Balanced Indian & global meal ideas tailored to your budget, allergies, and calorie goals.
           </p>
         </div>
 
         <Link
           to="/grocery-list"
-          className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 font-semibold px-4 py-2 rounded-2xl border border-slate-200 text-xs shadow-sm transition-all self-start sm:self-auto"
+          className="inline-flex items-center gap-2 bg-[#0d0d12] hover:bg-zinc-800 text-zinc-300 font-semibold px-4 py-2 rounded-2xl border border-zinc-800 text-xs shadow-sm transition-all self-start sm:self-auto cursor-pointer"
         >
-          <ShoppingCart className="w-4 h-4 text-violet-600" />
+          <ShoppingCart className="w-4 h-4 text-amber-400" />
           <span>View Grocery List</span>
         </Link>
       </div>
 
       {actionSuccess && (
-        <div className="p-4 rounded-2xl bg-green-50 border border-green-200 text-xs text-green-800 flex items-center gap-2">
-          <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+        <div className="p-4 rounded-2xl bg-emerald-950/40 border border-emerald-800 text-xs text-emerald-300 flex items-center gap-2">
+          <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
           <span className="font-semibold">{actionSuccess}</span>
         </div>
       )}
 
       {/* Generator Control Card */}
-      <div className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm space-y-4">
+      <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-xl bg-violet-50 text-violet-700">
+            <div className="p-2 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-400">
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-slate-900">Configure AI Meal Generator</h3>
-              <p className="text-xs text-slate-400">
+              <h3 className="text-sm font-bold text-white">Configure AI Meal Generator</h3>
+              <p className="text-xs text-zinc-400">
                 Adhering to: {profile?.dietary_preference || 'Vegetarian'} • Target: ~{profile?.daily_calorie_target || 2000} kcal
               </p>
             </div>
@@ -140,11 +140,11 @@ export const MealPlannerPage: React.FC = () => {
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-bold px-5 py-2.5 rounded-2xl text-xs shadow-md shadow-violet-600/20 transition-all disabled:opacity-60"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold px-5 py-2.5 rounded-2xl text-xs shadow-lg shadow-amber-500/20 gold-box-glow transition-all disabled:opacity-60 cursor-pointer"
           >
             {isGenerating ? (
               <>
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                 <span>Designing Your Meal Plan...</span>
               </>
             ) : (
@@ -156,21 +156,21 @@ export const MealPlannerPage: React.FC = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-slate-100">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-zinc-800">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-zinc-300 mb-1">
               Daily Grocery Budget (₹ INR)
             </label>
             <input
               type="number"
               value={budget}
               onChange={(e) => setBudget(Number(e.target.value) || 250)}
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+              className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-zinc-300 mb-1">
               Custom Requests / Preferences
             </label>
             <input
@@ -178,7 +178,7 @@ export const MealPlannerPage: React.FC = () => {
               value={customRequest}
               onChange={(e) => setCustomRequest(e.target.value)}
               placeholder="e.g. Include high-protein breakfast like besan chilla, light dinner"
-              className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-500"
+              className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-600"
             />
           </div>
         </div>
@@ -188,20 +188,20 @@ export const MealPlannerPage: React.FC = () => {
       {currentPlan ? (
         <div className="space-y-6">
           {/* Plan Header Strip */}
-          <div className="bg-gradient-to-r from-[#172554] via-blue-950 to-violet-950 text-white rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 border border-violet-900/40">
+          <div className="bg-[#0c0c10] text-white rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-amber-500/30">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-violet-400 text-xs font-semibold mb-1">
+              <div className="inline-flex items-center gap-1.5 text-amber-400 text-xs font-semibold mb-1">
                 <ChefHat className="w-4 h-4" /> Recommended Menu
               </div>
-              <h2 className="text-xl sm:text-2xl font-bold">{currentPlan.title}</h2>
-              {currentPlan.notes && <p className="text-xs text-slate-300 mt-1">{currentPlan.notes}</p>}
+              <h2 className="text-xl sm:text-2xl font-extrabold text-white">{currentPlan.title}</h2>
+              {currentPlan.notes && <p className="text-xs text-zinc-400 mt-1">{currentPlan.notes}</p>}
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
               <button
                 onClick={handleAddToDiary}
                 disabled={isAddingToDiary}
-                className="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-500 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-sm disabled:opacity-60"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-md disabled:opacity-60 cursor-pointer"
               >
                 <PlusCircle className="w-4 h-4" />
                 <span>{isAddingToDiary ? 'Logging...' : 'Add Plan to Diary'}</span>
@@ -210,9 +210,9 @@ export const MealPlannerPage: React.FC = () => {
               <button
                 onClick={handleCreateGrocery}
                 disabled={isBuildingGrocery}
-                className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold px-4 py-2.5 rounded-xl text-xs transition-colors border border-slate-700 disabled:opacity-60"
+                className="inline-flex items-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-bold px-4 py-2.5 rounded-xl text-xs transition-colors border border-zinc-700 disabled:opacity-60 cursor-pointer"
               >
-                <ShoppingCart className="w-4 h-4" />
+                <ShoppingCart className="w-4 h-4 text-amber-400" />
                 <span>{isBuildingGrocery ? 'Creating...' : 'Generate Grocery List'}</span>
               </button>
             </div>
@@ -223,41 +223,41 @@ export const MealPlannerPage: React.FC = () => {
             {currentPlan.items.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-3xl p-6 border border-slate-200/80 shadow-sm flex flex-col justify-between space-y-4 hover:border-violet-200 transition-all"
+                className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl flex flex-col justify-between space-y-4 hover:border-amber-500/40 transition-all"
               >
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-violet-700 bg-violet-50 px-2.5 py-1 rounded-full border border-violet-100">
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-300 bg-amber-950/60 px-2.5 py-1 rounded-full border border-amber-800/50">
                       {item.meal_category}
                     </span>
-                    <span className="text-xs font-black text-slate-900">
+                    <span className="text-xs font-black text-white">
                       {Math.round(item.estimated_calories)} kcal
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-slate-900 mt-1">{item.food_name}</h3>
-                  <p className="text-xs text-slate-500 mt-0.5">Portion: {item.portion_description}</p>
+                  <h3 className="text-base font-bold text-white mt-1">{item.food_name}</h3>
+                  <p className="text-xs text-zinc-400 mt-0.5">Portion: {item.portion_description}</p>
 
                   {/* Nutrients preview */}
-                  <div className="grid grid-cols-3 gap-2 bg-slate-50 p-2.5 rounded-xl text-center text-xs font-semibold text-slate-700 my-3">
+                  <div className="grid grid-cols-3 gap-2 bg-black/60 border border-zinc-800 p-2.5 rounded-xl text-center text-xs font-semibold text-zinc-300 my-3">
                     <div>
-                      <span className="text-[10px] text-slate-400 block">Protein</span>
-                      <span className="text-violet-700 font-bold">{item.protein_g}g</span>
+                      <span className="text-[10px] text-zinc-500 block">Protein</span>
+                      <span className="text-amber-400 font-bold">{item.protein_g}g</span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-slate-400 block">Carbs</span>
-                      {item.carbs_g}g
+                      <span className="text-[10px] text-zinc-500 block">Carbs</span>
+                      <span className="text-white font-semibold">{item.carbs_g}g</span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-slate-400 block">Fat</span>
-                      {item.fat_g}g
+                      <span className="text-[10px] text-zinc-500 block">Fat</span>
+                      <span className="text-white font-semibold">{item.fat_g}g</span>
                     </div>
                   </div>
 
                   {/* Recipe / Instructions */}
                   {item.recipe_instructions && (
-                    <div className="text-xs text-slate-600 bg-amber-50/50 p-3 rounded-xl border border-amber-100">
-                      <span className="font-bold text-amber-900 block mb-0.5">Quick Preparation:</span>
+                    <div className="text-xs text-zinc-300 bg-amber-950/20 p-3 rounded-xl border border-amber-900/30">
+                      <span className="font-bold text-amber-300 block mb-0.5">Quick Preparation:</span>
                       {item.recipe_instructions}
                     </div>
                   )}
@@ -265,13 +265,13 @@ export const MealPlannerPage: React.FC = () => {
 
                 {/* Ingredients chips */}
                 {item.ingredients && item.ingredients.length > 0 && (
-                  <div className="pt-2 border-t border-slate-100">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1.5">
+                  <div className="pt-2 border-t border-zinc-800">
+                    <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider block mb-1.5">
                       Key Ingredients:
                     </span>
                     <div className="flex flex-wrap gap-1.5">
                       {item.ingredients.map((ing, i) => (
-                        <span key={i} className="text-[11px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-lg">
+                        <span key={i} className="text-[11px] bg-black/60 border border-zinc-800 text-zinc-300 px-2 py-0.5 rounded-lg">
                           {ing}
                         </span>
                       ))}
@@ -283,16 +283,16 @@ export const MealPlannerPage: React.FC = () => {
           </div>
         </div>
       ) : (
-        <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-sm max-w-md mx-auto">
-          <CalendarCheck2 className="w-12 h-12 text-violet-600 mx-auto mb-3" />
-          <h3 className="text-base font-bold text-slate-900 mb-1">No Active Meal Plan</h3>
-          <p className="text-xs text-slate-500 mb-6">
+        <div className="bg-[#0d0d12] rounded-3xl p-12 text-center border border-zinc-800/90 shadow-xl max-w-md mx-auto">
+          <CalendarCheck2 className="w-12 h-12 text-amber-400 mx-auto mb-3" />
+          <h3 className="text-base font-bold text-white mb-1">No Active Meal Plan</h3>
+          <p className="text-xs text-zinc-400 mb-6">
             Click 'Generate New Daily Plan' above to create a culturally aligned, nutrient-balanced menu with SehatSense AI.
           </p>
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="px-6 py-2.5 bg-violet-600 hover:bg-violet-700 text-white rounded-xl text-xs font-bold shadow-sm transition-all"
+            className="px-6 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-xs font-extrabold shadow-lg shadow-amber-500/20 gold-box-glow transition-all cursor-pointer"
           >
             Create My Plan Now
           </button>
