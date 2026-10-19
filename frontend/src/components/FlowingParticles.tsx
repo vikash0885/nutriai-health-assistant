@@ -23,7 +23,7 @@ interface FlowingParticlesProps {
 export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
   count = 160,
   className = '',
-  connectLines = false,
+  connectLines = true,
   fixed = false,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -110,17 +110,19 @@ export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
     const animate = () => {
       ctx.clearRect(0, 0, cssWidth, cssHeight);
 
-      // Optional subtle constellation lines if enabled
+      // Radiant golden chain links between nearby floating dots
       if (connectLines) {
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 90) {
-              const lineAlpha = (1 - dist / 90) * 0.12;
+            if (dist < 115) {
+              const proximity = 1 - dist / 115;
+              const avgAlpha = (particles[i].alpha + particles[j].alpha) * 0.5;
+              const lineAlpha = proximity * 0.22 * avgAlpha;
               ctx.strokeStyle = `rgba(245, 158, 11, ${lineAlpha})`;
-              ctx.lineWidth = 0.5;
+              ctx.lineWidth = 0.75;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
