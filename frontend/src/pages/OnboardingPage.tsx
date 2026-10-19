@@ -99,7 +99,7 @@ export const OnboardingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-4rem)] bg-[#070709] flex items-center justify-center py-12 px-4 sm:px-6">
+    <div className="min-h-[calc(100vh-4rem)] bg-transparent flex items-center justify-center py-12 px-4 sm:px-6">
       <div className="max-w-xl w-full bg-[#0d0d12] rounded-3xl p-6 sm:p-10 border border-zinc-800/90 shadow-2xl relative overflow-hidden">
         {/* Subtle decorative glow */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
