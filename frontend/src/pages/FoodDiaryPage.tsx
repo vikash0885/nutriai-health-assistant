@@ -81,7 +81,7 @@ export const FoodDiaryPage: React.FC = () => {
   });
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 pb-12">
+    <div className="w-full space-y-6 pb-12">
       {/* Header & Date Navigator */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -157,7 +157,7 @@ export const FoodDiaryPage: React.FC = () => {
       {isLoading ? (
         <div className="py-12 text-center text-xs text-zinc-500">Loading meals...</div>
       ) : (
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           {mealCategories.map((category) => {
             const catEntries = entries.filter((e) => e.meal_category.toLowerCase() === category);
             const catTotalCal = catEntries.reduce((sum, e) => sum + e.calories, 0);

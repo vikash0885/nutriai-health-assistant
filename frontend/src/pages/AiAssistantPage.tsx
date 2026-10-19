@@ -94,7 +94,7 @@ export const AiAssistantPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-4 pb-12 flex flex-col h-[calc(100vh-8rem)]">
+    <div className="w-full space-y-4 pb-12 flex flex-col h-[calc(100vh-8rem)]">
       {/* Title & Banner */}
       <div className="flex items-center justify-between pb-2 border-b border-zinc-800">
         <div>

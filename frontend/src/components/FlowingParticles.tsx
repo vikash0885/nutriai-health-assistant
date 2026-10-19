@@ -20,7 +20,7 @@ interface FlowingParticlesProps {
 }
 
 export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
-  count = 70,
+  count = 140,
   className = '',
   connectLines = true,
   fixed = false,
@@ -52,27 +52,30 @@ export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
     window.addEventListener('resize', updateDimensions);
 
     const colors = [
-      '245, 158, 11',  // radiant amber
-      '251, 191, 36',  // golden yellow
-      '253, 224, 71',  // bright gold
-      '255, 255, 255', // starlight white
+      '245, 158, 11',  // Radiant amber
+      '251, 191, 36',  // Glowing gold
+      '253, 224, 71',  // Bright sunlight
+      '250, 204, 21',  // Electric gold
+      '255, 255, 255', // Crisp starlight white
     ];
 
-    const particles: Particle[] = [];
-    const particleCount = count || Math.min(85, Math.floor((width * height) / 11000));
+    // Compute dynamic density based on screen resolution: ~1 particle per 8,000 px^2 on desktop
+    const area = width * height;
+    const targetCount = Math.max(count, Math.min(260, Math.floor(area / 8000)));
 
-    for (let i = 0; i < particleCount; i++) {
+    const particles: Particle[] = [];
+    for (let i = 0; i < targetCount; i++) {
       const color = colors[Math.floor(Math.random() * colors.length)];
-      const maxAlpha = Math.random() * 0.45 + 0.35;
+      const maxAlpha = Math.random() * 0.5 + 0.4; // 0.4 to 0.9
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 2.2 + 1.1,
-        speedX: (Math.random() - 0.5) * 0.45,
-        speedY: -Math.random() * 0.5 - 0.18, // gently flow upwards
+        size: Math.random() * 2.4 + 1.2, // 1.2px to 3.6px
+        speedX: (Math.random() - 0.5) * 0.5,
+        speedY: -Math.random() * 0.55 - 0.2, // smoothly float upwards
         color,
         alpha: Math.random() * maxAlpha,
-        pulseSpeed: (Math.random() * 0.012 + 0.006) * (Math.random() > 0.5 ? 1 : -1),
+        pulseSpeed: (Math.random() * 0.015 + 0.006) * (Math.random() > 0.5 ? 1 : -1),
         maxAlpha,
       });
     }
@@ -80,17 +83,17 @@ export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Subtle constellation lines between nearby floating dots
+      // Subtle golden constellation lines between nearby floating dots
       if (connectLines) {
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 90) {
-              const lineAlpha = (1 - dist / 90) * 0.12;
+            if (dist < 105) {
+              const lineAlpha = (1 - dist / 105) * 0.16;
               ctx.strokeStyle = `rgba(245, 158, 11, ${lineAlpha})`;
-              ctx.lineWidth = 0.55;
+              ctx.lineWidth = 0.65;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
@@ -100,41 +103,45 @@ export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
         }
       }
 
-      // Draw and move floating glowing dots
+      // Draw and move floating glowing dots across the entire screen
       for (const p of particles) {
         p.x += p.speedX;
         p.y += p.speedY;
 
+        // Smooth breathing pulse
         p.alpha += p.pulseSpeed;
         if (p.alpha > p.maxAlpha) {
           p.alpha = p.maxAlpha;
           p.pulseSpeed = -Math.abs(p.pulseSpeed);
-        } else if (p.alpha < 0.1) {
-          p.alpha = 0.1;
+        } else if (p.alpha < 0.15) {
+          p.alpha = 0.15;
           p.pulseSpeed = Math.abs(p.pulseSpeed);
         }
 
-        // Loop boundaries smoothly
-        if (p.y < -12) {
-          p.y = height + 10;
+        // Loop boundaries smoothly from all sides
+        if (p.y < -15) {
+          p.y = height + 15;
           p.x = Math.random() * width;
-        } else if (p.y > height + 12) {
-          p.y = -10;
+        } else if (p.y > height + 15) {
+          p.y = -15;
+          p.x = Math.random() * width;
         }
 
-        if (p.x < -12) {
-          p.x = width + 10;
-        } else if (p.x > width + 12) {
-          p.x = -10;
+        if (p.x < -15) {
+          p.x = width + 15;
+          p.y = Math.random() * height;
+        } else if (p.x > width + 15) {
+          p.x = -15;
+          p.y = Math.random() * height;
         }
 
-        // Render dot with radiant bloom
+        // Render dot with rich radiant bloom
         ctx.save();
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
-        ctx.shadowBlur = 9;
-        ctx.shadowColor = `rgba(${p.color}, 0.8)`;
+        ctx.shadowBlur = 12;
+        ctx.shadowColor = `rgba(${p.color}, 0.9)`;
         ctx.fill();
         ctx.restore();
       }

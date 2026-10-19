@@ -27,8 +27,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
   };
 
   return (
-    <header className="sticky top-0 z-40 bg-[#070709]/95 backdrop-blur-md border-b border-zinc-800/80 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-40 bg-[#070709]/95 backdrop-blur-md border-b border-zinc-800/80 text-white w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Left: Mobile Toggle & Logo */}
         <div className="flex items-center gap-3">
           {isAuthenticated && (

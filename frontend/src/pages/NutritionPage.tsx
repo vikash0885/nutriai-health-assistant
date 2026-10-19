@@ -52,7 +52,7 @@ export const NutritionPage: React.FC = () => {
   }
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6 pb-12">
+    <div className="w-full space-y-6 pb-12">
       {/* Title */}
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Nutrition Analysis</h1>

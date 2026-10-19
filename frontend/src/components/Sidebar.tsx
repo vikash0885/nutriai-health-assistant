@@ -52,7 +52,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
 
       {/* Sidebar container */}
       <aside
-        className={`fixed lg:sticky top-16 z-40 h-[calc(100vh-4rem)] w-64 bg-[#070709] border-r border-zinc-800/80 overflow-y-auto transition-transform duration-300 ease-in-out ${
+        className={`fixed lg:sticky top-16 z-40 h-[calc(100vh-4rem)] w-64 flex-shrink-0 bg-[#070709] border-r border-zinc-800/80 overflow-y-auto transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >

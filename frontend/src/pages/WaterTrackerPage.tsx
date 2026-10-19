@@ -49,7 +49,7 @@ export const WaterTrackerPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6 pb-12">
+    <div className="w-full space-y-6 pb-12">
       {/* Title */}
       <div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Water Tracker</h1>

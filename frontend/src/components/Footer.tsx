@@ -3,8 +3,8 @@ import { ShieldCheck, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#070709] border-t border-zinc-800/80 mt-auto py-8 text-zinc-400">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs space-y-3">
+    <footer className="bg-[#070709] border-t border-zinc-800/80 mt-auto py-8 text-zinc-400 w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 text-center text-xs space-y-3">
         <div className="flex flex-wrap items-center justify-center gap-6 font-medium text-zinc-300">
           <div className="flex items-center gap-2">
             <img src="/images/sehatsense-logo-icon.png" alt="SehatSense AI" className="h-6 w-auto object-contain" />
