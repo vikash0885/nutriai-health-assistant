@@ -109,31 +109,41 @@ export const ExercisePage: React.FC = () => {
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {recommendations.map((routine, idx) => (
-            <div
-              key={idx}
-              onClick={() => handleSelectRoutine(routine)}
-              className="bg-gradient-to-br from-[#1a1205]/95 via-[#110a02]/95 to-[#070401] rounded-3xl p-5 border border-amber-500/30 hover:border-amber-500/60 shadow-xl cursor-pointer transition-all space-y-2 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-1">
-                  <h4 className="text-sm font-bold text-white">{routine.title}</h4>
-                  <span className="text-xs font-bold bg-amber-950/60 border border-amber-800/50 text-amber-300 px-2.5 py-0.5 rounded-full capitalize">
-                    {routine.intensity}
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-2">{routine.benefits}</p>
-                <div className="text-xs text-amber-200 bg-amber-950/30 p-2.5 rounded-xl border border-amber-900/40">
-                  ⚠️ {routine.safety_notes}
-                </div>
-              </div>
+          {recommendations.map((routine, idx) => {
+            const intLower = routine.intensity.toLowerCase();
+            const theme =
+              intLower === 'high'
+                ? { bg: 'from-[#2d0a0a]/95 via-[#1a0404]/95 to-[#0c0101]', border: 'border-red-500/40 hover:border-red-400/80', badge: 'bg-red-950/70 border-red-800/60 text-red-300', safety: 'bg-red-950/30 border-red-900/40 text-red-200' }
+                : intLower === 'moderate'
+                ? { bg: 'from-[#052618]/95 via-[#03170e]/95 to-[#010b06]', border: 'border-emerald-500/40 hover:border-emerald-400/80', badge: 'bg-emerald-950/70 border-emerald-800/60 text-emerald-300', safety: 'bg-emerald-950/30 border-emerald-900/40 text-emerald-200' }
+                : { bg: 'from-[#061c32]/95 via-[#031120]/95 to-[#01070e]', border: 'border-sky-500/40 hover:border-sky-400/80', badge: 'bg-sky-950/70 border-sky-800/60 text-sky-300', safety: 'bg-sky-950/30 border-sky-900/40 text-sky-200' };
 
-              <div className="flex items-center justify-between pt-2 border-t border-zinc-800 text-sm text-zinc-300 font-medium">
-                <span>⏱️ {routine.duration_minutes} mins</span>
-                <span className="text-amber-400 font-bold">~{Math.round(routine.estimated_calories)} kcal</span>
+            return (
+              <div
+                key={idx}
+                onClick={() => handleSelectRoutine(routine)}
+                className={`bg-gradient-to-br ${theme.bg} rounded-3xl p-5 border ${theme.border} shadow-2xl cursor-pointer transition-all space-y-2 flex flex-col justify-between`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <h4 className="text-sm font-bold text-white">{routine.title}</h4>
+                    <span className={`text-xs font-black border px-2.5 py-0.5 rounded-full capitalize ${theme.badge}`}>
+                      {routine.intensity}
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-2">{routine.benefits}</p>
+                  <div className={`text-xs p-2.5 rounded-xl border ${theme.safety}`}>
+                    ⚠️ {routine.safety_notes}
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between pt-2 border-t border-white/10 text-sm text-zinc-300 font-medium">
+                  <span>⏱️ {routine.duration_minutes} mins</span>
+                  <span className="text-amber-400 font-bold">~{Math.round(routine.estimated_calories)} kcal</span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
@@ -233,9 +243,12 @@ export const ExercisePage: React.FC = () => {
         </form>
       </div>
 
-      {/* Activity History */}
-      <div className="bg-gradient-to-br from-[#1a1205]/95 via-[#110a02]/95 to-[#070401] rounded-3xl p-6 border border-amber-500/30 shadow-xl space-y-4">
-        <h3 className="text-sm font-bold text-white">Recorded Activity History</h3>
+      {/* Activity History - Deep Indigo Sapphire */}
+      <div className="bg-gradient-to-br from-[#091536]/90 via-[#050e24]/95 to-[#020512] rounded-3xl p-6 border border-indigo-500/40 shadow-2xl space-y-4">
+        <h3 className="text-sm font-bold text-white flex items-center gap-2">
+          <Dumbbell className="w-4 h-4 text-indigo-400" />
+          <span>Recorded Activity History</span>
+        </h3>
 
         {isLoading ? (
           <div className="py-8 text-center text-xs text-zinc-500">Loading exercise logs...</div>
@@ -248,7 +261,7 @@ export const ExercisePage: React.FC = () => {
             {exercises.map((ex) => (
               <div
                 key={ex.id}
-                className="p-3.5 rounded-2xl bg-[#140c03]/80 border border-amber-900/40 hover:border-amber-500/40 transition-colors flex items-center justify-between"
+                className="p-3.5 rounded-2xl bg-[#08112b]/80 border border-indigo-900/50 hover:border-indigo-500/50 transition-colors flex items-center justify-between"
               >
                 <div>
                   <h4 className="text-sm font-bold text-white">{ex.activity_name}</h4>

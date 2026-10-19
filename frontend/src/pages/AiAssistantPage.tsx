@@ -113,8 +113,8 @@ export const AiAssistantPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Chat Messages Container */}
-      <div className="flex-1 bg-gradient-to-br from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] rounded-3xl p-4 sm:p-6 border border-amber-500/40 shadow-2xl overflow-y-auto space-y-4">
+      {/* Chat Messages Container - Royal Purple AI Theme */}
+      <div className="flex-1 bg-gradient-to-br from-[#1a082e]/95 via-[#10041b]/95 to-[#08020e] rounded-3xl p-4 sm:p-6 border border-purple-500/40 shadow-2xl overflow-y-auto space-y-4">
         {messages.map((m, idx) => (
           <div
             key={idx}
@@ -127,7 +127,7 @@ export const AiAssistantPage: React.FC = () => {
               className={`w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold ${
                 m.role === 'user'
                   ? 'bg-gradient-to-tr from-amber-500 to-yellow-400 text-black shadow-sm'
-                  : 'bg-amber-950/70 text-amber-300 border border-amber-800/60'
+                  : 'bg-purple-950/70 text-purple-300 border border-purple-800/60'
               }`}
             >
               {m.role === 'user' ? <User className="w-4.5 h-4.5" /> : <Bot className="w-4.5 h-4.5" />}
@@ -138,7 +138,7 @@ export const AiAssistantPage: React.FC = () => {
               className={`max-w-[80%] rounded-2xl p-4 text-sm leading-relaxed ${
                 m.role === 'user'
                   ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-semibold shadow-md rounded-tr-none'
-                  : 'bg-black/60 text-zinc-200 border border-zinc-800/80 rounded-tl-none space-y-2'
+                  : 'bg-[#160624]/80 text-purple-100 border border-purple-800/60 rounded-tl-none space-y-2'
               }`}
             >
               <div className="whitespace-pre-wrap">{m.content}</div>
@@ -201,20 +201,20 @@ export const AiAssistantPage: React.FC = () => {
           e.preventDefault();
           handleSend();
         }}
-        className="flex items-center gap-2 bg-gradient-to-r from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] p-2 rounded-2xl border border-amber-500/40 shadow-xl focus-within:ring-2 focus-within:ring-amber-500/30 focus-within:border-amber-400"
+        className="flex items-center gap-2 bg-gradient-to-r from-[#160626]/95 via-[#0e0319]/95 to-[#07010d] p-2 rounded-2xl border border-purple-500/40 shadow-xl focus-within:ring-2 focus-within:ring-purple-500/30 focus-within:border-purple-400"
       >
         <input
           type="text"
           value={inputMsg}
           onChange={(e) => setInputMsg(e.target.value)}
           placeholder="Type your question in English, Hindi, or Hinglish..."
-          className="flex-1 px-4 py-2.5 text-xs sm:text-sm bg-transparent text-white placeholder:text-zinc-600 focus:outline-none"
+          className="flex-1 px-4 py-2.5 text-xs sm:text-sm bg-transparent text-white placeholder:text-zinc-500 focus:outline-none"
         />
 
         <button
           type="submit"
           disabled={isLoading || !inputMsg.trim()}
-          className="p-3 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold rounded-xl transition-all shadow-lg shadow-amber-500/20 gold-box-glow disabled:opacity-50 cursor-pointer"
+          className="p-3 bg-gradient-to-r from-purple-500 via-fuchsia-500 to-purple-500 hover:from-purple-400 hover:to-fuchsia-400 text-white font-extrabold rounded-xl transition-all shadow-lg shadow-purple-500/20 disabled:opacity-50 cursor-pointer"
         >
           <Send className="w-4 h-4" />
         </button>

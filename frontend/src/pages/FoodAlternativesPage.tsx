@@ -54,30 +54,30 @@ export const FoodAlternativesPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Search & Suggestions */}
-      <div className="bg-gradient-to-br from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] rounded-3xl p-6 border border-amber-500/40 shadow-2xl space-y-4">
+      {/* Search & Suggestions - Royal Purple AI Theme */}
+      <div className="bg-gradient-to-br from-[#1f0933]/90 via-[#130522]/95 to-[#090210] rounded-3xl p-6 border border-purple-500/40 shadow-2xl space-y-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
-            <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-purple-300 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={foodQuery}
               onChange={(e) => setFoodQuery(e.target.value)}
               placeholder="Enter any meal or snack (e.g. Samosa, White Rice, Puri Bhaji)..."
-              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-600"
+              className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/60 border border-purple-500/30 text-xs focus:outline-none focus:ring-2 focus:ring-purple-500/20 focus:border-purple-400 text-white placeholder:text-zinc-500"
             />
           </div>
 
           <button
             onClick={() => handleFetchAlternatives(foodQuery)}
             disabled={isLoading || !foodQuery.trim()}
-            className="px-6 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-xs font-extrabold shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-1.5 disabled:opacity-60 cursor-pointer"
+            className="px-6 py-2.5 bg-gradient-to-r from-purple-500 via-fuchsia-500 to-purple-500 hover:from-purple-400 hover:to-fuchsia-400 text-white rounded-xl text-xs font-black shadow-lg shadow-purple-500/20 transition-all flex items-center justify-center gap-1.5 disabled:opacity-60 cursor-pointer"
           >
             {isLoading ? (
-              <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
             ) : (
               <>
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 text-purple-200" />
                 <span>Find Smart Swaps</span>
               </>
             )}
@@ -86,14 +86,14 @@ export const FoodAlternativesPage: React.FC = () => {
 
         {/* Quick Click presets */}
         <div>
-          <span className="text-xs font-bold text-zinc-400 block mb-2">Try an example:</span>
+          <span className="text-xs font-bold text-purple-200/80 block mb-2">Try an example:</span>
           <div className="flex flex-wrap gap-2">
             {sampleFoods.map((f) => (
               <button
                 key={f}
                 type="button"
                 onClick={() => handleFetchAlternatives(f)}
-                className="text-xs font-semibold bg-black/60 hover:bg-amber-950/40 text-zinc-200 hover:text-amber-300 border border-zinc-800 px-3.5 py-1.5 rounded-full transition-colors cursor-pointer"
+                className="text-xs font-semibold bg-[#140622]/80 hover:bg-purple-900/50 text-purple-200 hover:text-white border border-purple-800/60 px-3.5 py-1.5 rounded-full transition-colors cursor-pointer"
               >
                 {f}
               </button>
@@ -105,7 +105,7 @@ export const FoodAlternativesPage: React.FC = () => {
       {/* Results */}
       {isLoading ? (
         <div className="py-12 text-center text-sm font-medium text-zinc-400">
-          <div className="w-8 h-8 border-4 border-amber-500/20 border-t-amber-400 rounded-full animate-spin mx-auto mb-2" />
+          <div className="w-8 h-8 border-4 border-purple-500/20 border-t-purple-400 rounded-full animate-spin mx-auto mb-2" />
           <span>Generating smart nutritional alternatives with SehatSense AI...</span>
         </div>
       ) : alternatives.length > 0 ? (
@@ -115,36 +115,47 @@ export const FoodAlternativesPage: React.FC = () => {
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {alternatives.map((alt, idx) => (
-              <div
-                key={idx}
-                className="bg-gradient-to-br from-[#181105]/95 via-[#100a02]/95 to-[#080401] rounded-3xl p-6 border border-amber-500/35 hover:border-amber-500/60 shadow-xl flex flex-col justify-between space-y-4 transition-all"
-              >
-                <div className="space-y-3">
-                  {/* Food Swap Header */}
-                  <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
-                    <div>
-                      <span className="text-xs uppercase font-extrabold text-zinc-400 block mb-0.5">Current Food</span>
-                      <span className="text-sm font-bold text-zinc-200">{alt.original_food}</span>
-                      <span className="text-xs text-zinc-400 block font-medium mt-0.5">{alt.current_nutrients}</span>
+            {alternatives.map((alt, idx) => {
+              const isEven = idx % 2 === 0;
+              const cardBg = isEven
+                ? 'from-[#052618]/95 via-[#03170e]/95 to-[#010b06] border-emerald-500/40 hover:border-emerald-400/80'
+                : 'from-[#261504]/95 via-[#180d02]/95 to-[#0b0501] border-amber-500/40 hover:border-amber-400/80';
+              const swapIconColor = isEven ? 'text-emerald-400' : 'text-amber-400';
+              const targetBadgeColor = isEven ? 'text-emerald-400' : 'text-amber-400';
+              const nutrientBadge = isEven ? 'text-emerald-300' : 'text-amber-300';
+              const whyBg = isEven ? 'bg-emerald-950/30 border-emerald-900/40' : 'bg-amber-950/30 border-amber-900/40';
+              const whyTitle = isEven ? 'text-emerald-300' : 'text-amber-300';
+
+              return (
+                <div
+                  key={idx}
+                  className={`bg-gradient-to-br ${cardBg} rounded-3xl p-6 border shadow-2xl flex flex-col justify-between space-y-4 transition-all`}
+                >
+                  <div className="space-y-3">
+                    {/* Food Swap Header */}
+                    <div className="flex items-center justify-between pb-3 border-b border-white/10">
+                      <div>
+                        <span className="text-xs uppercase font-extrabold text-zinc-400 block mb-0.5">Current Food</span>
+                        <span className="text-sm font-bold text-zinc-200">{alt.original_food}</span>
+                        <span className="text-xs text-zinc-400 block font-medium mt-0.5">{alt.current_nutrients}</span>
+                      </div>
+
+                      <ArrowLeftRight className={`w-5 h-5 ${swapIconColor} flex-shrink-0`} />
+
+                      <div className="text-right">
+                        <span className={`text-xs uppercase font-extrabold ${targetBadgeColor} block mb-0.5`}>Try This</span>
+                        <span className="text-sm font-black text-white">{alt.suggested_alternative}</span>
+                        <span className={`text-xs ${nutrientBadge} font-bold block mt-0.5`}>{alt.alternative_nutrients}</span>
+                      </div>
                     </div>
 
-                    <ArrowLeftRight className="w-5 h-5 text-amber-400 flex-shrink-0" />
-
-                    <div className="text-right">
-                      <span className="text-xs uppercase font-extrabold text-amber-400 block mb-0.5">Try This</span>
-                      <span className="text-sm font-black text-white">{alt.suggested_alternative}</span>
-                      <span className="text-xs text-amber-300 font-bold block mt-0.5">{alt.alternative_nutrients}</span>
+                    {/* Why Better */}
+                    <div className={`${whyBg} p-3.5 rounded-2xl border text-sm text-zinc-200 space-y-1`}>
+                      <span className={`font-bold ${whyTitle} flex items-center gap-1.5`}>
+                        <TrendingUp className="w-4 h-4" /> Why this works:
+                      </span>
+                      <p className="leading-relaxed text-zinc-300">{alt.why_better}</p>
                     </div>
-                  </div>
-
-                  {/* Why Better */}
-                  <div className="bg-amber-950/20 p-3.5 rounded-2xl border border-amber-900/30 text-sm text-zinc-200 space-y-1">
-                    <span className="font-bold text-amber-300 flex items-center gap-1.5">
-                      <TrendingUp className="w-4 h-4 text-amber-400" /> Why this works:
-                    </span>
-                    <p className="leading-relaxed text-zinc-300">{alt.why_better}</p>
-                  </div>
 
                   {/* Budget & Portion */}
                   <div className="space-y-2 text-xs sm:text-sm text-zinc-300">
@@ -168,8 +179,9 @@ export const FoodAlternativesPage: React.FC = () => {
                   Cultural Foods Philosophy: Foods are neither good nor evil. Portions, cooking oils, and meal combinations shape balance.
                 </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
+        </div>
         </div>
       ) : hasSearched ? (
         <div className="text-center py-8 text-xs text-zinc-500">

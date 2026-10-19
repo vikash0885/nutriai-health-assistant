@@ -125,11 +125,28 @@ export const GroceryListPage: React.FC = () => {
             const catItems = items.filter((i) => i.category === category);
             if (catItems.length === 0) return null;
 
+            // Distinct themed color gradient for each grocery category
+            const catLower = category.toLowerCase();
+            const catTheme =
+              catLower.includes('produce') || catLower.includes('vegetable') || catLower.includes('fruit')
+                ? { bg: 'from-[#052618]/90 via-[#03180f]/95 to-[#010c07]', border: 'border-emerald-500/40', badge: 'text-emerald-300', divide: 'border-emerald-500/20' }
+                : catLower.includes('dairy') || catLower.includes('egg')
+                ? { bg: 'from-[#281905]/90 via-[#1a1002]/95 to-[#0c0701]', border: 'border-amber-500/40', badge: 'text-amber-300', divide: 'border-amber-500/20' }
+                : catLower.includes('grain') || catLower.includes('pulse') || catLower.includes('dal')
+                ? { bg: 'from-[#2a1306]/90 via-[#1a0a03]/95 to-[#0c0501]', border: 'border-orange-500/40', badge: 'text-orange-300', divide: 'border-orange-500/20' }
+                : catLower.includes('spice') || catLower.includes('condiment') || catLower.includes('oil')
+                ? { bg: 'from-[#290714]/90 via-[#19030c]/95 to-[#0c0106]', border: 'border-rose-500/40', badge: 'text-rose-300', divide: 'border-rose-500/20' }
+                : catLower.includes('meat') || catLower.includes('fish') || catLower.includes('poultry')
+                ? { bg: 'from-[#2a0808]/90 via-[#180404]/95 to-[#0b0101]', border: 'border-red-500/40', badge: 'text-red-300', divide: 'border-red-500/20' }
+                : catLower.includes('beverage') || catLower.includes('drink')
+                ? { bg: 'from-[#041d2d]/90 via-[#02121d]/95 to-[#01090f]', border: 'border-cyan-500/40', badge: 'text-cyan-300', divide: 'border-cyan-500/20' }
+                : { bg: 'from-[#1c082e]/90 via-[#11041d]/95 to-[#08020e]', border: 'border-purple-500/40', badge: 'text-purple-300', divide: 'border-purple-500/20' };
+
             return (
-              <div key={category} className="bg-gradient-to-br from-[#181105]/90 via-[#0f0a03]/95 to-[#080501] rounded-3xl p-6 border border-amber-500/30 shadow-xl space-y-3 backdrop-blur-xs">
-                <div className="flex items-center justify-between border-b border-amber-500/20 pb-2">
+              <div key={category} className={`bg-gradient-to-br ${catTheme.bg} rounded-3xl p-6 border ${catTheme.border} shadow-2xl space-y-3 backdrop-blur-xs`}>
+                <div className={`flex items-center justify-between border-b ${catTheme.divide} pb-2`}>
                   <h3 className="text-base font-black text-white">{category}</h3>
-                  <span className="text-xs font-bold text-amber-300">
+                  <span className={`text-xs font-black ${catTheme.badge}`}>
                     {catItems.filter((i) => i.is_purchased).length}/{catItems.length} purchased
                   </span>
                 </div>
@@ -140,8 +157,8 @@ export const GroceryListPage: React.FC = () => {
                       key={item.id}
                       className={`p-3 rounded-2xl border transition-all flex items-center justify-between ${
                         item.is_purchased
-                          ? 'bg-black/30 border-zinc-900 opacity-50'
-                          : 'bg-black/60 border border-zinc-800 hover:border-amber-500/40'
+                          ? 'bg-black/40 border-zinc-900 opacity-50'
+                          : 'bg-black/60 border border-zinc-800/80 hover:border-amber-500/40'
                       }`}
                     >
                       <label className="flex items-center gap-3 cursor-pointer flex-1">

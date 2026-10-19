@@ -95,7 +95,7 @@ export const WaterTrackerPage: React.FC = () => {
                 <button
                   key={p.ml}
                   onClick={() => handleAddWater(p.ml)}
-                  className="p-3.5 rounded-2xl bg-sky-950/50 hover:bg-sky-900/70 border border-sky-700/50 hover:border-sky-400 text-sky-200 flex flex-col items-center justify-center transition-all group cursor-pointer shadow-md"
+                  className="p-3.5 rounded-2xl bg-gradient-to-br from-[#072c47]/80 via-[#041a2c]/85 to-[#020e17]/90 hover:from-[#0c4066] border border-sky-500/40 hover:border-sky-300 text-sky-100 flex flex-col items-center justify-center transition-all group cursor-pointer shadow-lg"
                 >
                   <Droplet className="w-6 h-6 text-sky-400 mb-1 group-hover:scale-110 transition-transform" />
                   <span className="text-sm font-black">+{p.ml} ml</span>
@@ -118,7 +118,7 @@ export const WaterTrackerPage: React.FC = () => {
               />
               <button
                 onClick={() => handleAddWater(customAmount)}
-                className="px-5 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-sm font-black shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center gap-2 cursor-pointer"
+                className="px-5 py-2.5 bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-500 hover:from-sky-400 hover:to-cyan-300 text-black rounded-xl text-sm font-black shadow-lg shadow-sky-500/20 transition-all flex items-center gap-2 cursor-pointer"
               >
                 <Plus className="w-4.5 h-4.5" /> Add Custom
               </button>
@@ -142,7 +142,7 @@ export const WaterTrackerPage: React.FC = () => {
             {logs.map((log) => (
               <div
                 key={log.id}
-                className="p-3.5 rounded-2xl bg-black/60 border border-sky-500/20 flex items-center justify-between hover:bg-sky-950/20 transition-colors"
+                className="p-3.5 rounded-2xl bg-gradient-to-r from-[#031c2d]/80 to-[#020f18]/90 border border-sky-500/30 flex items-center justify-between hover:border-sky-400/60 transition-all"
               >
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 rounded-xl bg-sky-950/70 border border-sky-800/60 text-sky-400">

@@ -56,90 +56,106 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
-        <div className="p-4 space-y-1">
-          <div className="px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-zinc-400">
-            Core Tracking
+        <div className="p-3 space-y-3">
+          {/* Core Tracking Box - Deep Emerald */}
+          <div className="bg-gradient-to-br from-[#061e14]/80 via-[#03130c]/85 to-[#010905]/90 rounded-2xl p-2 border border-emerald-500/30 shadow-md space-y-1">
+            <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-emerald-400 flex items-center justify-between">
+              <span>Core Tracking</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            </div>
+            {navItems.slice(0, 4).map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={onClose}
+                className={({ isActive }) =>
+                  `flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-[14px] font-semibold transition-all ${
+                    isActive
+                      ? 'bg-emerald-500/25 text-emerald-200 font-bold border-l-3 border-emerald-400 shadow-sm shadow-emerald-950/40'
+                      : 'text-zinc-300 hover:text-white hover:bg-emerald-950/30'
+                  }`
+                }
+              >
+                <item.icon className="w-4.5 h-4.5 flex-shrink-0" />
+                <span>{item.label}</span>
+              </NavLink>
+            ))}
           </div>
-          {navItems.slice(0, 4).map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              onClick={onClose}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition-all ${
-                  isActive
-                    ? 'bg-amber-500/15 text-amber-300 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
-                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/60'
-                }`
-              }
-            >
-              <item.icon className="w-5 h-5 flex-shrink-0" />
-              <span>{item.label}</span>
-            </NavLink>
-          ))}
 
-          <div className="pt-3 px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-zinc-400">
-            AI & Planning
+          {/* AI & Planning Box - Royal Amethyst / Violet */}
+          <div className="bg-gradient-to-br from-[#1c082e]/80 via-[#10041b]/85 to-[#08020e]/90 rounded-2xl p-2 border border-purple-500/35 shadow-md shadow-purple-950/20 space-y-1">
+            <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-purple-300 flex items-center justify-between">
+              <span>AI & Planning</span>
+              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+            </div>
+            {navItems.slice(4, 7).map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={onClose}
+                className={({ isActive }) =>
+                  `flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-[14px] font-semibold transition-all ${
+                    isActive
+                      ? 'bg-purple-500/25 text-purple-200 font-bold border-l-3 border-purple-400 shadow-sm shadow-purple-950/40'
+                      : 'text-zinc-300 hover:text-white hover:bg-purple-950/30'
+                  }`
+                }
+              >
+                <item.icon className="w-4.5 h-4.5 flex-shrink-0" />
+                <span>{item.label}</span>
+              </NavLink>
+            ))}
           </div>
-          {navItems.slice(4, 7).map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              onClick={onClose}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition-all ${
-                  isActive
-                    ? 'bg-amber-500/15 text-amber-300 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
-                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/60'
-                }`
-              }
-            >
-              <item.icon className="w-5 h-5 flex-shrink-0" />
-              <span>{item.label}</span>
-            </NavLink>
-          ))}
 
-          <div className="pt-3 px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-zinc-400">
-            Health & Insights
+          {/* Health & Insights Box - Deep Sapphire Blue */}
+          <div className="bg-gradient-to-br from-[#071530]/80 via-[#040c1d]/85 to-[#020610]/90 rounded-2xl p-2 border border-sky-500/30 shadow-md space-y-1">
+            <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-sky-300 flex items-center justify-between">
+              <span>Health & Insights</span>
+              <TrendingUp className="w-3.5 h-3.5 text-sky-400" />
+            </div>
+            {navItems.slice(7, 10).map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={onClose}
+                className={({ isActive }) =>
+                  `flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-[14px] font-semibold transition-all ${
+                    isActive
+                      ? 'bg-sky-500/25 text-sky-200 font-bold border-l-3 border-sky-400 shadow-sm shadow-sky-950/40'
+                      : 'text-zinc-300 hover:text-white hover:bg-sky-950/30'
+                  }`
+                }
+              >
+                <item.icon className="w-4.5 h-4.5 flex-shrink-0" />
+                <span>{item.label}</span>
+              </NavLink>
+            ))}
           </div>
-          {navItems.slice(7, 10).map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              onClick={onClose}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition-all ${
-                  isActive
-                    ? 'bg-amber-500/15 text-amber-300 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
-                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/60'
-                }`
-              }
-            >
-              <item.icon className="w-5 h-5 flex-shrink-0" />
-              <span>{item.label}</span>
-            </NavLink>
-          ))}
 
-          <div className="pt-3 px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-zinc-400">
-            Lifestyle & Support
+          {/* Lifestyle & Support Box - Warm Amber Terracotta */}
+          <div className="bg-gradient-to-br from-[#241305]/80 via-[#150a02]/85 to-[#0b0501]/90 rounded-2xl p-2 border border-amber-500/35 shadow-md shadow-amber-950/20 space-y-1">
+            <div className="px-2.5 py-1 text-[11px] font-black uppercase tracking-wider text-amber-300 flex items-center justify-between">
+              <span>Lifestyle & Support</span>
+              <Settings className="w-3.5 h-3.5 text-amber-400" />
+            </div>
+            {navItems.slice(10).map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                onClick={onClose}
+                className={({ isActive }) =>
+                  `flex items-center gap-2.5 px-2.5 py-2 rounded-xl text-[14px] font-semibold transition-all ${
+                    isActive
+                      ? 'bg-amber-500/25 text-amber-200 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                      : 'text-zinc-300 hover:text-white hover:bg-amber-950/30'
+                  }`
+                }
+              >
+                <item.icon className="w-4.5 h-4.5 flex-shrink-0" />
+                <span>{item.label}</span>
+              </NavLink>
+            ))}
           </div>
-          {navItems.slice(10).map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              onClick={onClose}
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition-all ${
-                  isActive
-                    ? 'bg-amber-500/15 text-amber-300 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
-                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/60'
-                }`
-              }
-            >
-              <item.icon className="w-5 h-5 flex-shrink-0" />
-              <span>{item.label}</span>
-            </NavLink>
-          ))}
         </div>
       </aside>
     </>

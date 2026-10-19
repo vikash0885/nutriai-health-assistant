@@ -187,8 +187,8 @@ export const MealPlannerPage: React.FC = () => {
       {/* Active Meal Plan Display */}
       {currentPlan ? (
         <div className="space-y-6">
-          {/* Plan Header Strip */}
-          <div className="bg-[#0c0c10] text-white rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-amber-500/30">
+          {/* Plan Header Strip - Royal Amethyst */}
+          <div className="bg-gradient-to-br from-[#1c082e]/90 via-[#10041b]/95 to-[#08020e] text-white rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-purple-500/40">
             <div>
               <div className="inline-flex items-center gap-1.5 text-amber-400 text-xs font-semibold mb-1">
                 <ChefHat className="w-4 h-4" /> Recommended Menu

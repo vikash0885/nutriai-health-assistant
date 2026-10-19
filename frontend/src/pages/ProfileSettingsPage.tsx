@@ -156,10 +156,10 @@ export const ProfileSettingsPage: React.FC = () => {
         </div>
       )}
 
-      {/* Profile Form */}
-      <form onSubmit={handleSaveProfile} className="bg-gradient-to-br from-[#211504]/90 via-[#150d02]/95 to-[#0b0601] rounded-3xl p-6 sm:p-8 border border-amber-500/35 shadow-2xl space-y-5">
+      {/* Profile Form - Deep Emerald Onyx */}
+      <form onSubmit={handleSaveProfile} className="bg-gradient-to-br from-[#052618]/90 via-[#03170e]/95 to-[#010c07] rounded-3xl p-6 sm:p-8 border border-emerald-500/40 shadow-2xl space-y-5">
         <h3 className="text-base font-black text-white flex items-center gap-2">
-          <User className="w-5 h-5 text-amber-400" />
+          <User className="w-5 h-5 text-emerald-400" />
           <span>Biometric & Lifestyle Profile</span>
         </h3>
 
