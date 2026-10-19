@@ -34,7 +34,7 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="min-h-screen w-full bg-[#070709] text-zinc-100 flex flex-col selection:bg-amber-500 selection:text-black relative overflow-x-hidden">
       {/* Global Ambient Flowing Particle Dots Across Entire Application */}
-      <FlowingParticles fixed={true} count={150} connectLines={true} />
+      <FlowingParticles fixed={true} count={170} connectLines={false} />
 
       <Navbar
         onToggleSidebar={() => setIsSidebarOpen((prev) => !prev)}

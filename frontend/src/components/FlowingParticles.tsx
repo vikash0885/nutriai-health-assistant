@@ -3,13 +3,14 @@ import React, { useEffect, useRef } from 'react';
 interface Particle {
   x: number;
   y: number;
-  size: number;
+  radius: number;
   speedX: number;
   speedY: number;
   color: string;
   alpha: number;
-  pulseSpeed: number;
+  minAlpha: number;
   maxAlpha: number;
+  pulseSpeed: number;
 }
 
 interface FlowingParticlesProps {
@@ -20,9 +21,9 @@ interface FlowingParticlesProps {
 }
 
 export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
-  count = 140,
+  count = 160,
   className = '',
-  connectLines = true,
+  connectLines = false,
   fixed = false,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -34,66 +35,92 @@ export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
     if (!ctx) return;
 
     let animationFrameId: number;
-    let width = 0;
-    let height = 0;
+    let cssWidth = 0;
+    let cssHeight = 0;
 
     const updateDimensions = () => {
       if (!canvas) return;
+      const dpr = window.devicePixelRatio || 1;
+
       if (fixed) {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
+        cssWidth = window.innerWidth;
+        cssHeight = window.innerHeight;
       } else {
-        width = canvas.width = canvas.parentElement?.clientWidth || window.innerWidth;
-        height = canvas.height = canvas.parentElement?.clientHeight || window.innerHeight;
+        cssWidth = canvas.parentElement?.clientWidth || window.innerWidth;
+        cssHeight = canvas.parentElement?.clientHeight || window.innerHeight;
       }
+
+      // Crisp HiDPI / Retina canvas configuration to prevent blurry rendering on Windows displays
+      canvas.width = Math.floor(cssWidth * dpr);
+      canvas.height = Math.floor(cssHeight * dpr);
+      canvas.style.width = `${cssWidth}px`;
+      canvas.style.height = `${cssHeight}px`;
+
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
+      ctx.scale(dpr, dpr);
     };
 
     updateDimensions();
     window.addEventListener('resize', updateDimensions);
 
+    // Vibrant, clear particle color palette (Amber, Gold, Sunlight, Starlight White)
     const colors = [
-      '245, 158, 11',  // Radiant amber
-      '251, 191, 36',  // Glowing gold
-      '253, 224, 71',  // Bright sunlight
-      '250, 204, 21',  // Electric gold
+      '251, 191, 36',  // Pure radiant gold
+      '245, 158, 11',  // Deep amber
+      '253, 224, 71',  // Bright warm sunlight
+      '250, 204, 21',  // Vivid electric gold
       '255, 255, 255', // Crisp starlight white
     ];
 
-    // Compute dynamic density based on screen resolution: ~1 particle per 8,000 px^2 on desktop
-    const area = width * height;
-    const targetCount = Math.max(count, Math.min(260, Math.floor(area / 8000)));
+    // Compute dynamic density based on screen area to ensure dots cover the entire wide display
+    const area = cssWidth * cssHeight;
+    const targetCount = Math.max(count, Math.min(260, Math.floor(area / 7500)));
 
     const particles: Particle[] = [];
     for (let i = 0; i < targetCount; i++) {
       const color = colors[Math.floor(Math.random() * colors.length)];
-      const maxAlpha = Math.random() * 0.5 + 0.4; // 0.4 to 0.9
+      // Size distribution: mostly 1.5-2.5px, some prominent 3-4px dots
+      const sizeTier = Math.random();
+      let radius: number;
+      if (sizeTier < 0.6) {
+        radius = Math.random() * 0.8 + 1.4; // 1.4px to 2.2px (crisp clear small dots)
+      } else if (sizeTier < 0.9) {
+        radius = Math.random() * 0.9 + 2.2; // 2.2px to 3.1px (medium bright dots)
+      } else {
+        radius = Math.random() * 1.0 + 3.1; // 3.1px to 4.1px (prominent glowing orbs)
+      }
+
+      const minAlpha = Math.random() * 0.2 + 0.45; // 0.45 to 0.65 - always clearly visible
+      const maxAlpha = Math.random() * 0.25 + 0.75; // 0.75 to 1.0 - vibrant peak
+
       particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        size: Math.random() * 2.4 + 1.2, // 1.2px to 3.6px
-        speedX: (Math.random() - 0.5) * 0.5,
-        speedY: -Math.random() * 0.55 - 0.2, // smoothly float upwards
+        x: Math.random() * cssWidth,
+        y: Math.random() * cssHeight,
+        radius,
+        speedX: (Math.random() - 0.5) * 0.4,
+        speedY: -Math.random() * 0.5 - 0.2, // Smooth upward floating movement
         color,
-        alpha: Math.random() * maxAlpha,
-        pulseSpeed: (Math.random() * 0.015 + 0.006) * (Math.random() > 0.5 ? 1 : -1),
+        alpha: Math.random() * (maxAlpha - minAlpha) + minAlpha,
+        minAlpha,
         maxAlpha,
+        pulseSpeed: (Math.random() * 0.008 + 0.004) * (Math.random() > 0.5 ? 1 : -1),
       });
     }
 
     const animate = () => {
-      ctx.clearRect(0, 0, width, height);
+      ctx.clearRect(0, 0, cssWidth, cssHeight);
 
-      // Subtle golden constellation lines between nearby floating dots
+      // Optional subtle constellation lines if enabled
       if (connectLines) {
         for (let i = 0; i < particles.length; i++) {
           for (let j = i + 1; j < particles.length; j++) {
             const dx = particles[i].x - particles[j].x;
             const dy = particles[i].y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
-            if (dist < 105) {
-              const lineAlpha = (1 - dist / 105) * 0.16;
+            if (dist < 90) {
+              const lineAlpha = (1 - dist / 90) * 0.12;
               ctx.strokeStyle = `rgba(245, 158, 11, ${lineAlpha})`;
-              ctx.lineWidth = 0.65;
+              ctx.lineWidth = 0.5;
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
@@ -103,46 +130,64 @@ export const FlowingParticles: React.FC<FlowingParticlesProps> = ({
         }
       }
 
-      // Draw and move floating glowing dots across the entire screen
+      // Render crisp, unmistakable floating dots
       for (const p of particles) {
         p.x += p.speedX;
         p.y += p.speedY;
 
-        // Smooth breathing pulse
+        // Gentle breathing brightness oscillation (dots never fade into invisible smudges)
         p.alpha += p.pulseSpeed;
-        if (p.alpha > p.maxAlpha) {
+        if (p.alpha >= p.maxAlpha) {
           p.alpha = p.maxAlpha;
           p.pulseSpeed = -Math.abs(p.pulseSpeed);
-        } else if (p.alpha < 0.15) {
-          p.alpha = 0.15;
+        } else if (p.alpha <= p.minAlpha) {
+          p.alpha = p.minAlpha;
           p.pulseSpeed = Math.abs(p.pulseSpeed);
         }
 
-        // Loop boundaries smoothly from all sides
+        // Seamless boundary respawn across all 4 edges
         if (p.y < -15) {
-          p.y = height + 15;
-          p.x = Math.random() * width;
-        } else if (p.y > height + 15) {
+          p.y = cssHeight + 15;
+          p.x = Math.random() * cssWidth;
+        } else if (p.y > cssHeight + 15) {
           p.y = -15;
-          p.x = Math.random() * width;
+          p.x = Math.random() * cssWidth;
         }
 
         if (p.x < -15) {
-          p.x = width + 15;
-          p.y = Math.random() * height;
-        } else if (p.x > width + 15) {
+          p.x = cssWidth + 15;
+          p.y = Math.random() * cssHeight;
+        } else if (p.x > cssWidth + 15) {
           p.x = -15;
-          p.y = Math.random() * height;
+          p.y = Math.random() * cssHeight;
         }
 
-        // Render dot with rich radiant bloom
+        // Draw clear, razor-sharp dot
         ctx.save();
+
+        // 1. Soft atmospheric halo
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = `rgba(${p.color}, 0.9)`;
+        ctx.arc(p.x, p.y, p.radius + 1.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.color}, ${p.alpha * 0.22})`;
         ctx.fill();
+
+        // 2. Clear, solid, brightly lit dot core
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = `rgba(${p.color}, 0.85)`;
+        ctx.fill();
+
+        // 3. Starlight pinpoint white spark in the center for clear definition
+        if (p.radius >= 2.0) {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius * 0.45, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(1, p.alpha + 0.3)})`;
+          ctx.shadowBlur = 0;
+          ctx.fill();
+        }
+
         ctx.restore();
       }
 

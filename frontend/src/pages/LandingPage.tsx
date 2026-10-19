@@ -64,9 +64,9 @@ export const LandingPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-transparent text-zinc-100 flex flex-col">
       {/* Hero Section: Full width Dark Onyx + Radiant Gold Accents */}
-      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 w-full border-b border-zinc-800/80 bg-[#050507]/60 backdrop-blur-xs">
+      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 w-full border-b border-zinc-800/80 bg-transparent">
         {/* Warm Golden/Amber Ambient Glow in center */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[750px] h-[500px] bg-gradient-to-tr from-amber-500/20 via-yellow-500/15 to-transparent rounded-full blur-[110px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[360px] bg-gradient-to-tr from-amber-500/12 via-yellow-500/8 to-transparent rounded-full blur-[90px] pointer-events-none" />
 
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
@@ -147,13 +147,6 @@ export const LandingPage: React.FC = () => {
                   </button>
                 </>
               )}
-            </div>
-
-            {/* Developer Credit */}
-            <div className="mt-8 flex justify-center">
-              <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 text-xs text-zinc-400">
-                <span>Made with ❤️ by <strong className="text-amber-300 font-semibold">Vikash Mishra</strong></span>
-              </div>
             </div>
           </div>
         </div>

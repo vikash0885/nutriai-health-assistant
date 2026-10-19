@@ -118,15 +118,12 @@ export const LoginPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Bottom Trust Badge & Developer Credit */}
-          <div className="relative z-10 pt-6 mt-6 border-t border-zinc-800/80 space-y-2">
+          {/* Bottom Trust Badge */}
+          <div className="relative z-10 pt-6 mt-6 border-t border-zinc-800/80">
             <div className="flex items-center gap-2 text-[11px] text-zinc-400">
               <ShieldCheck className="w-4 h-4 text-amber-400" />
               <span>Private, secure, and user-consented health data</span>
             </div>
-            <p className="text-[11px] text-zinc-400 font-medium pt-1">
-              Made with ❤️ by <span className="text-amber-300 font-semibold">Vikash Mishra</span>
-            </p>
           </div>
         </div>
 

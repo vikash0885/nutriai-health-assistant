@@ -1,6 +1,5 @@
 # SehatSense AI — Smart Food Choices, Better Health.
 > **Tagline:** Smart Food Choices, Better Health.  
-> **Developer:** Made with ❤️ by **Vikash Mishra**
 
 [![Backend Tests](https://img.shields.io/badge/pytest-11%20passed-brightgreen.svg)]()
 [![Python](https://img.shields.io/badge/Python-3.13%2B-blue.svg)]()
@@ -203,11 +202,6 @@ SehatSense AI is an educational wellness and lifestyle tracking assistant.
 - **Not Medical Advice:** SehatSense AI does not diagnose, treat, or cure medical conditions.
 - **Correlations, Not Causation:** Observed diary associations between foods and symptoms reflect personal logs and do not constitute clinical allergy or intolerance diagnoses.
 - **Medical Evaluation:** For persistent, severe, or worsening symptoms (e.g., severe abdominal pain, persistent nausea), users should promptly consult a licensed healthcare professional.
-
----
-
-## 👨‍💻 Developer Credit
-**Made with ❤️ by Vikash Mishra**
 
 ---
 

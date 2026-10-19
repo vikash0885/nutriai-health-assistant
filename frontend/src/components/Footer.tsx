@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, Heart } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -26,10 +26,8 @@ export const Footer: React.FC = () => {
           <p className="text-[11px] text-zinc-400">
             © {new Date().getFullYear()} SehatSense AI. All rights reserved.
           </p>
-          <p className="font-medium text-zinc-300 flex items-center gap-1.5 bg-[#0d0d12] px-3 py-1 rounded-full border border-zinc-800 shadow-2xs">
-            <span>Made with</span>
-            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
-            <span>by <strong className="text-amber-300 font-semibold">Vikash Mishra</strong></span>
+          <p className="text-[11px] text-zinc-400">
+            Intelligent Nutrition & Wellness Platform
           </p>
         </div>
       </div>

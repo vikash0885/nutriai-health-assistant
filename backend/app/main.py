@@ -20,7 +20,6 @@ app = FastAPI(
     description="""
 # SehatSense AI — Smart Food Choices, Better Health.
 **Tagline:** Smart Food Choices, Better Health.
-*Made with ❤️ by Vikash Mishra*
 
 SehatSense AI is a comprehensive wellness intelligence platform combining deterministic nutritional calculations,
 symptom pattern recognition, and conversational AI assistance for Indian and global food cultures.
