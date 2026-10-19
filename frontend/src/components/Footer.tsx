@@ -22,12 +22,6 @@ export const Footer: React.FC = () => {
           </span>
         </div>
 
-        <p className="max-w-3xl mx-auto text-zinc-400 leading-relaxed text-[11px]">
-          Medical Disclaimer: SehatSense AI provides nutritional education, habit tracking, and lifestyle insights.
-          It does not provide medical diagnosis, treatment, or cure for diseases.
-          Always consult a licensed medical practitioner for health concerns or major dietary modifications.
-        </p>
-
         <div className="pt-2 border-t border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-2 text-[12px] text-zinc-400">
           <p className="text-[11px] text-zinc-400">
             © {new Date().getFullYear()} SehatSense AI. All rights reserved.
