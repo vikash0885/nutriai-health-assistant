@@ -69,13 +69,15 @@ export const LandingPage: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            {/* Center Logo Artwork */}
-            <div className="flex justify-center mb-6">
-              <img
-                src="/images/sehatsense-logo-icon.png"
-                alt="SehatSense AI"
-                className="h-20 sm:h-24 w-auto object-contain drop-shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-transform duration-500 hover:scale-105"
-              />
+            {/* Center Brand Wordmark */}
+            <div className="flex items-center justify-center mb-6">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight drop-shadow-[0_0_35px_rgba(245,158,11,0.45)]">
+                <span className="text-white">Sehat</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500">Sense</span>
+                <span className="text-amber-300 text-xl sm:text-2xl ml-2.5 font-extrabold bg-amber-500/15 border border-amber-500/30 px-2.5 py-0.5 rounded-xl align-middle shadow-[0_0_15px_rgba(245,158,11,0.25)]">
+                  AI
+                </span>
+              </h2>
             </div>
 
             {/* Top Badge: Golden pill matching reference image */}
