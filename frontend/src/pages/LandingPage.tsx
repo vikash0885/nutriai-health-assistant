@@ -34,23 +34,24 @@ export const LandingPage: React.FC = () => {
         tokenData = await api.register({
           email: 'demo@nutriai.app',
           password: 'DemoPassword123!',
-          display_name: 'Aarav Patel',
-        });
-        localStorage.setItem('nutriai_token', tokenData.access_token);
-        await api.updateProfile({
-          display_name: 'Aarav Patel',
-          age: 28,
-          gender: 'male',
-          height_cm: 175,
-          weight_kg: 72,
-          activity_level: 'moderate',
-          dietary_preference: 'vegetarian',
-          fitness_goal: 'general_wellness',
-          daily_budget_inr: 250,
-          preferred_language: 'en',
-          onboarding_completed: true,
+          display_name: 'Vikash Mishra',
         });
       }
+
+      localStorage.setItem('nutriai_token', tokenData.access_token);
+      await api.updateProfile({
+        display_name: 'Vikash Mishra',
+        age: 26,
+        gender: 'male',
+        height_cm: 175,
+        weight_kg: 70,
+        activity_level: 'moderate',
+        dietary_preference: 'vegetarian',
+        fitness_goal: 'general_wellness',
+        daily_budget_inr: 250,
+        preferred_language: 'en',
+        onboarding_completed: true,
+      });
 
       await login(tokenData.access_token, tokenData.user);
       navigate('/dashboard');
