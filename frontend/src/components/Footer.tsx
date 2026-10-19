@@ -8,7 +8,11 @@ export const Footer: React.FC = () => {
         <div className="flex flex-wrap items-center justify-center gap-6 font-medium text-zinc-300">
           <div className="flex items-center gap-2">
             <img src="/images/sehatsense-logo-icon.png" alt="SehatSense AI" className="h-6 w-auto object-contain" />
-            <span className="font-bold text-white">SehatSense AI</span>
+            <span className="font-bold">
+              <span className="text-white">Sehat</span>
+              <span className="text-amber-400">Sense</span>
+              <span className="text-amber-300 font-semibold"> AI</span>
+            </span>
           </div>
           <span>•</span>
           <span>Smart Food Choices, Better Health.</span>

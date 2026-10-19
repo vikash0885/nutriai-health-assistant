@@ -49,8 +49,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
             />
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-white text-lg tracking-tight">SehatSense</span>
-                <span className="text-[10px] font-bold bg-amber-950/70 text-amber-300 border border-amber-800/60 px-1.5 py-0.5 rounded-full flex items-center gap-0.5">
+                <span className="font-extrabold text-lg tracking-tight">
+                  <span className="text-white">Sehat</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.3)]">Sense</span>
+                </span>
+                <span className="text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
                   <Sparkles className="w-2.5 h-2.5 text-amber-400" /> AI
                 </span>
               </div>

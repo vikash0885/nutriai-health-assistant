@@ -79,7 +79,10 @@ export const LoginPage: React.FC = () => {
               />
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-xl tracking-tight text-white">SehatSense</span>
+                  <span className="font-extrabold text-xl tracking-tight">
+                    <span className="text-white">Sehat</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.3)]">Sense</span>
+                  </span>
                   <span className="text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full">
                     AI
                   </span>
