@@ -123,7 +123,7 @@ export const ProfileSettingsPage: React.FC = () => {
 
       {/* Target Preview Strip */}
       {profile && (
-        <div className="bg-[#0d0d12] border border-zinc-800/90 shadow-xl rounded-3xl p-6 text-center">
+        <div className="bg-gradient-to-br from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] border border-amber-500/40 shadow-2xl rounded-3xl p-6 text-center">
           <h3 className="text-sm font-black text-amber-300 uppercase tracking-wider mb-3">
             Computed Daily Dietary Targets (Mifflin-St Jeor & ICMR Standards)
           </h3>
@@ -157,7 +157,7 @@ export const ProfileSettingsPage: React.FC = () => {
       )}
 
       {/* Profile Form */}
-      <form onSubmit={handleSaveProfile} className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl space-y-5">
+      <form onSubmit={handleSaveProfile} className="bg-gradient-to-br from-[#211504]/90 via-[#150d02]/95 to-[#0b0601] rounded-3xl p-6 sm:p-8 border border-amber-500/35 shadow-2xl space-y-5">
         <h3 className="text-base font-black text-white flex items-center gap-2">
           <User className="w-5 h-5 text-amber-400" />
           <span>Biometric & Lifestyle Profile</span>

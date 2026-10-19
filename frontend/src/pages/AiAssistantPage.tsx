@@ -114,7 +114,7 @@ export const AiAssistantPage: React.FC = () => {
       </div>
 
       {/* Chat Messages Container */}
-      <div className="flex-1 bg-[#0d0d12] rounded-3xl p-4 sm:p-6 border border-zinc-800/90 shadow-xl overflow-y-auto space-y-4">
+      <div className="flex-1 bg-gradient-to-br from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] rounded-3xl p-4 sm:p-6 border border-amber-500/40 shadow-2xl overflow-y-auto space-y-4">
         {messages.map((m, idx) => (
           <div
             key={idx}
@@ -201,7 +201,7 @@ export const AiAssistantPage: React.FC = () => {
           e.preventDefault();
           handleSend();
         }}
-        className="flex items-center gap-2 bg-[#0d0d12] p-2 rounded-2xl border border-zinc-800/90 shadow-xl focus-within:ring-2 focus-within:ring-amber-500/20 focus-within:border-amber-400"
+        className="flex items-center gap-2 bg-gradient-to-r from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] p-2 rounded-2xl border border-amber-500/40 shadow-xl focus-within:ring-2 focus-within:ring-amber-500/30 focus-within:border-amber-400"
       >
         <input
           type="text"

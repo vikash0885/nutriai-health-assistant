@@ -100,7 +100,7 @@ export const OnboardingPage: React.FC = () => {
 
   return (
     <div className="min-h-[calc(100vh-4rem)] bg-transparent flex items-center justify-center py-12 px-4 sm:px-6">
-      <div className="max-w-xl w-full bg-[#0d0d12] rounded-3xl p-6 sm:p-10 border border-zinc-800/90 shadow-2xl relative overflow-hidden">
+      <div className="max-w-xl w-full bg-gradient-to-br from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] rounded-3xl p-6 sm:p-10 border border-amber-500/40 shadow-2xl relative overflow-hidden">
         {/* Subtle decorative glow */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/5 rounded-full blur-3xl -z-10 pointer-events-none" />
 
@@ -179,10 +179,10 @@ export const OnboardingPage: React.FC = () => {
                   onChange={(e) => setGender(e.target.value)}
                   className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
                 >
-                  <option value="prefer_not_to_say" className="bg-[#0d0d12]">Prefer not to say</option>
-                  <option value="female" className="bg-[#0d0d12]">Female</option>
-                  <option value="male" className="bg-[#0d0d12]">Male</option>
-                  <option value="other" className="bg-[#0d0d12]">Other</option>
+                  <option value="prefer_not_to_say" className="bg-zinc-900">Prefer not to say</option>
+                  <option value="female" className="bg-zinc-900">Female</option>
+                  <option value="male" className="bg-zinc-900">Male</option>
+                  <option value="other" className="bg-zinc-900">Other</option>
                 </select>
               </div>
             </div>
@@ -222,11 +222,11 @@ export const OnboardingPage: React.FC = () => {
                 onChange={(e) => setActivityLevel(e.target.value)}
                 className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
               >
-                <option value="sedentary" className="bg-[#0d0d12]">Sedentary (Little or no exercise, desk job)</option>
-                <option value="light" className="bg-[#0d0d12]">Lightly Active (Light exercise / walking 1-3 days/week)</option>
-                <option value="moderate" className="bg-[#0d0d12]">Moderately Active (Moderate exercise 3-5 days/week)</option>
-                <option value="active" className="bg-[#0d0d12]">Active (Heavy exercise / sports 6-7 days/week)</option>
-                <option value="very_active" className="bg-[#0d0d12]">Very Active (Physical job or twice-a-day training)</option>
+                <option value="sedentary" className="bg-zinc-900">Sedentary (Little or no exercise, desk job)</option>
+                <option value="light" className="bg-zinc-900">Lightly Active (Light exercise / walking 1-3 days/week)</option>
+                <option value="moderate" className="bg-zinc-900">Moderately Active (Moderate exercise 3-5 days/week)</option>
+                <option value="active" className="bg-zinc-900">Active (Heavy exercise / sports 6-7 days/week)</option>
+                <option value="very_active" className="bg-zinc-900">Very Active (Physical job or twice-a-day training)</option>
               </select>
             </div>
           </div>
@@ -317,9 +317,9 @@ export const OnboardingPage: React.FC = () => {
                   onChange={(e) => setLanguage(e.target.value)}
                   className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-white text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400"
                 >
-                  <option value="en" className="bg-[#0d0d12]">English</option>
-                  <option value="hi" className="bg-[#0d0d12]">हिन्दी (Hindi)</option>
-                  <option value="hinglish" className="bg-[#0d0d12]">Hinglish</option>
+                  <option value="en" className="bg-zinc-900">English</option>
+                  <option value="hi" className="bg-zinc-900">हिन्दी (Hindi)</option>
+                  <option value="hinglish" className="bg-zinc-900">Hinglish</option>
                 </select>
               </div>
             </div>

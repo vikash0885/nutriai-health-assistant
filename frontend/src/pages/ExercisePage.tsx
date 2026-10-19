@@ -113,7 +113,7 @@ export const ExercisePage: React.FC = () => {
             <div
               key={idx}
               onClick={() => handleSelectRoutine(routine)}
-              className="bg-[#0d0d12] rounded-3xl p-5 border border-zinc-800/90 shadow-xl hover:border-amber-500/50 cursor-pointer transition-all space-y-2 flex flex-col justify-between"
+              className="bg-gradient-to-br from-[#1a1205]/95 via-[#110a02]/95 to-[#070401] rounded-3xl p-5 border border-amber-500/30 hover:border-amber-500/60 shadow-xl cursor-pointer transition-all space-y-2 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-1">
@@ -138,7 +138,7 @@ export const ExercisePage: React.FC = () => {
       </div>
 
       {/* Log Exercise Form */}
-      <div className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl space-y-4">
+      <div className="bg-gradient-to-br from-[#211504]/90 via-[#150d02]/95 to-[#0b0601] rounded-3xl p-6 sm:p-8 border border-amber-500/40 shadow-2xl space-y-4">
         <h3 className="text-sm font-bold text-white flex items-center gap-2">
           <Plus className="w-4 h-4 text-amber-400" />
           <span>Log Completed Activity</span>
@@ -234,7 +234,7 @@ export const ExercisePage: React.FC = () => {
       </div>
 
       {/* Activity History */}
-      <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
+      <div className="bg-gradient-to-br from-[#1a1205]/95 via-[#110a02]/95 to-[#070401] rounded-3xl p-6 border border-amber-500/30 shadow-xl space-y-4">
         <h3 className="text-sm font-bold text-white">Recorded Activity History</h3>
 
         {isLoading ? (
@@ -248,7 +248,7 @@ export const ExercisePage: React.FC = () => {
             {exercises.map((ex) => (
               <div
                 key={ex.id}
-                className="p-3.5 rounded-2xl bg-black/60 border border-zinc-800/80 flex items-center justify-between"
+                className="p-3.5 rounded-2xl bg-[#140c03]/80 border border-amber-900/40 hover:border-amber-500/40 transition-colors flex items-center justify-between"
               >
                 <div>
                   <h4 className="text-sm font-bold text-white">{ex.activity_name}</h4>

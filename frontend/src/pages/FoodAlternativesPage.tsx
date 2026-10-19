@@ -55,7 +55,7 @@ export const FoodAlternativesPage: React.FC = () => {
       </div>
 
       {/* Search & Suggestions */}
-      <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
+      <div className="bg-gradient-to-br from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] rounded-3xl p-6 border border-amber-500/40 shadow-2xl space-y-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -118,7 +118,7 @@ export const FoodAlternativesPage: React.FC = () => {
             {alternatives.map((alt, idx) => (
               <div
                 key={idx}
-                className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl flex flex-col justify-between space-y-4 hover:border-amber-500/40 transition-all"
+                className="bg-gradient-to-br from-[#181105]/95 via-[#100a02]/95 to-[#080401] rounded-3xl p-6 border border-amber-500/35 hover:border-amber-500/60 shadow-xl flex flex-col justify-between space-y-4 transition-all"
               >
                 <div className="space-y-3">
                   {/* Food Swap Header */}

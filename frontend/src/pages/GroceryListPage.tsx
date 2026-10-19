@@ -77,21 +77,21 @@ export const GroceryListPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Add Custom Item Card */}
-      <form onSubmit={handleAdd} className="bg-[#0d0d12] rounded-3xl p-5 border border-zinc-800/90 shadow-xl flex flex-col sm:flex-row gap-3">
+      {/* Add Custom Item Card - Royal Amber Onyx */}
+      <form onSubmit={handleAdd} className="bg-gradient-to-r from-[#211504]/90 via-[#150d02]/95 to-[#0b0601] rounded-3xl p-5 border border-amber-500/40 shadow-xl flex flex-col sm:flex-row gap-3 backdrop-blur-xs">
         <input
           type="text"
           required
           value={newItemName}
           onChange={(e) => setNewItemName(e.target.value)}
           placeholder="Add item (e.g. Baby Spinach, Moong Dal, Lemon)..."
-          className="flex-1 p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-600"
+          className="flex-1 p-3 rounded-xl bg-black/60 border border-amber-500/30 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-500"
         />
 
         <select
           value={newItemCategory}
           onChange={(e) => setNewItemCategory(e.target.value)}
-          className="p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white"
+          className="p-3 rounded-xl bg-black/60 border border-amber-500/30 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white"
         >
           {categories.map((cat) => (
             <option key={cat} value={cat} className="bg-zinc-900 text-white">
@@ -102,20 +102,20 @@ export const GroceryListPage: React.FC = () => {
 
         <button
           type="submit"
-          className="px-5 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-xs font-extrabold shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+          className="px-6 py-3 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-sm font-black shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-2 cursor-pointer"
         >
-          <Plus className="w-4 h-4" /> Add Item
+          <Plus className="w-4.5 h-4.5" /> Add Item
         </button>
       </form>
 
       {/* Items by Category */}
       {isLoading ? (
-        <div className="py-12 text-center text-xs text-zinc-500">Loading grocery list...</div>
+        <div className="py-12 text-center text-sm font-medium text-zinc-400">Loading grocery list...</div>
       ) : items.length === 0 ? (
-        <div className="bg-[#0d0d12] rounded-3xl p-12 text-center border border-zinc-800/90 shadow-xl max-w-md mx-auto">
+        <div className="bg-gradient-to-br from-[#1c1206]/90 via-[#110a03]/95 to-[#090501] rounded-3xl p-12 text-center border border-amber-500/40 shadow-xl max-w-md mx-auto">
           <ShoppingCart className="w-12 h-12 text-amber-400 mx-auto mb-3 opacity-80" />
-          <h3 className="text-base font-bold text-white mb-1">Your list is currently empty</h3>
-          <p className="text-xs text-zinc-400">
+          <h3 className="text-lg font-black text-white mb-1">Your list is currently empty</h3>
+          <p className="text-sm text-zinc-300 font-medium">
             Generate an AI meal plan and click 'Generate Grocery List' to populate your shopping items!
           </p>
         </div>
@@ -126,10 +126,10 @@ export const GroceryListPage: React.FC = () => {
             if (catItems.length === 0) return null;
 
             return (
-              <div key={category} className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-3">
-                <div className="flex items-center justify-between border-b border-zinc-800 pb-2">
-                  <h3 className="text-sm font-bold text-white">{category}</h3>
-                  <span className="text-xs font-semibold text-zinc-400">
+              <div key={category} className="bg-gradient-to-br from-[#181105]/90 via-[#0f0a03]/95 to-[#080501] rounded-3xl p-6 border border-amber-500/30 shadow-xl space-y-3 backdrop-blur-xs">
+                <div className="flex items-center justify-between border-b border-amber-500/20 pb-2">
+                  <h3 className="text-base font-black text-white">{category}</h3>
+                  <span className="text-xs font-bold text-amber-300">
                     {catItems.filter((i) => i.is_purchased).length}/{catItems.length} purchased
                   </span>
                 </div>

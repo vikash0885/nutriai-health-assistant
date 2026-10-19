@@ -108,7 +108,7 @@ export const MealPlannerPage: React.FC = () => {
 
         <Link
           to="/grocery-list"
-          className="inline-flex items-center gap-2 bg-[#0d0d12] hover:bg-zinc-800 text-zinc-300 font-semibold px-4 py-2 rounded-2xl border border-zinc-800 text-xs shadow-sm transition-all self-start sm:self-auto cursor-pointer"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] hover:border-amber-500/50 text-zinc-300 font-semibold px-4 py-2 rounded-2xl border border-amber-500/30 text-xs shadow-sm transition-all self-start sm:self-auto cursor-pointer"
         >
           <ShoppingCart className="w-4 h-4 text-amber-400" />
           <span>View Grocery List</span>
@@ -122,16 +122,16 @@ export const MealPlannerPage: React.FC = () => {
         </div>
       )}
 
-      {/* Generator Control Card */}
-      <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
+      {/* Generator Control Card - Royal Amber Onyx */}
+      <div className="bg-gradient-to-br from-[#261504]/90 via-[#180d02]/95 to-[#0b0601] rounded-3xl p-6 border border-amber-500/40 shadow-2xl space-y-4 backdrop-blur-xs">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="p-2 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-400">
-              <Sparkles className="w-4 h-4" />
+          <div className="flex items-center gap-2.5">
+            <div className="p-2.5 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400">
+              <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-sm font-bold text-white">Configure AI Meal Generator</h3>
-              <p className="text-xs text-zinc-400">
+              <h3 className="text-base font-black text-white">Configure AI Meal Generator</h3>
+              <p className="text-xs sm:text-sm text-zinc-300 font-medium">
                 Adhering to: {profile?.dietary_preference || 'Vegetarian'} • Target: ~{profile?.daily_calorie_target || 2000} kcal
               </p>
             </div>
@@ -140,7 +140,7 @@ export const MealPlannerPage: React.FC = () => {
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold px-5 py-2.5 rounded-2xl text-xs shadow-lg shadow-amber-500/20 gold-box-glow transition-all disabled:opacity-60 cursor-pointer"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-black px-6 py-3 rounded-2xl text-sm shadow-lg shadow-amber-500/20 gold-box-glow transition-all disabled:opacity-60 cursor-pointer"
           >
             {isGenerating ? (
               <>
@@ -220,11 +220,22 @@ export const MealPlannerPage: React.FC = () => {
 
           {/* Meals Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {currentPlan.items.map((item) => (
-              <div
-                key={item.id}
-                className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl flex flex-col justify-between space-y-4 hover:border-amber-500/40 transition-all"
-              >
+            {currentPlan.items.map((item) => {
+              const catKey = item.meal_category.toLowerCase();
+              const catStyle =
+                catKey === 'breakfast'
+                  ? 'from-[#281805]/90 via-[#1a1106]/95 to-[#0c0a07] border-amber-500/40 hover:border-amber-400 shadow-amber-500/5'
+                  : catKey === 'lunch'
+                  ? 'from-[#072a17]/90 via-[#051a0f]/95 to-[#040e08] border-emerald-500/40 hover:border-emerald-400 shadow-emerald-500/5'
+                  : catKey === 'dinner'
+                  ? 'from-[#0c1636]/90 via-[#080f24]/95 to-[#050914] border-indigo-500/40 hover:border-indigo-400 shadow-indigo-500/5'
+                  : 'from-[#2e0814]/90 via-[#1d060e]/95 to-[#0e070a] border-rose-500/40 hover:border-rose-400 shadow-rose-500/5';
+
+              return (
+                <div
+                  key={item.id}
+                  className={`bg-gradient-to-br ${catStyle} rounded-3xl p-6 border shadow-2xl flex flex-col justify-between space-y-4 hover:shadow-2xl transition-all backdrop-blur-xs`}
+                >
                 <div>
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-bold uppercase tracking-wider text-amber-300 bg-amber-950/60 px-2.5 py-1 rounded-full border border-amber-800/50">
@@ -279,20 +290,21 @@ export const MealPlannerPage: React.FC = () => {
                   </div>
                 )}
               </div>
-            ))}
-          </div>
+            );
+          })}
+        </div>
         </div>
       ) : (
-        <div className="bg-[#0d0d12] rounded-3xl p-12 text-center border border-zinc-800/90 shadow-xl max-w-md mx-auto">
+        <div className="bg-gradient-to-br from-[#1c1206]/90 via-[#110a03]/95 to-[#090501] rounded-3xl p-12 text-center border border-amber-500/40 shadow-xl max-w-md mx-auto">
           <CalendarCheck2 className="w-12 h-12 text-amber-400 mx-auto mb-3" />
-          <h3 className="text-base font-bold text-white mb-1">No Active Meal Plan</h3>
-          <p className="text-xs text-zinc-400 mb-6">
+          <h3 className="text-lg font-black text-white mb-1">No Active Meal Plan</h3>
+          <p className="text-sm text-zinc-300 mb-6 font-medium">
             Click 'Generate New Daily Plan' above to create a culturally aligned, nutrient-balanced menu with SehatSense AI.
           </p>
           <button
             onClick={handleGenerate}
             disabled={isGenerating}
-            className="px-6 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-xs font-extrabold shadow-lg shadow-amber-500/20 gold-box-glow transition-all cursor-pointer"
+            className="px-6 py-3 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-sm font-black shadow-lg shadow-amber-500/20 gold-box-glow transition-all cursor-pointer"
           >
             Create My Plan Now
           </button>

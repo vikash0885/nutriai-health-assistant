@@ -58,22 +58,22 @@ export const WaterTrackerPage: React.FC = () => {
         </p>
       </div>
 
-      {/* Main Hydration Card */}
+      {/* Main Hydration Card - Deep Ocean Sapphire */}
       {summary && (
-        <div className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="bg-gradient-to-br from-[#041d33]/90 via-[#021324]/95 to-[#010810] rounded-3xl p-6 sm:p-8 border border-sky-500/40 shadow-2xl hover:border-sky-400 hover:shadow-sky-500/10 transition-all flex flex-col md:flex-row items-center justify-between gap-8 backdrop-blur-xs">
           <div className="flex flex-col items-center justify-center text-center">
             <ProgressRing
               progress={summary.percentage}
               size={180}
               strokeWidth={16}
               colorClass="text-sky-400"
-              bgColorClass="text-zinc-800"
+              bgColorClass="text-sky-950/50"
             >
               <Droplet className="w-8 h-8 text-sky-400 mb-1" />
               <span className="text-3xl font-black text-white leading-none">{summary.total_ml}</span>
-              <span className="text-xs text-zinc-500 font-semibold mt-1">/ {summary.target_ml} ml</span>
+              <span className="text-sm text-sky-300 font-semibold mt-1">/ {summary.target_ml} ml</span>
             </ProgressRing>
-            <span className="text-xs font-bold text-sky-300 bg-sky-950/60 border border-sky-800/50 px-3 py-1 rounded-full mt-4">
+            <span className="text-xs font-black text-sky-300 bg-sky-950/80 border border-sky-500/40 px-3.5 py-1 rounded-full mt-4">
               {Math.round(summary.percentage)}% of Daily Target
             </span>
           </div>
@@ -81,8 +81,8 @@ export const WaterTrackerPage: React.FC = () => {
           {/* Quick Actions Panel */}
           <div className="flex-1 w-full space-y-4">
             <div>
-              <h3 className="text-sm font-bold text-white mb-1">Quick Log Buttons</h3>
-              <p className="text-xs text-zinc-400">Tap standard volumes to record instantly</p>
+              <h3 className="text-base font-black text-white mb-1">Quick Log Buttons</h3>
+              <p className="text-sm text-sky-200/80 font-medium">Tap standard volumes to record instantly</p>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -95,7 +95,7 @@ export const WaterTrackerPage: React.FC = () => {
                 <button
                   key={p.ml}
                   onClick={() => handleAddWater(p.ml)}
-                  className="p-3.5 rounded-2xl bg-sky-950/40 hover:bg-sky-900/60 border border-sky-800/50 text-sky-200 flex flex-col items-center justify-center transition-all group cursor-pointer"
+                  className="p-3.5 rounded-2xl bg-sky-950/50 hover:bg-sky-900/70 border border-sky-700/50 hover:border-sky-400 text-sky-200 flex flex-col items-center justify-center transition-all group cursor-pointer shadow-md"
                 >
                   <Droplet className="w-6 h-6 text-sky-400 mb-1 group-hover:scale-110 transition-transform" />
                   <span className="text-sm font-black">+{p.ml} ml</span>
@@ -113,7 +113,7 @@ export const WaterTrackerPage: React.FC = () => {
                 step="50"
                 value={customAmount}
                 onChange={(e) => setCustomAmount(Number(e.target.value) || 250)}
-                className="w-36 p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-500"
+                className="w-36 p-2.5 rounded-xl bg-black/60 border border-sky-500/30 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-400 text-white placeholder:text-zinc-500"
                 placeholder="Custom ml"
               />
               <button
@@ -127,8 +127,8 @@ export const WaterTrackerPage: React.FC = () => {
         </div>
       )}
 
-      {/* History */}
-      <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
+      {/* History - Deep Marine Navy */}
+      <div className="bg-gradient-to-br from-[#061826]/90 via-[#030e17]/95 to-[#01060a] rounded-3xl p-6 border border-sky-600/30 shadow-xl space-y-4 backdrop-blur-xs">
         <h3 className="text-base font-black text-white">Today's Hydration Entries</h3>
 
         {isLoading ? (
@@ -142,7 +142,7 @@ export const WaterTrackerPage: React.FC = () => {
             {logs.map((log) => (
               <div
                 key={log.id}
-                className="p-3.5 rounded-2xl bg-black/60 border border-zinc-800/80 flex items-center justify-between"
+                className="p-3.5 rounded-2xl bg-black/60 border border-sky-500/20 flex items-center justify-between hover:bg-sky-950/20 transition-colors"
               >
                 <div className="flex items-center gap-3">
                   <div className="p-2.5 rounded-xl bg-sky-950/70 border border-sky-800/60 text-sky-400">
@@ -169,7 +169,7 @@ export const WaterTrackerPage: React.FC = () => {
         )}
       </div>
 
-      <div className="p-4 bg-[#0d0d12] rounded-2xl border border-zinc-800 text-xs text-zinc-400 flex items-start gap-2">
+      <div className="p-4 bg-gradient-to-r from-[#031322] to-[#010810] rounded-2xl border border-sky-500/30 text-xs text-sky-200/80 flex items-start gap-2">
         <Info className="w-4 h-4 text-sky-400 flex-shrink-0 mt-0.5" />
         <span>
           Hydration guidance note: Fluid requirements vary by environmental heat, physical exertion,

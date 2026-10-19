@@ -28,12 +28,12 @@ export const LandingPage: React.FC = () => {
       let tokenData;
       try {
         tokenData = await api.login({
-          email: 'demo@nutriai.app',
+          email: 'ssdemo@gmail.com',
           password: 'DemoPassword123!',
         });
       } catch {
         tokenData = await api.register({
-          email: 'demo@nutriai.app',
+          email: 'ssdemo@gmail.com',
           password: 'DemoPassword123!',
           display_name: 'Vikash Mishra',
         });

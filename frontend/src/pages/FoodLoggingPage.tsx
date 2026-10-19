@@ -14,6 +14,7 @@ import {
   Info,
   Clock,
   ArrowRight,
+  UtensilsCrossed,
 } from 'lucide-react';
 
 export const FoodLoggingPage: React.FC = () => {
@@ -220,7 +221,7 @@ export const FoodLoggingPage: React.FC = () => {
       )}
 
       {/* Tabs Switcher */}
-      <div className="flex bg-[#0d0d12] border border-zinc-800/90 p-1.5 rounded-2xl max-w-sm">
+      <div className="flex bg-gradient-to-r from-[#1c1205] to-[#120b02] border border-amber-500/40 p-1.5 rounded-2xl max-w-sm shadow-lg">
         <button
           onClick={() => setActiveTab('manual')}
           className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer ${
@@ -249,31 +250,33 @@ export const FoodLoggingPage: React.FC = () => {
       {/* TAB 1: MANUAL ENTRY */}
       {activeTab === 'manual' && (
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {/* Left Column: Search & Select */}
-          <div className="md:col-span-7 bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
-            <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              <Search className="w-4 h-4 text-amber-400" />
+          {/* Left Column: Search & Select - Deep Emerald Obsidian */}
+          <div className="md:col-span-7 bg-gradient-to-br from-[#06201a]/90 via-[#041511]/95 to-[#020b08] rounded-3xl p-6 border border-emerald-500/40 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-500/10 transition-all space-y-4 backdrop-blur-xs">
+            <h3 className="text-base font-black text-white flex items-center gap-2.5">
+              <span className="p-1.5 rounded-xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                <Search className="w-4 h-4 text-emerald-400" />
+              </span>
               <span>Search Database</span>
             </h3>
 
             {/* Search Input */}
             <div className="relative">
-              <Search className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Search className="w-4 h-4 text-emerald-400/70 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search roti, dal, paneer, poha, dosa, biryani..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-600"
+                className="w-full pl-10 pr-4 py-2.5 rounded-2xl bg-black/60 border border-emerald-500/30 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/30 focus:border-emerald-400 transition-all text-white placeholder:text-zinc-500"
               />
             </div>
 
             {/* Search Results list */}
-            <div className="space-y-1.5 max-h-72 overflow-y-auto pr-1">
+            <div className="space-y-2 max-h-72 overflow-y-auto pr-1">
               {isSearching ? (
-                <div className="text-center py-6 text-xs text-zinc-500">Searching nutrition records...</div>
+                <div className="text-center py-6 text-sm text-zinc-400 font-medium">Searching nutrition records...</div>
               ) : searchResults.length === 0 ? (
-                <div className="text-center py-6 text-xs text-zinc-500">
+                <div className="text-center py-6 text-sm text-zinc-400 font-medium">
                   No exact dish found. You can still enter your dish name and estimate portion.
                 </div>
               ) : (
@@ -283,22 +286,22 @@ export const FoodLoggingPage: React.FC = () => {
                     <div
                       key={item.name}
                       onClick={() => handleSelectFood(item)}
-                      className={`p-3 rounded-2xl border cursor-pointer transition-all flex items-center justify-between ${
+                      className={`p-3.5 rounded-2xl border cursor-pointer transition-all flex items-center justify-between ${
                         isSel
-                          ? 'border-amber-400 bg-amber-950/30 shadow-sm'
-                          : 'border-zinc-800/80 bg-black/50 hover:bg-zinc-900/60'
+                          ? 'border-emerald-400 bg-emerald-950/70 shadow-lg shadow-emerald-500/20'
+                          : 'border-emerald-500/20 bg-black/60 hover:bg-emerald-950/40 hover:border-emerald-500/40'
                       }`}
                     >
                       <div>
                         <h4 className="text-sm font-bold text-white">{item.name}</h4>
                         <p className="text-xs text-zinc-300 font-medium">
                           {item.hindi_name ? `${item.hindi_name} • ` : ''}
-                          <span className="text-zinc-400">{item.category}</span>
+                          <span className="text-emerald-300/80">{item.category}</span>
                         </p>
                       </div>
                       <div className="text-right">
-                        <span className="text-sm font-bold text-zinc-200">{item.calories_per_100g} kcal</span>
-                        <span className="text-xs text-zinc-400 font-medium block">per 100g</span>
+                        <span className="text-sm font-bold text-zinc-100">{item.calories_per_100g} kcal</span>
+                        <span className="text-xs text-emerald-400 font-semibold block">per 100g</span>
                       </div>
                     </div>
                   );
@@ -307,10 +310,15 @@ export const FoodLoggingPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Column: Portion & Calculation Review */}
-          <div className="md:col-span-5 bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4 flex flex-col justify-between">
+          {/* Right Column: Portion & Calculation Review - Warm Terracotta Honey */}
+          <div className="md:col-span-5 bg-gradient-to-br from-[#281508]/90 via-[#1a0e05]/95 to-[#0d0703] rounded-3xl p-6 border border-amber-500/40 hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/10 transition-all space-y-4 flex flex-col justify-between backdrop-blur-xs">
             <div className="space-y-4">
-              <h3 className="text-base font-black text-white">Portion & Nutrients</h3>
+              <h3 className="text-base font-black text-white flex items-center gap-2.5">
+                <span className="p-1.5 rounded-xl bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  <UtensilsCrossed className="w-4 h-4 text-amber-400" />
+                </span>
+                <span>Portion & Nutrients</span>
+              </h3>
 
               {/* Meal Category */}
               <div>
@@ -324,7 +332,7 @@ export const FoodLoggingPage: React.FC = () => {
                       className={`py-2 text-sm font-bold rounded-xl capitalize transition-all cursor-pointer ${
                         mealCategory === cat
                           ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-black font-extrabold shadow-sm'
-                          : 'bg-black/60 border border-zinc-800 text-zinc-300 hover:bg-zinc-800/60 hover:text-white'
+                          : 'bg-black/60 border border-amber-500/20 text-zinc-300 hover:bg-amber-950/40 hover:text-white hover:border-amber-500/40'
                       }`}
                     >
                       {cat}
@@ -344,7 +352,7 @@ export const FoodLoggingPage: React.FC = () => {
                     max="50"
                     value={quantity}
                     onChange={(e) => setQuantity(Number(e.target.value) || 1)}
-                    className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white font-semibold"
+                    className="w-full p-2.5 rounded-xl bg-black/60 border border-amber-500/30 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white font-semibold"
                   />
                 </div>
 
@@ -353,7 +361,7 @@ export const FoodLoggingPage: React.FC = () => {
                   <select
                     value={unit}
                     onChange={(e) => setUnit(e.target.value)}
-                    className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white font-semibold"
+                    className="w-full p-2.5 rounded-xl bg-black/60 border border-amber-500/30 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white font-semibold"
                   >
                     {selectedFood && selectedFood.standard_units && selectedFood.standard_units.length > 0 ? (
                       selectedFood.standard_units.map((u) => (
@@ -374,8 +382,8 @@ export const FoodLoggingPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Calculated Nutrients Panel */}
-              <div className="bg-amber-950/20 p-4 rounded-2xl border border-amber-900/40 space-y-2.5">
+              {/* Calculated Nutrients Panel - Rich Amber Onyx */}
+              <div className="bg-gradient-to-br from-[#381a06]/90 via-[#241003]/95 to-[#130801] p-4.5 rounded-2xl border border-amber-500/40 shadow-xl space-y-2.5">
                 <div className="flex items-center justify-between text-sm font-bold text-zinc-200">
                   <span>Estimated Total Energy</span>
                   <span className="text-lg text-amber-400 font-black">
@@ -383,34 +391,34 @@ export const FoodLoggingPage: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-4 gap-2 pt-2 border-t border-amber-900/40 text-center">
+                <div className="grid grid-cols-4 gap-2 pt-2 border-t border-amber-500/30 text-center">
                   <div>
-                    <span className="text-xs text-zinc-300 font-bold block mb-0.5">Protein</span>
+                    <span className="text-xs text-amber-200/80 font-bold block mb-0.5">Protein</span>
                     <span className="text-sm font-extrabold text-amber-300">
                       {calculatedNutrients ? calculatedNutrients.protein_g : 0}g
                     </span>
                   </div>
                   <div>
-                    <span className="text-xs text-zinc-300 font-bold block mb-0.5">Carbs</span>
+                    <span className="text-xs text-amber-200/80 font-bold block mb-0.5">Carbs</span>
                     <span className="text-sm font-extrabold text-white">
                       {calculatedNutrients ? calculatedNutrients.carbs_g : 0}g
                     </span>
                   </div>
                   <div>
-                    <span className="text-xs text-zinc-300 font-bold block mb-0.5">Fat</span>
+                    <span className="text-xs text-amber-200/80 font-bold block mb-0.5">Fat</span>
                     <span className="text-sm font-extrabold text-yellow-400">
                       {calculatedNutrients ? calculatedNutrients.fat_g : 0}g
                     </span>
                   </div>
                   <div>
-                    <span className="text-xs text-zinc-300 font-bold block mb-0.5">Fiber</span>
+                    <span className="text-xs text-amber-200/80 font-bold block mb-0.5">Fiber</span>
                     <span className="text-sm font-extrabold text-emerald-400">
                       {calculatedNutrients ? calculatedNutrients.fiber_g : 0}g
                     </span>
                   </div>
                 </div>
 
-                <div className="text-xs text-zinc-400 font-medium text-center pt-1">
+                <div className="text-xs text-amber-300/70 font-medium text-center pt-1">
                   Formula: (nutrient_per_100g × {calculatedNutrients?.serving_weight_g || 100}g) ÷ 100
                 </div>
               </div>
@@ -422,7 +430,7 @@ export const FoodLoggingPage: React.FC = () => {
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="e.g. cooked with minimal oil, home recipe"
-                  className="w-full p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-500"
+                  className="w-full p-2.5 rounded-xl bg-black/60 border border-amber-500/30 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-500 font-medium"
                 />
               </div>
             </div>
@@ -430,13 +438,13 @@ export const FoodLoggingPage: React.FC = () => {
             <button
               onClick={handleManualSave}
               disabled={isSaving || (!selectedFood && !searchQuery.trim())}
-              className="w-full py-3 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold text-xs shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
+              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black font-black text-sm shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer"
             >
               {isSaving ? (
-                <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
               ) : (
                 <>
-                  <CheckCircle2 className="w-4 h-4" />
+                  <CheckCircle2 className="w-5 h-5" />
                   <span>Confirm & Save Entry</span>
                 </>
               )}
@@ -445,15 +453,15 @@ export const FoodLoggingPage: React.FC = () => {
         </div>
       )}
 
-      {/* TAB 2: AI IMAGE SCAN */}
+      {/* TAB 2: AI IMAGE SCAN - Royal Amethyst Obsidian */}
       {activeTab === 'image' && (
-        <div className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl space-y-6">
+        <div className="bg-gradient-to-br from-[#1f0933]/90 via-[#140622]/95 to-[#090210] rounded-3xl p-6 sm:p-8 border border-purple-500/40 shadow-2xl space-y-6 backdrop-blur-xs">
           <div className="max-w-xl mx-auto text-center space-y-2">
-            <div className="w-12 h-12 rounded-2xl bg-amber-950/60 border border-amber-800/50 text-amber-400 flex items-center justify-center mx-auto mb-2 shadow-sm">
-              <Camera className="w-6 h-6" />
+            <div className="w-14 h-14 rounded-2xl bg-purple-950/70 border border-purple-500/40 text-purple-300 flex items-center justify-center mx-auto mb-2 shadow-sm">
+              <Camera className="w-7 h-7 text-purple-400" />
             </div>
-            <h3 className="text-lg font-bold text-white">AI Food Recognition</h3>
-            <p className="text-xs text-zinc-400">
+            <h3 className="text-xl font-black text-white">AI Food Recognition</h3>
+            <p className="text-sm text-zinc-300 leading-relaxed font-medium">
               Upload a clear photo of your meal (rotis, thali, salad, or regional dish).
               SehatSense AI will identify likely dishes and calculate nutrients for your confirmation.
             </p>
@@ -461,7 +469,7 @@ export const FoodLoggingPage: React.FC = () => {
 
           {/* Upload Zone */}
           <div className="max-w-md mx-auto">
-            <label className="border-2 border-dashed border-zinc-700 hover:border-amber-400 rounded-3xl p-6 flex flex-col items-center justify-center cursor-pointer transition-colors bg-black/40 hover:bg-amber-950/15">
+            <label className="border-2 border-dashed border-purple-500/40 hover:border-purple-300 rounded-3xl p-6 flex flex-col items-center justify-center cursor-pointer transition-colors bg-black/50 hover:bg-purple-950/30">
               {previewUrl ? (
                 <img
                   src={previewUrl}

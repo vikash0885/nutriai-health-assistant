@@ -33,7 +33,7 @@ export const HabitInsightsPage: React.FC = () => {
           <span>Evaluating lifestyle consistency...</span>
         </div>
       ) : habits.length === 0 ? (
-        <div className="bg-[#0d0d12] rounded-3xl p-12 text-center border border-zinc-800/90 shadow-xl max-w-md mx-auto space-y-3">
+        <div className="bg-gradient-to-br from-[#1a1205]/95 via-[#110a02]/95 to-[#070401] rounded-3xl p-12 text-center border border-amber-500/35 shadow-xl max-w-md mx-auto space-y-3">
           <TrendingUp className="w-12 h-12 text-amber-400 mx-auto opacity-80" />
           <h3 className="text-base font-bold text-white">More Records Needed</h3>
           <p className="text-xs text-zinc-400">
@@ -43,7 +43,7 @@ export const HabitInsightsPage: React.FC = () => {
       ) : (
         <div className="space-y-4">
           {habits.map((h, i) => (
-            <div key={i} className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl space-y-3 hover:border-amber-500/40 transition-all">
+            <div key={i} className="bg-gradient-to-br from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] rounded-3xl p-6 sm:p-8 border border-amber-500/35 hover:border-amber-500/60 shadow-xl space-y-3 transition-all">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="p-2 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-400">

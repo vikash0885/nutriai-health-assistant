@@ -47,16 +47,16 @@ export const LoginPage: React.FC = () => {
   };
 
   const fillDemoAccount = () => {
-    setEmail('demo@nutriai.app');
+    setEmail('ssdemo@gmail.com');
     setPassword('DemoPassword123!');
     setError(null);
   };
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl w-full bg-[#0d0d12] rounded-3xl border border-zinc-800/90 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+      <div className="max-w-4xl w-full bg-gradient-to-br from-[#1c1408] via-[#0f0b04] to-[#060402] rounded-3xl border border-amber-500/40 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
         {/* Left: Onyx & Golden Amber Branding Panel */}
-        <div className="lg:col-span-5 bg-[#070709] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden border-b lg:border-b-0 lg:border-r border-zinc-800/80">
+        <div className="lg:col-span-5 bg-gradient-to-b from-[#180f03]/95 via-[#0e0902]/98 to-[#050301] p-8 sm:p-10 text-white flex flex-col justify-between relative overflow-hidden border-b lg:border-b-0 lg:border-r border-amber-500/30">
           {/* Custom Background Image Texture */}
           <div
             className="absolute inset-0 bg-cover bg-center opacity-10 mix-blend-screen pointer-events-none"
@@ -128,7 +128,7 @@ export const LoginPage: React.FC = () => {
         </div>
 
         {/* Right: Authentication Form */}
-        <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-[#0d0d12]">
+        <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-gradient-to-br from-[#120d05]/95 via-[#0c0904]/98 to-[#060402]">
           <div className="mb-6">
             <h3 className="text-2xl font-black text-white tracking-tight">Welcome Back</h3>
             <p className="text-sm text-zinc-300 mt-1">

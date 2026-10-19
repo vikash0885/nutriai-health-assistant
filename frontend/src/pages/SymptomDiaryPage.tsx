@@ -100,7 +100,7 @@ export const SymptomDiaryPage: React.FC = () => {
 
         <Link
           to="/patterns"
-          className="inline-flex items-center gap-2 bg-[#0d0d12] hover:bg-zinc-800 text-amber-300 font-semibold px-4 py-2 rounded-2xl border border-zinc-800 text-xs transition-all self-start sm:self-auto cursor-pointer"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] hover:border-amber-500/50 text-amber-300 font-semibold px-4 py-2 rounded-2xl border border-amber-500/30 text-xs transition-all self-start sm:self-auto cursor-pointer"
         >
           <Sparkles className="w-4 h-4 text-amber-400" />
           <span>Analyze Food Patterns</span>
@@ -115,7 +115,7 @@ export const SymptomDiaryPage: React.FC = () => {
       )}
 
       {/* Log Symptom Form */}
-      <div className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl space-y-4">
+      <div className="bg-gradient-to-br from-[#230933]/90 via-[#170522]/95 to-[#0b0211] rounded-3xl p-6 sm:p-8 border border-purple-500/40 shadow-2xl space-y-4">
         <h3 className="text-sm font-bold text-white flex items-center gap-2">
           <Plus className="w-4 h-4 text-amber-400" />
           <span>Log a Bodily or Digestive Feeling</span>
@@ -218,7 +218,7 @@ export const SymptomDiaryPage: React.FC = () => {
       </div>
 
       {/* Symptom History */}
-      <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
+      <div className="bg-gradient-to-br from-[#1b0826]/90 via-[#100418]/95 to-[#08020d] rounded-3xl p-6 border border-purple-500/30 shadow-xl space-y-4">
         <h3 className="text-sm font-bold text-white">Recorded Symptom History</h3>
 
         {isLoading ? (
@@ -247,7 +247,7 @@ export const SymptomDiaryPage: React.FC = () => {
               return (
                 <div
                   key={s.id}
-                  className="p-3.5 rounded-2xl bg-black/60 border border-zinc-800/80 flex items-center justify-between"
+                  className="p-3.5 rounded-2xl bg-[#140620]/70 border border-purple-900/40 hover:border-purple-500/40 transition-colors flex items-center justify-between"
                 >
                   <div>
                     <div className="flex items-center gap-2">

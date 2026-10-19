@@ -82,7 +82,7 @@ export const DashboardPage: React.FC = () => {
 
   if (error || !data) {
     return (
-      <div className="p-8 text-center max-w-md mx-auto bg-[#0d0d12] rounded-3xl border border-zinc-800 shadow-xl">
+      <div className="p-8 text-center max-w-md mx-auto bg-gradient-to-br from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] rounded-3xl border border-amber-500/35 shadow-2xl">
         <AlertCircle className="w-10 h-10 text-red-400 mx-auto mb-3" />
         <h3 className="text-lg font-bold text-white mb-1">Could not load dashboard</h3>
         <p className="text-xs text-zinc-400 mb-4">{error}</p>

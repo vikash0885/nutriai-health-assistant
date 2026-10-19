@@ -119,7 +119,7 @@ export const FoodDiaryPage: React.FC = () => {
         </div>
 
         {/* Date Selector */}
-        <div className="flex items-center gap-2 bg-[#0d0d12] p-2 rounded-2xl border border-zinc-800/90 shadow-md self-start sm:self-auto">
+        <div className="flex items-center gap-2 bg-gradient-to-r from-[#1c1205]/95 via-[#120a02]/95 to-[#080401] p-2 rounded-2xl border border-amber-500/40 shadow-md self-start sm:self-auto">
           <button
             onClick={handlePrevDay}
             className="p-2 hover:bg-zinc-800/60 rounded-xl text-zinc-300 transition-colors cursor-pointer"

@@ -8,7 +8,7 @@ interface MedicalDisclaimerProps {
 export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ compact = false }) => {
   if (compact) {
     return (
-      <div className="flex items-center gap-2 text-xs text-zinc-400 bg-[#0d0d12] px-3.5 py-2 rounded-xl border border-zinc-800/90">
+      <div className="flex items-center gap-2 text-xs text-zinc-300 bg-gradient-to-r from-[#180e03]/90 via-[#100802]/95 to-[#080401] px-3.5 py-2 rounded-xl border border-amber-500/30">
         <ShieldAlert className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
         <span>SehatSense AI is an educational wellness tool and does not provide medical diagnoses or treatment.</span>
       </div>
@@ -16,7 +16,7 @@ export const MedicalDisclaimer: React.FC<MedicalDisclaimerProps> = ({ compact = 
   }
 
   return (
-    <div className="bg-[#0d0d12] border border-zinc-800/90 rounded-2xl p-4 text-sm text-zinc-300 flex items-start gap-3 my-4 shadow-xl">
+    <div className="bg-gradient-to-br from-[#180e03]/90 via-[#100802]/95 to-[#080401] border border-amber-500/30 rounded-2xl p-4 text-sm text-zinc-300 flex items-start gap-3 my-4 shadow-xl">
       <div className="p-2 rounded-xl bg-amber-950/70 border border-amber-800/60 text-amber-400 flex-shrink-0">
         <AlertTriangle className="w-4 h-4" />
       </div>
