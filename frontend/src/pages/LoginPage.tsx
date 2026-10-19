@@ -72,9 +72,11 @@ export const LoginPage: React.FC = () => {
           {/* Top Brand Identity */}
           <div className="relative z-10">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center text-black font-black text-xl shadow-lg shadow-amber-500/25">
-                S
-              </div>
+              <img
+                src="/images/sehatsense-logo-icon.png"
+                alt="SehatSense AI Logo"
+                className="h-12 w-auto object-contain drop-shadow-[0_0_16px_rgba(245,158,11,0.45)]"
+              />
               <div>
                 <div className="flex items-center gap-1.5">
                   <span className="font-extrabold text-xl tracking-tight text-white">SehatSense</span>

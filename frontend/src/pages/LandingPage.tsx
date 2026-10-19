@@ -68,6 +68,15 @@ export const LandingPage: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
+            {/* Center Logo Artwork */}
+            <div className="flex justify-center mb-6">
+              <img
+                src="/images/sehatsense-logo-icon.png"
+                alt="SehatSense AI"
+                className="h-20 sm:h-24 w-auto object-contain drop-shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+
             {/* Top Badge: Golden pill matching reference image */}
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-500/40 bg-black/60 shadow-lg mb-8 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-amber-400 shadow-[0_0_10px_#f59e0b] animate-pulse" />

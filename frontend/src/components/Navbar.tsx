@@ -41,10 +41,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
             </button>
           )}
 
-          <Link to={isAuthenticated ? '/dashboard' : '/'} className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-amber-500 to-yellow-400 flex items-center justify-center shadow-md shadow-amber-500/25 text-black font-black text-lg">
-              S
-            </div>
+          <Link to={isAuthenticated ? '/dashboard' : '/'} className="flex items-center gap-3 group">
+            <img
+              src="/images/sehatsense-logo-icon.png"
+              alt="SehatSense AI Logo"
+              className="h-10 w-auto object-contain drop-shadow-[0_0_14px_rgba(245,158,11,0.4)] transition-transform duration-300 group-hover:scale-105"
+            />
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="font-extrabold text-white text-lg tracking-tight">SehatSense</span>
