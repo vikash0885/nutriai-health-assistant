@@ -155,84 +155,84 @@ export const LandingPage: React.FC = () => {
       {/* Core Features Grid */}
       <section className="py-20 bg-transparent border-t border-zinc-800/80 w-full">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-white mb-3 tracking-tight">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
               Comprehensive Health Intelligence, Built for Real Life
             </h2>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
               No generic western meal plans that ignore your culture. SehatSense AI embraces authentic Indian staples,
               honest calculations, and safe digestive pattern recognition.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {/* Card 1 */}
-            <div className="p-6 rounded-3xl bg-[#0c0c10] border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Camera className="w-6 h-6" />
+            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <Camera className="w-7 h-7" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">AI Vision Photo Logging</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">AI Vision Photo Logging</h3>
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                 Snap a picture of your thali or snack. SehatSense AI detects your rotis, dals, and sabzis,
                 allowing you to confirm portions while our deterministic engine calculates precise nutrients.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="p-6 rounded-3xl bg-[#0c0c10] border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Activity className="w-6 h-6" />
+            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <Activity className="w-7 h-7" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Food-to-Symptom Pattern Mining</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Food-to-Symptom Pattern Mining</h3>
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                 Log bloating, acidity, or sluggishness. Our deterministic algorithm computes time lags and
                 flags repeated associations with medical disclaimers to help you have informed doctor visits.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="p-6 rounded-3xl bg-[#0c0c10] border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Bot className="w-6 h-6" />
+            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <Bot className="w-7 h-7" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Bilingual Hindi-English AI Assistant</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Ask questions in English, Hindi, or Hinglish: <span className="italic text-amber-300">"Aaj maine kitna protein khaya?"</span>.
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Bilingual Hindi-English AI Assistant</h3>
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+                Ask questions in English, Hindi, or Hinglish: <span className="italic text-amber-300 font-medium">"Aaj maine kitna protein khaya?"</span>.
                 The assistant reads your live diary records with zero hallucinated history.
               </p>
             </div>
 
             {/* Card 4 */}
-            <div className="p-6 rounded-3xl bg-[#0c0c10] border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Calendar className="w-6 h-6" />
+            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <Calendar className="w-7 h-7" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Smart Affordable Meal Planner</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Smart Affordable Meal Planner</h3>
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                 Generate practical daily plans tailored to your budget (e.g. ₹250/day), allergies, and dietary choices
                 (Veg, Eggetarian, Non-Veg). 1-click adds meals to diary and builds grocery lists!
               </p>
             </div>
 
             {/* Card 5 */}
-            <div className="p-6 rounded-3xl bg-[#0c0c10] border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Apple className="w-6 h-6" />
+            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <Apple className="w-7 h-7" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Eat This, Try This</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Eat This, Try This</h3>
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                 Instead of shaming traditional foods, discover budget-friendly upgrades: adding sprouted moong to
                 boost fiber, or swapping packaged biscuits for roasted chana and chaas.
               </p>
             </div>
 
             {/* Card 6 */}
-            <div className="p-6 rounded-3xl bg-[#0c0c10] border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10 transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Dumbbell className="w-6 h-6" />
+            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+                <Dumbbell className="w-7 h-7" />
               </div>
-              <h3 className="text-base font-bold text-white mb-2">Exercise & Post-Meal Strolls</h3>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Exercise & Post-Meal Strolls</h3>
+              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
                 Traditional gentle 100-step strolls (Shatapawali) after meals accelerate gastric emptying and steady
                 blood sugar, complemented by beginner workout routines and water tracking.
               </p>
