@@ -17,6 +17,7 @@ import {
   Users,
 } from 'lucide-react';
 import { api } from '../services/api';
+import { FlowingParticles } from '../components/FlowingParticles';
 
 export const LandingPage: React.FC = () => {
   const { isAuthenticated, login } = useAuth();
@@ -62,8 +63,11 @@ export const LandingPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#070709] text-zinc-100 flex flex-col">
-      {/* Hero Section: Dark Onyx Grid + Radiant Gold Accents */}
-      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 mx-2 sm:mx-4 mt-2 rounded-3xl border border-zinc-800/80 bg-[#050507] bg-grid-mesh shadow-2xl">
+      {/* Hero Section: Dark Onyx + Radiant Gold Accents & Flowing Particles */}
+      <section className="relative overflow-hidden pt-16 pb-20 lg:pt-24 lg:pb-28 mx-2 sm:mx-4 mt-2 rounded-3xl border border-zinc-800/80 bg-[#050507] shadow-2xl">
+        {/* Animated Flowing Golden & Starlight Particle Dots */}
+        <FlowingParticles count={75} connectLines={true} />
+
         {/* Warm Golden/Amber Ambient Glow in center */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-gradient-to-tr from-amber-500/20 via-yellow-500/15 to-transparent rounded-full blur-[110px] pointer-events-none" />
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { api } from '../services/api';
+import { FlowingParticles } from '../components/FlowingParticles';
 import {
   Sparkles,
   Lock,
@@ -62,8 +63,8 @@ export const LoginPage: React.FC = () => {
             style={{ backgroundImage: `url('/images/sehatsense-background.png')` }}
           />
 
-          {/* Grid Mesh */}
-          <div className="absolute inset-0 bg-grid-mesh opacity-30 pointer-events-none" />
+          {/* Animated Flowing Particles */}
+          <FlowingParticles count={35} connectLines={true} />
 
           {/* Subtle Ambient Gold Glow */}
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
