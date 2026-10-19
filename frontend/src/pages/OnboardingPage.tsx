@@ -107,12 +107,22 @@ export const OnboardingPage: React.FC = () => {
         {/* Progress Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between text-xs font-semibold text-zinc-400 mb-2">
-            <span>Step {step} of 3</span>
-            <span className="text-amber-400 font-medium">
-              {step === 1 && 'Biometrics & Body'}
-              {step === 2 && 'Dietary Culture & Goals'}
-              {step === 3 && 'Allergies & Wellness'}
-            </span>
+            <div className="flex items-center gap-2">
+              <span>Step {step} of 3</span>
+              <span className="text-zinc-600">•</span>
+              <span className="text-amber-400 font-medium">
+                {step === 1 && 'Biometrics & Body'}
+                {step === 2 && 'Dietary Culture & Goals'}
+                {step === 3 && 'Allergies & Wellness'}
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => navigate('/dashboard')}
+              className="text-xs text-zinc-400 hover:text-amber-400 transition-colors font-medium cursor-pointer"
+            >
+              Skip to Dashboard →
+            </button>
           </div>
           <div className="w-full bg-zinc-800/80 h-2 rounded-full overflow-hidden">
             <div
