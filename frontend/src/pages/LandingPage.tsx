@@ -166,73 +166,73 @@ export const LandingPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-6xl mx-auto">
-            {/* Card 1 */}
-            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+            {/* Card 1: Warm Golden Amber */}
+            <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-[#281805]/85 via-[#1a1106]/90 to-[#0c0a07]/95 border border-amber-500/40 hover:border-amber-400 hover:shadow-2xl hover:shadow-amber-500/20 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-amber-500/20 border border-amber-500/40 text-amber-300 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-lg shadow-amber-500/10">
                 <Camera className="w-7 h-7" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">AI Vision Photo Logging</h3>
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-300 mb-3 tracking-tight transition-colors">AI Vision Photo Logging</h3>
+              <p className="text-sm sm:text-base text-zinc-200/90 leading-relaxed">
                 Snap a picture of your thali or snack. SehatSense AI detects your rotis, dals, and sabzis,
                 allowing you to confirm portions while our deterministic engine calculates precise nutrients.
               </p>
             </div>
 
-            {/* Card 2 */}
-            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+            {/* Card 2: Deep Ruby / Rose Vitality */}
+            <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-[#2e0814]/85 via-[#1d060e]/90 to-[#0e070a]/95 border border-rose-500/40 hover:border-rose-400 hover:shadow-2xl hover:shadow-rose-500/20 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-rose-500/20 border border-rose-500/40 text-rose-300 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-lg shadow-rose-500/10">
                 <Activity className="w-7 h-7" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Food-to-Symptom Pattern Mining</h3>
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-rose-300 mb-3 tracking-tight transition-colors">Food-to-Symptom Pattern Mining</h3>
+              <p className="text-sm sm:text-base text-zinc-200/90 leading-relaxed">
                 Log bloating, acidity, or sluggishness. Our deterministic algorithm computes time lags and
                 flags repeated associations with medical disclaimers to help you have informed doctor visits.
               </p>
             </div>
 
-            {/* Card 3 */}
-            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+            {/* Card 3: Deep Royal Violet / Indigo AI */}
+            <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-[#1e0e38]/85 via-[#130924]/90 to-[#0a0712]/95 border border-violet-500/40 hover:border-violet-400 hover:shadow-2xl hover:shadow-violet-500/20 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-violet-500/20 border border-violet-500/40 text-violet-300 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-lg shadow-violet-500/10">
                 <Bot className="w-7 h-7" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Bilingual Hindi-English AI Assistant</h3>
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                Ask questions in English, Hindi, or Hinglish: <span className="italic text-amber-300 font-medium">"Aaj maine kitna protein khaya?"</span>.
+              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-violet-300 mb-3 tracking-tight transition-colors">Bilingual Hindi-English AI Assistant</h3>
+              <p className="text-sm sm:text-base text-zinc-200/90 leading-relaxed">
+                Ask questions in English, Hindi, or Hinglish: <span className="italic text-violet-300 font-medium">"Aaj maine kitna protein khaya?"</span>.
                 The assistant reads your live diary records with zero hallucinated history.
               </p>
             </div>
 
-            {/* Card 4 */}
-            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+            {/* Card 4: Lush Emerald Green Budget */}
+            <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-[#072a17]/85 via-[#051a0f]/90 to-[#040e08]/95 border border-emerald-500/40 hover:border-emerald-400 hover:shadow-2xl hover:shadow-emerald-500/20 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-lg shadow-emerald-500/10">
                 <Calendar className="w-7 h-7" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Smart Affordable Meal Planner</h3>
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-300 mb-3 tracking-tight transition-colors">Smart Affordable Meal Planner</h3>
+              <p className="text-sm sm:text-base text-zinc-200/90 leading-relaxed">
                 Generate practical daily plans tailored to your budget (e.g. ₹250/day), allergies, and dietary choices
                 (Veg, Eggetarian, Non-Veg). 1-click adds meals to diary and builds grocery lists!
               </p>
             </div>
 
-            {/* Card 5 */}
-            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+            {/* Card 5: Cool Ocean Cyan / Teal Freshness */}
+            <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-[#062630]/85 via-[#041920]/90 to-[#040e12]/95 border border-cyan-500/40 hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/20 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-lg shadow-cyan-500/10">
                 <Apple className="w-7 h-7" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Eat This, Try This</h3>
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-cyan-300 mb-3 tracking-tight transition-colors">Eat This, Try This</h3>
+              <p className="text-sm sm:text-base text-zinc-200/90 leading-relaxed">
                 Instead of shaming traditional foods, discover budget-friendly upgrades: adding sprouted moong to
                 boost fiber, or swapping packaged biscuits for roasted chana and chaas.
               </p>
             </div>
 
-            {/* Card 6 */}
-            <div className="p-7 sm:p-9 rounded-3xl bg-[#0c0c10]/85 border border-zinc-800/80 hover:border-amber-500/50 hover:shadow-xl hover:shadow-amber-500/10 transition-all group backdrop-blur-xs">
-              <div className="w-14 h-14 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+            {/* Card 6: Warm Sunset Orange / Coral Fitness */}
+            <div className="p-7 sm:p-9 rounded-3xl bg-gradient-to-br from-[#2f1406]/85 via-[#1e0e05]/90 to-[#0e0704]/95 border border-orange-500/40 hover:border-orange-400 hover:shadow-2xl hover:shadow-orange-500/20 transition-all group backdrop-blur-xs">
+              <div className="w-14 h-14 rounded-2xl bg-orange-500/20 border border-orange-500/40 text-orange-300 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform shadow-lg shadow-orange-500/10">
                 <Dumbbell className="w-7 h-7" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 tracking-tight">Exercise & Post-Meal Strolls</h3>
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-orange-300 mb-3 tracking-tight transition-colors">Exercise & Post-Meal Strolls</h3>
+              <p className="text-sm sm:text-base text-zinc-200/90 leading-relaxed">
                 Traditional gentle 100-step strolls (Shatapawali) after meals accelerate gastric emptying and steady
                 blood sugar, complemented by beginner workout routines and water tracking.
               </p>
