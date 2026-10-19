@@ -75,12 +75,12 @@ export const PatternInsightsPage: React.FC = () => {
       ) : insights.length === 0 ? (
         <div className="bg-[#0d0d12] rounded-3xl p-12 text-center border border-zinc-800/90 shadow-xl max-w-lg mx-auto space-y-3">
           <Sparkles className="w-12 h-12 text-amber-400 mx-auto opacity-80" />
-          <h3 className="text-base font-bold text-white">No Repeated Patterns Found Yet</h3>
-          <p className="text-xs text-zinc-400 leading-relaxed">
+          <h3 className="text-lg font-black text-white">No Repeated Patterns Found Yet</h3>
+          <p className="text-sm text-zinc-300 leading-relaxed">
             SehatSense AI strictly avoids fabricating false associations. We require at least 2 distinct instances
             where a symptom was logged within 6 hours of consuming a specific food before flagging a pattern.
           </p>
-          <p className="text-[11px] text-zinc-500">
+          <p className="text-xs text-zinc-400 font-medium">
             Keep logging your daily meals in the Food Diary and any feelings in the Symptom Diary!
           </p>
         </div>
@@ -101,46 +101,46 @@ export const PatternInsightsPage: React.FC = () => {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
-                    <span className="p-2 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-400">
-                      <Sparkles className="w-4 h-4" />
+                    <span className="p-2.5 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-400">
+                      <Sparkles className="w-5 h-5" />
                     </span>
-                    <h3 className="text-base font-bold text-white">{ins.title}</h3>
+                    <h3 className="text-lg font-black text-white">{ins.title}</h3>
                   </div>
 
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider ${confColor}`}>
+                  <span className={`text-xs font-black px-3.5 py-1 rounded-full uppercase tracking-wider ${confColor}`}>
                     {ins.confidence} confidence
                   </span>
                 </div>
 
-                <p className="text-sm text-zinc-300 leading-relaxed">{ins.description}</p>
+                <p className="text-sm sm:text-base text-zinc-200 leading-relaxed">{ins.description}</p>
 
                 {ins.actionable_tip && (
-                  <div className="bg-amber-950/20 p-3.5 rounded-2xl border border-amber-900/30 text-xs text-amber-200">
-                    <strong className="block mb-0.5">Practical Tracking Step:</strong>
+                  <div className="bg-amber-950/20 p-4 rounded-2xl border border-amber-900/30 text-sm text-amber-200 leading-relaxed">
+                    <strong className="block mb-1 text-amber-300 font-extrabold">Practical Tracking Step:</strong>
                     {ins.actionable_tip}
                   </div>
                 )}
 
                 {/* Medical Safety Disclaimer for this Pattern */}
-                <div className="p-3 bg-black/60 rounded-xl border border-zinc-800 text-[11px] text-zinc-400 flex items-start gap-2">
-                  <Info className="w-4 h-4 text-zinc-500 flex-shrink-0 mt-0.5" />
+                <div className="p-3.5 bg-black/60 rounded-xl border border-zinc-800 text-xs text-zinc-300 flex items-start gap-2.5 leading-relaxed">
+                  <Info className="w-4.5 h-4.5 text-zinc-400 flex-shrink-0 mt-0.5" />
                   <span>{ins.medical_disclaimer}</span>
                 </div>
 
                 {/* Feedback Bar */}
-                <div className="flex items-center justify-between pt-3 border-t border-zinc-800 text-xs text-zinc-400">
-                  <span className="text-[11px]">Was this pattern observation accurate for you?</span>
+                <div className="flex items-center justify-between pt-3 border-t border-zinc-800 text-xs text-zinc-300 font-medium">
+                  <span>Was this pattern observation accurate for you?</span>
 
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleFeedback(ins.id, 'helpful')}
-                      className={`px-3 py-1.5 rounded-xl border flex items-center gap-1.5 font-medium transition-all cursor-pointer ${
+                      className={`px-3.5 py-1.5 rounded-xl border flex items-center gap-1.5 font-bold transition-all cursor-pointer ${
                         ins.user_feedback === 'helpful'
-                          ? 'border-amber-400 bg-amber-950/50 text-amber-300 font-bold'
+                          ? 'border-amber-400 bg-amber-950/50 text-amber-300'
                           : 'border-zinc-800 hover:bg-zinc-800/60 text-zinc-300'
                       }`}
                     >
-                      <ThumbsUp className="w-3.5 h-3.5" /> Helpful
+                      <ThumbsUp className="w-4 h-4" /> Helpful
                     </button>
 
                     <button

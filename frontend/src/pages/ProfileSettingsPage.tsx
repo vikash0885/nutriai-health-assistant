@@ -124,33 +124,33 @@ export const ProfileSettingsPage: React.FC = () => {
       {/* Target Preview Strip */}
       {profile && (
         <div className="bg-[#0d0d12] border border-zinc-800/90 shadow-xl rounded-3xl p-6 text-center">
-          <h3 className="text-xs font-bold text-amber-300 uppercase tracking-wider mb-3">
+          <h3 className="text-sm font-black text-amber-300 uppercase tracking-wider mb-3">
             Computed Daily Dietary Targets (Mifflin-St Jeor & ICMR Standards)
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-6 gap-3">
             <div>
-              <span className="text-[10px] text-zinc-500 block">Calories</span>
-              <span className="text-base font-bold text-white">{Math.round(profile.daily_calorie_target)} kcal</span>
+              <span className="text-xs text-zinc-400 font-bold block mb-1">Calories</span>
+              <span className="text-lg font-black text-white">{Math.round(profile.daily_calorie_target)} kcal</span>
             </div>
             <div>
-              <span className="text-[10px] text-zinc-500 block">Protein</span>
-              <span className="text-base font-bold text-amber-400">{profile.daily_protein_target} g</span>
+              <span className="text-xs text-zinc-400 font-bold block mb-1">Protein</span>
+              <span className="text-lg font-black text-amber-400">{profile.daily_protein_target} g</span>
             </div>
             <div>
-              <span className="text-[10px] text-zinc-500 block">Carbs</span>
-              <span className="text-base font-bold text-amber-300">{profile.daily_carb_target} g</span>
+              <span className="text-xs text-zinc-400 font-bold block mb-1">Carbs</span>
+              <span className="text-lg font-black text-amber-300">{profile.daily_carb_target} g</span>
             </div>
             <div>
-              <span className="text-[10px] text-zinc-500 block">Fat</span>
-              <span className="text-base font-bold text-yellow-500">{profile.daily_fat_target} g</span>
+              <span className="text-xs text-zinc-400 font-bold block mb-1">Fat</span>
+              <span className="text-lg font-black text-yellow-500">{profile.daily_fat_target} g</span>
             </div>
             <div>
-              <span className="text-[10px] text-zinc-500 block">Fiber</span>
-              <span className="text-base font-bold text-emerald-400">{profile.daily_fiber_target} g</span>
+              <span className="text-xs text-zinc-400 font-bold block mb-1">Fiber</span>
+              <span className="text-lg font-black text-emerald-400">{profile.daily_fiber_target} g</span>
             </div>
             <div>
-              <span className="text-[10px] text-zinc-500 block">Water</span>
-              <span className="text-base font-bold text-sky-400">{profile.daily_water_target_ml} ml</span>
+              <span className="text-xs text-zinc-400 font-bold block mb-1">Water</span>
+              <span className="text-lg font-black text-sky-400">{profile.daily_water_target_ml} ml</span>
             </div>
           </div>
         </div>
@@ -158,8 +158,8 @@ export const ProfileSettingsPage: React.FC = () => {
 
       {/* Profile Form */}
       <form onSubmit={handleSaveProfile} className="bg-[#0d0d12] rounded-3xl p-6 sm:p-8 border border-zinc-800/90 shadow-xl space-y-5">
-        <h3 className="text-sm font-bold text-white flex items-center gap-2">
-          <User className="w-4 h-4 text-amber-400" />
+        <h3 className="text-base font-black text-white flex items-center gap-2">
+          <User className="w-5 h-5 text-amber-400" />
           <span>Biometric & Lifestyle Profile</span>
         </h3>
 

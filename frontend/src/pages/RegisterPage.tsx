@@ -96,11 +96,11 @@ export const RegisterPage: React.FC = () => {
                     <span className="text-white">Sehat</span>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.3)]">Sense</span>
                   </span>
-                  <span className="text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-full">
                     AI
                   </span>
                 </div>
-                <p className="text-xs text-amber-400/90 font-medium">Smart Food Choices, Better Health.</p>
+                <p className="text-xs text-amber-300 font-semibold">Smart Food Choices, Better Health.</p>
               </div>
             </div>
 
@@ -108,23 +108,23 @@ export const RegisterPage: React.FC = () => {
               <h2 className="text-2xl font-bold leading-tight tracking-tight text-white">
                 Start Your Intelligent Nutrition Journey
               </h2>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <p className="text-sm text-zinc-300 leading-relaxed">
                 Join thousands who balance authentic Indian dishes with smart macro goals, hydration tracking, and symptom awareness.
               </p>
             </div>
 
             {/* Highlights */}
             <div className="space-y-3 pt-2">
-              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
-                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-sm font-medium text-zinc-200">
+                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
                 <span>Personalized Mifflin-St Jeor TDEE target</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
-                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-sm font-medium text-zinc-200">
+                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
                 <span>Bilingual conversational assistance in Hindi & English</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
-                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-sm font-medium text-zinc-200">
+                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
                 <span>Smart budget-friendly meal plan generation</span>
               </div>
             </div>
@@ -132,8 +132,8 @@ export const RegisterPage: React.FC = () => {
 
           {/* Bottom Trust Badge */}
           <div className="relative z-10 pt-6 mt-6 border-t border-zinc-800/80">
-            <div className="flex items-center gap-2 text-[11px] text-zinc-400">
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
+            <div className="flex items-center gap-2 text-xs text-zinc-300 font-medium">
+              <ShieldCheck className="w-4.5 h-4.5 text-amber-400" />
               <span>Zero health-data selling. Total user consent controls.</span>
             </div>
           </div>
@@ -234,9 +234,9 @@ export const RegisterPage: React.FC = () => {
                   type="checkbox"
                   checked={consent}
                   onChange={(e) => setConsent(e.target.checked)}
-                  className="mt-0.5 w-4 h-4 text-amber-500 bg-black/60 rounded border-zinc-700 focus:ring-amber-400"
+                  className="mt-1 w-4.5 h-4.5 text-amber-500 bg-black/60 rounded border-zinc-700 focus:ring-amber-400"
                 />
-                <span className="text-[11px] text-zinc-400 leading-tight">
+                <span className="text-xs text-zinc-300 leading-relaxed font-medium">
                   I agree to the secure storage of my food diary and lifestyle logs for educational wellness intelligence,
                   and acknowledge SehatSense AI is not medical treatment.
                 </span>
@@ -246,7 +246,7 @@ export const RegisterPage: React.FC = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full mt-3 py-3 px-4 rounded-xl font-bold text-sm text-black bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer"
+              className="w-full mt-3 py-3 px-4 rounded-xl font-black text-sm text-black bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer"
             >
               {isLoading ? (
                 <div className="w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin" />
@@ -259,9 +259,9 @@ export const RegisterPage: React.FC = () => {
             </button>
           </form>
 
-          <p className="text-center text-xs text-zinc-400 mt-6">
+          <p className="text-center text-sm text-zinc-300 mt-6">
             Already have an account?{' '}
-            <Link to="/login" className="font-semibold text-amber-400 hover:text-amber-300 hover:underline">
+            <Link to="/login" className="font-bold text-amber-400 hover:text-amber-300 hover:underline">
               Sign In
             </Link>
           </p>

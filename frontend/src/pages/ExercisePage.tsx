@@ -117,18 +117,18 @@ export const ExercisePage: React.FC = () => {
             >
               <div>
                 <div className="flex items-center justify-between mb-1">
-                  <h4 className="text-xs font-bold text-white">{routine.title}</h4>
-                  <span className="text-[10px] font-bold bg-amber-950/60 border border-amber-800/50 text-amber-300 px-2 py-0.5 rounded-full capitalize">
+                  <h4 className="text-sm font-bold text-white">{routine.title}</h4>
+                  <span className="text-xs font-bold bg-amber-950/60 border border-amber-800/50 text-amber-300 px-2.5 py-0.5 rounded-full capitalize">
                     {routine.intensity}
                   </span>
                 </div>
-                <p className="text-xs text-zinc-300 leading-relaxed mb-2">{routine.benefits}</p>
-                <div className="text-[11px] text-amber-200 bg-amber-950/30 p-2 rounded-xl border border-amber-900/40">
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed mb-2">{routine.benefits}</p>
+                <div className="text-xs text-amber-200 bg-amber-950/30 p-2.5 rounded-xl border border-amber-900/40">
                   ⚠️ {routine.safety_notes}
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-2 border-t border-zinc-800 text-xs text-zinc-400 font-medium">
+              <div className="flex items-center justify-between pt-2 border-t border-zinc-800 text-sm text-zinc-300 font-medium">
                 <span>⏱️ {routine.duration_minutes} mins</span>
                 <span className="text-amber-400 font-bold">~{Math.round(routine.estimated_calories)} kcal</span>
               </div>
@@ -251,8 +251,8 @@ export const ExercisePage: React.FC = () => {
                 className="p-3.5 rounded-2xl bg-black/60 border border-zinc-800/80 flex items-center justify-between"
               >
                 <div>
-                  <h4 className="text-xs font-bold text-white">{ex.activity_name}</h4>
-                  <p className="text-[11px] text-zinc-400 mt-0.5">
+                  <h4 className="text-sm font-bold text-white">{ex.activity_name}</h4>
+                  <p className="text-xs text-zinc-300 mt-1 font-medium">
                     {new Date(ex.logged_at).toLocaleDateString('en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
                     {` • ${ex.duration_minutes} mins • ${ex.intensity} intensity`}
                     {ex.notes && ` • "${ex.notes}"`}
@@ -261,8 +261,8 @@ export const ExercisePage: React.FC = () => {
 
                 <div className="flex items-center gap-3">
                   <div className="text-right">
-                    <span className="text-xs font-bold text-amber-400">{Math.round(ex.calories_burned)} kcal</span>
-                    <span className="text-[10px] text-zinc-500 block">burned</span>
+                    <span className="text-sm font-bold text-amber-400">{Math.round(ex.calories_burned)} kcal</span>
+                    <span className="text-xs text-zinc-400 block font-medium">burned</span>
                   </div>
 
                   <button

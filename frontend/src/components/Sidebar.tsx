@@ -57,7 +57,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         }`}
       >
         <div className="p-4 space-y-1">
-          <div className="px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+          <div className="px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-zinc-400">
             Core Tracking
           </div>
           {navItems.slice(0, 4).map((item) => (
@@ -66,19 +66,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               to={item.to}
               onClick={onClose}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition-all ${
                   isActive
-                    ? 'bg-amber-500/15 text-amber-300 font-semibold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                    ? 'bg-amber-500/15 text-amber-300 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/60'
                 }`
               }
             >
-              <item.icon className="w-4 h-4 flex-shrink-0" />
+              <item.icon className="w-5 h-5 flex-shrink-0" />
               <span>{item.label}</span>
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+          <div className="pt-3 px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-zinc-400">
             AI & Planning
           </div>
           {navItems.slice(4, 7).map((item) => (
@@ -87,19 +87,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               to={item.to}
               onClick={onClose}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition-all ${
                   isActive
-                    ? 'bg-amber-500/15 text-amber-300 font-semibold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                    ? 'bg-amber-500/15 text-amber-300 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/60'
                 }`
               }
             >
-              <item.icon className="w-4 h-4 flex-shrink-0" />
+              <item.icon className="w-5 h-5 flex-shrink-0" />
               <span>{item.label}</span>
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+          <div className="pt-3 px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-zinc-400">
             Health & Insights
           </div>
           {navItems.slice(7, 10).map((item) => (
@@ -108,19 +108,19 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               to={item.to}
               onClick={onClose}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition-all ${
                   isActive
-                    ? 'bg-amber-500/15 text-amber-300 font-semibold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                    ? 'bg-amber-500/15 text-amber-300 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/60'
                 }`
               }
             >
-              <item.icon className="w-4 h-4 flex-shrink-0" />
+              <item.icon className="w-5 h-5 flex-shrink-0" />
               <span>{item.label}</span>
             </NavLink>
           ))}
 
-          <div className="pt-3 px-3 py-2 text-[10px] font-bold uppercase tracking-wider text-zinc-500">
+          <div className="pt-3 px-3 py-2 text-xs font-extrabold uppercase tracking-wider text-zinc-400">
             Lifestyle & Support
           </div>
           {navItems.slice(10).map((item) => (
@@ -129,14 +129,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               to={item.to}
               onClick={onClose}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                `flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition-all ${
                   isActive
-                    ? 'bg-amber-500/15 text-amber-300 font-semibold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
-                    : 'text-zinc-400 hover:text-white hover:bg-zinc-800/60'
+                    ? 'bg-amber-500/15 text-amber-300 font-bold border-l-3 border-amber-400 shadow-sm shadow-amber-950/40'
+                    : 'text-zinc-300 hover:text-white hover:bg-zinc-800/60'
                 }`
               }
             >
-              <item.icon className="w-4 h-4 flex-shrink-0" />
+              <item.icon className="w-5 h-5 flex-shrink-0" />
               <span>{item.label}</span>
             </NavLink>
           ))}

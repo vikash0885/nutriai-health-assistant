@@ -84,11 +84,11 @@ export const LoginPage: React.FC = () => {
                     <span className="text-white">Sehat</span>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.3)]">Sense</span>
                   </span>
-                  <span className="text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                  <span className="text-xs font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-full">
                     AI
                   </span>
                 </div>
-                <p className="text-xs text-amber-400/90 font-medium">Smart Food Choices, Better Health.</p>
+                <p className="text-xs text-amber-300 font-semibold">Smart Food Choices, Better Health.</p>
               </div>
             </div>
 
@@ -96,23 +96,23 @@ export const LoginPage: React.FC = () => {
               <h2 className="text-2xl font-bold leading-tight tracking-tight text-white">
                 Personal Food, Health & Fitness Intelligence
               </h2>
-              <p className="text-xs text-zinc-400 leading-relaxed">
+              <p className="text-sm text-zinc-300 leading-relaxed">
                 Log authentic meals, discover pattern correlations, and achieve balanced wellness with bilingual AI assistance.
               </p>
             </div>
 
             {/* Highlights */}
             <div className="space-y-3 pt-2">
-              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
-                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-sm font-medium text-zinc-200">
+                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
                 <span>120+ Curated Indian Dishes & Nutrition Math</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
-                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-sm font-medium text-zinc-200">
+                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
                 <span>Multimodal AI Food Photo Recognition</span>
               </div>
-              <div className="flex items-center gap-2.5 text-xs text-zinc-300">
-                <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
+              <div className="flex items-center gap-2.5 text-sm font-medium text-zinc-200">
+                <CheckCircle2 className="w-5 h-5 text-amber-400 flex-shrink-0" />
                 <span>Temporal Symptom Pattern Analysis</span>
               </div>
             </div>
@@ -120,8 +120,8 @@ export const LoginPage: React.FC = () => {
 
           {/* Bottom Trust Badge */}
           <div className="relative z-10 pt-6 mt-6 border-t border-zinc-800/80">
-            <div className="flex items-center gap-2 text-[11px] text-zinc-400">
-              <ShieldCheck className="w-4 h-4 text-amber-400" />
+            <div className="flex items-center gap-2 text-xs text-zinc-300 font-medium">
+              <ShieldCheck className="w-4.5 h-4.5 text-amber-400" />
               <span>Private, secure, and user-consented health data</span>
             </div>
           </div>
@@ -130,25 +130,25 @@ export const LoginPage: React.FC = () => {
         {/* Right: Authentication Form */}
         <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-center bg-[#0d0d12]">
           <div className="mb-6">
-            <h3 className="text-2xl font-bold text-white tracking-tight">Welcome Back</h3>
-            <p className="text-xs text-zinc-400 mt-1">
+            <h3 className="text-2xl font-black text-white tracking-tight">Welcome Back</h3>
+            <p className="text-sm text-zinc-300 mt-1">
               Sign in to your SehatSense AI account to continue your wellness journey.
             </p>
           </div>
 
           {error && (
-            <div className="mb-5 p-3.5 rounded-xl bg-red-950/40 border border-red-800/60 text-xs text-red-300 flex items-center gap-2">
-              <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-400" />
+            <div className="mb-5 p-3.5 rounded-xl bg-red-950/40 border border-red-800/60 text-sm text-red-300 flex items-center gap-2">
+              <AlertCircle className="w-5 h-5 flex-shrink-0 text-red-400" />
               <span>{error}</span>
             </div>
           )}
 
           {forgotNotice && (
-            <div className="mb-5 p-3.5 rounded-xl bg-amber-950/40 border border-amber-800/60 text-xs text-amber-300 flex items-start gap-2">
-              <HeartPulse className="w-4 h-4 flex-shrink-0 text-amber-400 mt-0.5" />
+            <div className="mb-5 p-3.5 rounded-xl bg-amber-950/40 border border-amber-800/60 text-sm text-amber-300 flex items-start gap-2">
+              <HeartPulse className="w-5 h-5 flex-shrink-0 text-amber-400 mt-0.5" />
               <div>
-                <p className="font-semibold">Reset Password</p>
-                <p className="text-[11px] text-zinc-300 mt-0.5">
+                <p className="font-bold">Reset Password</p>
+                <p className="text-xs text-zinc-200 mt-0.5">
                   For security, local development accounts can reset by creating a new account or using Demo Credentials below.
                 </p>
               </div>
@@ -157,27 +157,27 @@ export const LoginPage: React.FC = () => {
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold text-zinc-300 mb-1.5">Email Address</label>
+              <label className="block text-sm font-bold text-zinc-200 mb-1.5">Email Address</label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Mail className="w-4.5 h-4.5 text-zinc-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-600"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 transition-all text-white placeholder:text-zinc-500 font-medium"
                 />
               </div>
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="block text-xs font-semibold text-zinc-300">Password</label>
+                <label className="block text-sm font-bold text-zinc-200">Password</label>
                 <button
                   type="button"
                   onClick={() => setForgotNotice(!forgotNotice)}
-                  className="text-[11px] font-medium text-amber-400 hover:text-amber-300 hover:underline"
+                  className="text-xs font-bold text-amber-400 hover:text-amber-300 hover:underline"
                 >
                   Forgot password?
                 </button>

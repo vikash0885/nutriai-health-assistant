@@ -251,13 +251,13 @@ export const SymptomDiaryPage: React.FC = () => {
                 >
                   <div>
                     <div className="flex items-center gap-2">
-                      <h4 className="text-xs font-bold text-white">{s.symptom_type}</h4>
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full capitalize ${sevBadge}`}>
+                      <h4 className="text-sm font-bold text-white">{s.symptom_type}</h4>
+                      <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full capitalize ${sevBadge}`}>
                         {s.severity}
                       </span>
                     </div>
 
-                    <p className="text-[11px] text-zinc-400 mt-0.5">
+                    <p className="text-xs text-zinc-300 mt-1 font-medium">
                       {logDate}
                       {s.onset_minutes_after_meal && ` • ~${s.onset_minutes_after_meal} mins after meal`}
                       {s.suspected_food && ` • Trigger: ${s.suspected_food}`}

@@ -76,19 +76,19 @@ export const MacroCard: React.FC<MacroCardProps> = ({ label, data, color, icon }
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
           {icon && <div className={`p-1.5 rounded-lg border ${scheme.bg} ${scheme.text} ${scheme.border}`}>{icon}</div>}
-          <span className="text-xs font-semibold text-zinc-300 uppercase tracking-wider">{label}</span>
+          <span className="text-sm font-bold text-zinc-200 uppercase tracking-wider">{label}</span>
         </div>
-        <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${scheme.bg} ${scheme.text} ${scheme.border}`}>
+        <span className={`text-sm font-extrabold px-2.5 py-0.5 rounded-full border ${scheme.bg} ${scheme.text} ${scheme.border}`}>
           {Math.round(data.percentage)}%
         </span>
       </div>
 
       <div className="flex items-baseline justify-between mt-1 mb-2">
         <div className="flex items-baseline gap-1">
-          <span className="text-xl font-bold text-white">{Math.round(data.current)}</span>
-          <span className="text-xs text-zinc-300">/ {Math.round(data.target)} {data.unit || 'g'}</span>
+          <span className="text-2xl font-black text-white">{Math.round(data.current)}</span>
+          <span className="text-sm font-medium text-zinc-300">/ {Math.round(data.target)} {data.unit || 'g'}</span>
         </div>
-        <span className="text-xs text-zinc-400 font-medium">
+        <span className="text-sm text-zinc-300 font-semibold">
           {Math.max(0, Math.round(data.target - data.current))} left
         </span>
       </div>

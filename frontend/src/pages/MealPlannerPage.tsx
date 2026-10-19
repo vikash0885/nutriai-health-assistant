@@ -235,29 +235,29 @@ export const MealPlannerPage: React.FC = () => {
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-white mt-1">{item.food_name}</h3>
-                  <p className="text-xs text-zinc-400 mt-0.5">Portion: {item.portion_description}</p>
+                  <h3 className="text-lg font-black text-white mt-1">{item.food_name}</h3>
+                  <p className="text-sm text-zinc-300 font-medium mt-0.5">Portion: {item.portion_description}</p>
 
                   {/* Nutrients preview */}
-                  <div className="grid grid-cols-3 gap-2 bg-black/60 border border-zinc-800 p-2.5 rounded-xl text-center text-xs font-semibold text-zinc-300 my-3">
+                  <div className="grid grid-cols-3 gap-2 bg-black/60 border border-zinc-800 p-3 rounded-xl text-center text-sm font-semibold text-zinc-200 my-3">
                     <div>
-                      <span className="text-[10px] text-zinc-500 block">Protein</span>
-                      <span className="text-amber-400 font-bold">{item.protein_g}g</span>
+                      <span className="text-xs text-zinc-400 font-bold block mb-0.5">Protein</span>
+                      <span className="text-amber-400 font-black text-base">{item.protein_g}g</span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-zinc-500 block">Carbs</span>
-                      <span className="text-white font-semibold">{item.carbs_g}g</span>
+                      <span className="text-xs text-zinc-400 font-bold block mb-0.5">Carbs</span>
+                      <span className="text-white font-black text-base">{item.carbs_g}g</span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-zinc-500 block">Fat</span>
-                      <span className="text-white font-semibold">{item.fat_g}g</span>
+                      <span className="text-xs text-zinc-400 font-bold block mb-0.5">Fat</span>
+                      <span className="text-white font-black text-base">{item.fat_g}g</span>
                     </div>
                   </div>
 
                   {/* Recipe / Instructions */}
                   {item.recipe_instructions && (
-                    <div className="text-xs text-zinc-300 bg-amber-950/20 p-3 rounded-xl border border-amber-900/30">
-                      <span className="font-bold text-amber-300 block mb-0.5">Quick Preparation:</span>
+                    <div className="text-sm text-zinc-200 bg-amber-950/20 p-3.5 rounded-xl border border-amber-900/30 leading-relaxed">
+                      <span className="font-extrabold text-amber-300 block mb-1">Quick Preparation:</span>
                       {item.recipe_instructions}
                     </div>
                   )}
@@ -265,13 +265,13 @@ export const MealPlannerPage: React.FC = () => {
 
                 {/* Ingredients chips */}
                 {item.ingredients && item.ingredients.length > 0 && (
-                  <div className="pt-2 border-t border-zinc-800">
-                    <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider block mb-1.5">
+                  <div className="pt-2.5 border-t border-zinc-800">
+                    <span className="text-xs font-black text-zinc-400 uppercase tracking-wider block mb-2">
                       Key Ingredients:
                     </span>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap gap-2">
                       {item.ingredients.map((ing, i) => (
-                        <span key={i} className="text-[11px] bg-black/60 border border-zinc-800 text-zinc-300 px-2 py-0.5 rounded-lg">
+                        <span key={i} className="text-xs font-semibold bg-black/60 border border-zinc-700/80 text-zinc-200 px-2.5 py-1 rounded-lg">
                           {ing}
                         </span>
                       ))}

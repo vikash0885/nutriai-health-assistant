@@ -86,14 +86,14 @@ export const FoodAlternativesPage: React.FC = () => {
 
         {/* Quick Click presets */}
         <div>
-          <span className="text-[11px] font-semibold text-zinc-500 block mb-2">Try an example:</span>
+          <span className="text-xs font-bold text-zinc-400 block mb-2">Try an example:</span>
           <div className="flex flex-wrap gap-2">
             {sampleFoods.map((f) => (
               <button
                 key={f}
                 type="button"
                 onClick={() => handleFetchAlternatives(f)}
-                className="text-xs bg-black/60 hover:bg-amber-950/40 text-zinc-300 hover:text-amber-300 border border-zinc-800 px-3 py-1.5 rounded-full transition-colors cursor-pointer"
+                className="text-xs font-semibold bg-black/60 hover:bg-amber-950/40 text-zinc-200 hover:text-amber-300 border border-zinc-800 px-3.5 py-1.5 rounded-full transition-colors cursor-pointer"
               >
                 {f}
               </button>
@@ -104,13 +104,13 @@ export const FoodAlternativesPage: React.FC = () => {
 
       {/* Results */}
       {isLoading ? (
-        <div className="py-12 text-center text-xs text-zinc-500">
+        <div className="py-12 text-center text-sm font-medium text-zinc-400">
           <div className="w-8 h-8 border-4 border-amber-500/20 border-t-amber-400 rounded-full animate-spin mx-auto mb-2" />
           <span>Generating smart nutritional alternatives with SehatSense AI...</span>
         </div>
       ) : alternatives.length > 0 ? (
         <div className="space-y-4">
-          <h3 className="text-sm font-bold text-white">
+          <h3 className="text-base font-black text-white">
             Suggested Upgrades for "{foodQuery}"
           </h3>
 
@@ -124,47 +124,47 @@ export const FoodAlternativesPage: React.FC = () => {
                   {/* Food Swap Header */}
                   <div className="flex items-center justify-between pb-3 border-b border-zinc-800">
                     <div>
-                      <span className="text-[10px] uppercase font-bold text-zinc-500 block">Current Food</span>
-                      <span className="text-xs font-semibold text-zinc-300">{alt.original_food}</span>
-                      <span className="text-[10px] text-zinc-500 block">{alt.current_nutrients}</span>
+                      <span className="text-xs uppercase font-extrabold text-zinc-400 block mb-0.5">Current Food</span>
+                      <span className="text-sm font-bold text-zinc-200">{alt.original_food}</span>
+                      <span className="text-xs text-zinc-400 block font-medium mt-0.5">{alt.current_nutrients}</span>
                     </div>
 
                     <ArrowLeftRight className="w-5 h-5 text-amber-400 flex-shrink-0" />
 
                     <div className="text-right">
-                      <span className="text-[10px] uppercase font-bold text-amber-400 block">Try This</span>
-                      <span className="text-xs font-bold text-white">{alt.suggested_alternative}</span>
-                      <span className="text-[10px] text-amber-300 font-semibold block">{alt.alternative_nutrients}</span>
+                      <span className="text-xs uppercase font-extrabold text-amber-400 block mb-0.5">Try This</span>
+                      <span className="text-sm font-black text-white">{alt.suggested_alternative}</span>
+                      <span className="text-xs text-amber-300 font-bold block mt-0.5">{alt.alternative_nutrients}</span>
                     </div>
                   </div>
 
                   {/* Why Better */}
-                  <div className="bg-amber-950/20 p-3.5 rounded-2xl border border-amber-900/30 text-xs text-zinc-300 space-y-1">
+                  <div className="bg-amber-950/20 p-3.5 rounded-2xl border border-amber-900/30 text-sm text-zinc-200 space-y-1">
                     <span className="font-bold text-amber-300 flex items-center gap-1.5">
-                      <TrendingUp className="w-3.5 h-3.5 text-amber-400" /> Why this works:
+                      <TrendingUp className="w-4 h-4 text-amber-400" /> Why this works:
                     </span>
-                    <p className="leading-relaxed text-zinc-400">{alt.why_better}</p>
+                    <p className="leading-relaxed text-zinc-300">{alt.why_better}</p>
                   </div>
 
                   {/* Budget & Portion */}
-                  <div className="space-y-2 text-xs text-zinc-400">
+                  <div className="space-y-2 text-xs sm:text-sm text-zinc-300">
                     <div className="flex items-start gap-2">
-                      <Tag className="w-3.5 h-3.5 text-zinc-500 flex-shrink-0 mt-0.5" />
+                      <Tag className="w-4 h-4 text-zinc-400 flex-shrink-0 mt-0.5" />
                       <span>
-                        <strong className="text-zinc-200">Affordability:</strong> {alt.budget_friendly_note}
+                        <strong className="text-zinc-100 font-bold">Affordability:</strong> {alt.budget_friendly_note}
                       </span>
                     </div>
 
                     <div className="flex items-start gap-2">
-                      <Scale className="w-3.5 h-3.5 text-zinc-500 flex-shrink-0 mt-0.5" />
+                      <Scale className="w-4 h-4 text-zinc-400 flex-shrink-0 mt-0.5" />
                       <span>
-                        <strong className="text-zinc-200">Portion Tip:</strong> {alt.portion_tip}
+                        <strong className="text-zinc-100 font-bold">Portion Tip:</strong> {alt.portion_tip}
                       </span>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-zinc-800 text-[11px] text-zinc-500">
+                <div className="pt-3 border-t border-zinc-800 text-xs text-zinc-400 font-medium">
                   Cultural Foods Philosophy: Foods are neither good nor evil. Portions, cooking oils, and meal combinations shape balance.
                 </div>
               </div>

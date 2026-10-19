@@ -95,11 +95,11 @@ export const WaterTrackerPage: React.FC = () => {
                 <button
                   key={p.ml}
                   onClick={() => handleAddWater(p.ml)}
-                  className="p-3 rounded-2xl bg-sky-950/40 hover:bg-sky-900/60 border border-sky-800/50 text-sky-200 flex flex-col items-center justify-center transition-all group cursor-pointer"
+                  className="p-3.5 rounded-2xl bg-sky-950/40 hover:bg-sky-900/60 border border-sky-800/50 text-sky-200 flex flex-col items-center justify-center transition-all group cursor-pointer"
                 >
-                  <Droplet className="w-5 h-5 text-sky-400 mb-1 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs font-bold">+{p.ml} ml</span>
-                  <span className="text-[10px] text-sky-300/80">{p.label}</span>
+                  <Droplet className="w-6 h-6 text-sky-400 mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-sm font-black">+{p.ml} ml</span>
+                  <span className="text-xs text-sky-300 font-semibold">{p.label}</span>
                 </button>
               ))}
             </div>
@@ -113,14 +113,14 @@ export const WaterTrackerPage: React.FC = () => {
                 step="50"
                 value={customAmount}
                 onChange={(e) => setCustomAmount(Number(e.target.value) || 250)}
-                className="w-32 p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-600"
+                className="w-36 p-2.5 rounded-xl bg-black/60 border border-zinc-800 text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-400 text-white placeholder:text-zinc-500"
                 placeholder="Custom ml"
               />
               <button
                 onClick={() => handleAddWater(customAmount)}
-                className="px-4 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-xs font-extrabold shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center gap-1.5 cursor-pointer"
+                className="px-5 py-2.5 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 hover:from-amber-400 hover:to-yellow-300 text-black rounded-xl text-sm font-black shadow-lg shadow-amber-500/20 gold-box-glow transition-all flex items-center gap-2 cursor-pointer"
               >
-                <Plus className="w-4 h-4" /> Add Custom
+                <Plus className="w-4.5 h-4.5" /> Add Custom
               </button>
             </div>
           </div>
@@ -129,28 +129,28 @@ export const WaterTrackerPage: React.FC = () => {
 
       {/* History */}
       <div className="bg-[#0d0d12] rounded-3xl p-6 border border-zinc-800/90 shadow-xl space-y-4">
-        <h3 className="text-sm font-bold text-white">Today's Hydration Entries</h3>
+        <h3 className="text-base font-black text-white">Today's Hydration Entries</h3>
 
         {isLoading ? (
-          <div className="py-8 text-center text-xs text-zinc-500">Loading water records...</div>
+          <div className="py-8 text-center text-sm font-medium text-zinc-400">Loading water records...</div>
         ) : logs.length === 0 ? (
-          <div className="py-8 text-center text-xs text-zinc-500">
+          <div className="py-8 text-center text-sm font-medium text-zinc-400">
             No water logged yet today. Drink a refreshing glass and tap +250ml!
           </div>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {logs.map((log) => (
               <div
                 key={log.id}
-                className="p-3 rounded-2xl bg-black/60 border border-zinc-800/80 flex items-center justify-between"
+                className="p-3.5 rounded-2xl bg-black/60 border border-zinc-800/80 flex items-center justify-between"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-xl bg-sky-950/70 border border-sky-800/60 text-sky-400">
-                    <Droplet className="w-4 h-4" />
+                  <div className="p-2.5 rounded-xl bg-sky-950/70 border border-sky-800/60 text-sky-400">
+                    <Droplet className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-white">{log.amount_ml} ml</h4>
-                    <p className="text-[11px] text-zinc-400">
+                    <h4 className="text-sm font-bold text-white">{log.amount_ml} ml</h4>
+                    <p className="text-xs text-zinc-300 font-medium">
                       {new Date(log.logged_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </p>
                   </div>
@@ -158,10 +158,10 @@ export const WaterTrackerPage: React.FC = () => {
 
                 <button
                   onClick={() => handleDelete(log.id)}
-                  className="p-1.5 text-zinc-500 hover:text-rose-400 hover:bg-rose-950/40 rounded-lg transition-colors cursor-pointer"
+                  className="p-2 text-zinc-400 hover:text-rose-400 hover:bg-rose-950/40 rounded-xl transition-colors cursor-pointer"
                   title="Delete"
                 >
-                  <Trash2 className="w-4 h-4" />
+                  <Trash2 className="w-4.5 h-4.5" />
                 </button>
               </div>
             ))}

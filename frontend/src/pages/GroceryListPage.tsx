@@ -152,13 +152,13 @@ export const GroceryListPage: React.FC = () => {
                           className="w-4 h-4 text-amber-500 bg-black rounded border-zinc-700 focus:ring-amber-400"
                         />
                         <span
-                          className={`text-xs font-semibold ${
+                          className={`text-sm font-bold ${
                             item.is_purchased ? 'line-through text-zinc-500' : 'text-zinc-100'
                           }`}
                         >
                           {item.item_name}
                         </span>
-                        <span className="text-[11px] text-zinc-400">({item.quantity})</span>
+                        <span className="text-xs text-zinc-300 font-medium">({item.quantity})</span>
                       </label>
 
                       <button

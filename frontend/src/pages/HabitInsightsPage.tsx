@@ -49,24 +49,24 @@ export const HabitInsightsPage: React.FC = () => {
                   <span className="p-2 rounded-xl bg-amber-950/60 border border-amber-800/50 text-amber-400">
                     <TrendingUp className="w-4 h-4" />
                   </span>
-                  <h3 className="text-base font-bold text-white">{h.title}</h3>
+                  <h3 className="text-lg font-black text-white">{h.title}</h3>
                 </div>
 
-                <span className="text-[10px] font-bold uppercase tracking-wider bg-amber-950/60 border border-amber-800/50 text-amber-300 px-2.5 py-1 rounded-full">
+                <span className="text-xs font-extrabold uppercase tracking-wider bg-amber-950/60 border border-amber-800/50 text-amber-300 px-3 py-1 rounded-full">
                   {h.confidence} Confidence
                 </span>
               </div>
 
-              <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">{h.description}</p>
+              <p className="text-sm sm:text-base text-zinc-200 leading-relaxed">{h.description}</p>
 
               {h.actionable_tip && (
-                <div className="p-3.5 bg-amber-950/20 border border-amber-900/30 rounded-2xl text-xs text-amber-200 font-medium">
+                <div className="p-3.5 bg-amber-950/20 border border-amber-900/30 rounded-2xl text-sm text-amber-200 font-medium">
                   <strong>Practical Action to Consider:</strong> {h.actionable_tip}
                 </div>
               )}
 
-              <div className="text-[11px] text-zinc-500 pt-2 border-t border-zinc-800 flex items-center gap-1.5">
-                <Info className="w-3.5 h-3.5 flex-shrink-0" />
+              <div className="text-xs text-zinc-400 pt-2.5 border-t border-zinc-800 flex items-center gap-2">
+                <Info className="w-4 h-4 flex-shrink-0" />
                 <span>{h.medical_disclaimer}</span>
               </div>
             </div>

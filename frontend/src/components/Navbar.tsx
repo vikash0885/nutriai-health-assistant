@@ -49,15 +49,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
             />
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-lg tracking-tight">
+                <span className="font-extrabold text-xl tracking-tight">
                   <span className="text-white">Sehat</span>
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 drop-shadow-[0_0_12px_rgba(245,158,11,0.3)]">Sense</span>
                 </span>
-                <span className="text-[10px] font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shadow-[0_0_10px_rgba(245,158,11,0.2)]">
-                  <Sparkles className="w-2.5 h-2.5 text-amber-400" /> AI
+                <span className="text-xs font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-[0_0_10px_rgba(245,158,11,0.25)]">
+                  <Sparkles className="w-3 h-3 text-amber-400" /> AI
                 </span>
               </div>
-              <p className="text-[10px] text-zinc-400 font-medium hidden sm:block">Smart Food Choices, Better Health.</p>
+              <p className="text-xs text-zinc-300 font-medium hidden sm:block">Smart Food Choices, Better Health.</p>
             </div>
           </Link>
         </div>
@@ -69,7 +69,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
               {/* Quick Log Buttons */}
               <Link
                 to="/food-logging"
-                className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-amber-300 bg-amber-950/40 hover:bg-amber-900/50 border border-amber-800/60 px-3 py-1.5 rounded-xl transition-all"
+                className="hidden md:flex items-center gap-1.5 text-sm font-bold text-amber-300 bg-amber-950/40 hover:bg-amber-900/50 border border-amber-800/60 px-3.5 py-1.5 rounded-xl transition-all"
               >
                 <PlusCircle className="w-4 h-4 text-amber-400" />
                 <span>Log Meal</span>
@@ -77,7 +77,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
 
               <Link
                 to="/food-logging?tab=image"
-                className="hidden md:flex items-center gap-1.5 text-xs font-semibold text-zinc-200 bg-zinc-900/80 hover:bg-zinc-800/80 border border-zinc-800 px-3 py-1.5 rounded-xl transition-all"
+                className="hidden md:flex items-center gap-1.5 text-sm font-bold text-zinc-200 bg-zinc-900/80 hover:bg-zinc-800/80 border border-zinc-800 px-3.5 py-1.5 rounded-xl transition-all"
               >
                 <Camera className="w-4 h-4 text-amber-400" />
                 <span>AI Photo Scan</span>
@@ -85,9 +85,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
 
               <Link
                 to="/assistant"
-                className="flex items-center gap-1.5 text-xs font-bold text-black bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 px-3.5 py-1.5 rounded-xl shadow-md shadow-amber-500/20 transition-all"
+                className="flex items-center gap-1.5 text-sm font-extrabold text-black bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 px-4 py-1.5 rounded-xl shadow-md shadow-amber-500/20 transition-all"
               >
-                <Bot className="w-4 h-4" />
+                <Bot className="w-4.5 h-4.5" />
                 <span className="hidden sm:inline">AI Assistant</span>
               </Link>
 
@@ -98,10 +98,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
                   className="flex items-center gap-2 p-1.5 rounded-xl hover:bg-zinc-800/60 transition-colors"
                   title="Profile & Settings"
                 >
-                  <div className="w-8 h-8 rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-300 font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-300 font-bold text-sm">
                     {profile?.display_name ? profile.display_name[0].toUpperCase() : <UserIcon className="w-4 h-4" />}
                   </div>
-                  <span className="text-xs font-medium text-zinc-200 hidden lg:inline-block max-w-[100px] truncate">
+                  <span className="text-sm font-bold text-zinc-200 hidden lg:inline-block max-w-[120px] truncate">
                     {profile?.display_name || user?.email.split('@')[0]}
                   </span>
                 </Link>
@@ -111,7 +111,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
                   className="p-1.5 text-zinc-400 hover:text-red-400 hover:bg-red-950/30 rounded-xl transition-colors cursor-pointer"
                   title="Log out"
                 >
-                  <LogOut className="w-4 h-4" />
+                  <LogOut className="w-4.5 h-4.5" />
                 </button>
               </div>
             </>
@@ -119,13 +119,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onToggleSidebar, isSidebarOpen }
             <div className="flex items-center gap-2">
               <Link
                 to="/login"
-                className="text-xs font-semibold text-zinc-300 hover:text-white px-3.5 py-2 rounded-xl hover:bg-zinc-800 transition-colors"
+                className="text-sm font-bold text-zinc-200 hover:text-white px-4 py-2 rounded-xl hover:bg-zinc-800 transition-colors"
               >
                 Sign In
               </Link>
               <Link
                 to="/register"
-                className="text-xs font-bold text-black bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 px-4 py-2 rounded-xl shadow-md shadow-amber-500/20 transition-all"
+                className="text-sm font-black text-black bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 px-5 py-2 rounded-xl shadow-md shadow-amber-500/20 transition-all"
               >
                 Get Started
               </Link>
